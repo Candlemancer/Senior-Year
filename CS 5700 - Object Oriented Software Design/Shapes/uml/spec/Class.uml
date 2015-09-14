@@ -1,0 +1,62 @@
+@startuml
+hide empty members
+
+'Input'
+abstract class Input {
+	Shape[] read(filename) = 0
+}
+class JsonInput {
+	read(filename)
+}
+class XmlInput {
+	read(filename)
+}
+
+Input <|-- JsonInput
+Input <|-- XmlInput
+
+'Shapes'
+abstract class Shape {
+	getArea() = 0
+}
+
+package Ellipsoids {	
+	class Ellipse {
+		semiMajorAxis
+		semiMinorAxis
+		getArea()
+	}
+	Shape <|-- Ellipse
+	Ellipse <|-- Circle
+}
+
+package Polygons {
+	class ConvexPolygon {
+		Point[] points
+		getArea()	
+	}
+	Shape <|-- ConvexPolygon
+	ConvexPolygon <|-- RegularPolygon
+	RegularPolygon <|-- EquilateralTriangle
+	ConvexPolygon <|-- EquilateralTriangle
+	ConvexPolygon <|-- IsoscelesTriangle
+	ConvexPolygon <|-- ScaleneTriangle
+	ConvexPolygon <|-- Rectangle
+	Rectangle <|-- Square
+	RegularPolygon <|-- Square
+}
+
+'Output'
+abstract class Output {
+	void print(Shapes[]) = 0
+}
+class StandardOutput {
+	print(Shapes[])
+}
+class CsvOutput {
+	print(Shapes[])
+}
+
+Output <|-- StandardOutput
+Output <|-- CsvOutput
+@enduml
