@@ -1,26 +1,30 @@
 # Jonathan Petersen
 # A01236750
 # Shapes Assignment
-# Input Base Class
+# Input Class
 
 import json
+import os
+import xml.etree.ElementTree as xml
 
 class Input:
 	def readFile(self, filename):
-		raise NotImplementedError;
+		return self.strategy(open(filename));
 
-class JsonInput(Input):
-	def __init__(self):
-		fp = open("example.json", "w")
-		fp.write("Hello World!")
+####################################################################################################
 
-	def readFile(self, filename):
-		self.contents = json.load(filename.open());
-		return;
+def jsonStrategy(filePointer):
+	return json.load(filePointer);
 
-class XmlInput(Input):
-	def readFile(self, filename):
-		return;
+def xmlStrategy(filePointer):
+	tree = xml.parse(filePointer);
+	root = tree.getroot();
 
 
+	return;
+
+def parseXMLTree(node):
+
+	# Base Case
+	i
 
