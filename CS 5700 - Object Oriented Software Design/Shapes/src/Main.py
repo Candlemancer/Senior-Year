@@ -3,11 +3,13 @@
 # Shapes Assignment
 # Driver Code
 
+import AreaFinder
 import Input
 import Output
 
 testShapes = {
 	"Circle":{"Radius":10.0},
+	"Circle":{"Radius":12.0},
 	"Square":[	{"Point":[{"x":1},{"y":1}]}, 
 				{"Point":[{"x":-1},{"y":1}]}, 
 				{"Point":[{"x":-1},{"y":-1}]}, 
@@ -22,13 +24,19 @@ testShapes = {
 
 if __name__ == "__main__":
 	input = Input.Input();
+	input.strategy = Input.xmlStrategy;
+	alpha = input.readFile("test.xml");
 	input.strategy = Input.jsonStrategy;
-	dict = input.readFile("test.json");
+	beta = input.readFile("test.json");
 
-	output = Output.Output(Output.xmlStrategy);
-	# output.strategy = Output.stdoutStrategy;
-	output.writeFile(testShapes);
+	finder = AreaFinder.AreaFinder();
+	results = finder.computeAreas(alpha["Shapes"]);
 
-	if (dict == testShapes):
-		print("Victory!");
+	# print(results);
+
+	output = Output.Output(Output.jsonStrategy);
+	output.writeFile(results);
+
+	# if (dict == testShapes):
+	# 	print("Victory!");
 
