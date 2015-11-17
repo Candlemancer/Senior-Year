@@ -11,12 +11,11 @@ import pprint
 import xml.etree.ElementTree as xml
 
 class Output:
+
+	strategy = None;
+
 	def __init__(self):
 		self.strategy = stdoutStrategy;
-		return;
-
-	def __init__(self, strategy):
-		self.strategy = strategy;
 		return;
 
 	def writeFile(self, dict):
@@ -30,6 +29,7 @@ def stdoutStrategy(dict):
 
 def csvStrategy(dict):
 	file = open("results.csv", "w")
+	dict = dict[0];
 	for key, value in dict.items():
 		file.write(str(key) + "," + repr(value) + "\n");
 	file.close();

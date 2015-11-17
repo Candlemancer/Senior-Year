@@ -15,60 +15,58 @@ class AreaFinder:
 		for shapeData in shapes:
 			(k, v) = shapeData.popitem();
 			if (k == "Circle"):
-				a = ellipseStrategy(v + copy.deepcopy(v));
-				results.append({k:a});
-				results[0]["Total"] += a;
-				results[0]["Circle"] += a;
-				results[0]["Ellipse"] += a;
+				if(len(v) == 1):
+					a = ellipseStrategy(v + copy.deepcopy(v));
+					results[0]["Total"] += a;
+					results[0]["Circle"] += a;
+					results[0]["Ellipse"] += a;
 			if (k == "Ellipse"):
-				a = ellipseStrategy(v);
-				results.append({k:a});
-				results[0]["Total"] += a;
-				results[0]["Ellipse"] += a;
+				if(len(v) == 2):
+					a = ellipseStrategy(v);
+					results[0]["Total"] += a;
+					results[0]["Ellipse"] += a;
 			if (k == "Triangle"):
-				a = polygonStrategy(v);
-				results.append({k:a});
-				results[0]["Total"] += a;				
-				results[0]["Triangle"] += a;
-				results[0]["ConvexPolygon"] += a;				
+				if(len(v) == 3):
+					a = polygonStrategy(v);
+					results[0]["Total"] += a;				
+					results[0]["Triangle"] += a;
+					results[0]["ConvexPolygon"] += a;				
 			if (k == "EquilateralTriangle"):
-				a = polygonStrategy(v);
-				results.append({k:a});
-				results[0]["Total"] += a;				
-				results[0]["Triangle"] += a;				
-				results[0]["RegularPolygon"] += a;
-				results[0]["EquilateralTriangle"] += a;
-				results[0]["ConvexPolygon"] += a;				
+				if(len(v) == 3):
+					a = polygonStrategy(v);
+					results[0]["Total"] += a;				
+					results[0]["Triangle"] += a;				
+					results[0]["RegularPolygon"] += a;
+					results[0]["EquilateralTriangle"] += a;
+					results[0]["ConvexPolygon"] += a;				
 			if (k == "IsocelsesTriangle"):
-				a = polygonStrategy(v);
-				results.append({k:a});
-				results[0]["Total"] += a;				
-				results[0]["Triangle"] += a;				
-				results[0]["IsocelsesTriangle"] += a;
-				results[0]["ConvexPolygon"] += a;				
+				if(len(v) == 3):
+					a = polygonStrategy(v);
+					results[0]["Total"] += a;				
+					results[0]["Triangle"] += a;				
+					results[0]["IsocelsesTriangle"] += a;
+					results[0]["ConvexPolygon"] += a;				
 			if (k == "Square"):
-				a = polygonStrategy(v);
-				results.append({k:a});
-				results[0]["Total"] += a;				
-				results[0]["Rectangle"] += a;				
-				results[0]["Square"] += a;
-				results[0]["RegularPolygon"] += a;
-				results[0]["ConvexPolygon"] += a;				
+				if(len(v) == 4):
+					a = polygonStrategy(v);
+					results[0]["Total"] += a;
+					results[0]["Rectangle"] += a;
+					results[0]["Square"] += a;
+					results[0]["RegularPolygon"] += a;
+					results[0]["ConvexPolygon"] += a;
 			if (k == "Rectangle"):
-				a = polygonStrategy(v);
-				results.append({k:a});
-				results[0]["Total"] += a;				
-				results[0]["Rectangle"] += a;
-				results[0]["ConvexPolygon"] += a;				
+				if(len(v) == 4):
+					a = polygonStrategy(v);
+					results[0]["Total"] += a;
+					results[0]["Rectangle"] += a;
+					results[0]["ConvexPolygon"] += a;				
 			if (k == "RegularPolygon"):
 				a = polygonStrategy(v);
-				results.append({k:a});
 				results[0]["Total"] += a;				
 				results[0]["ConvexPolygon"] += a;				
 				results[0]["RegularPolygon"] += a;
 			if (k == "ConvexPolygon"):
 				a = polygonStrategy(v);
-				results.append({k:a});
 				results[0]["Total"] += a;				
 				results[0]["ConvexPolygon"] += a;
 		return results;

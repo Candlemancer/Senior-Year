@@ -7,23 +7,41 @@ import json
 import os
 import unittest
 import xml.etree.ElementTree as xml
+import sys
 
 class Input:
+	def __init__(self):
+		self.strategy = xmlStrategy;
+
 	def readFile(self, filename):
 		return self.strategy(open(filename));
+
+	def setStrategy(self, strategy):
+		self.strategy = strategy;
+		return
 
 ####################################################################################################
 
 def jsonStrategy(filePointer):
-	result = json.load(filePointer);
-	filePointer.close();
-	return result;
+	try:
+		result = json.load(filePointer);
+		filePointer.close();
+		return result;
+	except Exception as e:
+		print("Invalid JSON input file");
+		sys.exit(1);
+
 
 def xmlStrategy(filePointer):
-	tree = xml.parse(filePointer);
-	root = tree.getroot();
+	try:
+		tree = xml.parse(filePointer);
+		root = tree.getroot();
+		return parseXMLTree(root);
+	except Exception as e:
+		print("Invalid XML input file");
+		sys.exit(1);
 
-	return parseXMLTree(root);
+
 
 def parseXMLTree(node):
 
