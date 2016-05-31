@@ -1,0 +1,8 @@
+Y:\tmp\SensorSimulator\DummyServer\obj\Debug\DummyServer.csprojResolveAssemblyReference.cache
+Y:\tmp\SensorSimulator\DummyServer\bin\Debug\DummyServer.exe.config
+Y:\tmp\SensorSimulator\DummyServer\bin\Debug\DummyServer.exe
+Y:\tmp\SensorSimulator\DummyServer\bin\Debug\DummyServer.pdb
+Y:\tmp\SensorSimulator\DummyServer\bin\Debug\Messages.dll
+Y:\tmp\SensorSimulator\DummyServer\bin\Debug\Messages.pdb
+Y:\tmp\SensorSimulator\DummyServer\obj\Debug\DummyServer.exe
+Y:\tmp\SensorSimulator\DummyServer\obj\Debug\DummyServer.pdb

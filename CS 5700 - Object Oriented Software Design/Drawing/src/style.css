@@ -1,0 +1,30 @@
+html {
+	background: #333333;
+	/*height: 100%;*/
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #333333;
+}
+
+#content {
+	width: 66%;
+	min-width: 850px;
+	height: 100%;
+	background: #FEFEFE;
+	margin: 0px auto;
+	padding: 50px 100px;	
+}
+
+canvas {
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+	/*background: #FFFFFF;*/
+	margin: 0 auto;
+	padding: 0;
+	width: 800;
+	height: 600;
+}

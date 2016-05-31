@@ -1,0 +1,75 @@
+Test will cover Sections 3.1, 2, 3, 4, 5 and 4.1, 2
+
+Expected Value:
+	Discrete - Σ(xi * p(xi))
+	Continuous - ∫(x * f(x))dx
+
+	Expected Value is the mean or average over time (i.e. center of mass).
+
+	Ex.
+		Geometric: 1/p
+		Exponential: 1/λ
+		Normal: μ
+
+	Remark: E(x + a) = E(x) + a : Expected value is a linear operation! 
+								   (But not necessarily a homomorphism)
+
+Variance:
+	Let µ = E(x)
+	Var(X) = E[(x - µ)^2] = σ^2
+		Discrete - Σ(x - µ)^2 p(xi)dx = σ^2
+		Continuous - ∫(x - µ)^2 f(x)dx = σ^2
+	Or rather
+	Var(X) = E(x^2) - µ^2
+		   = E(x^2) - E(x)^2 
+
+Standard Deviation:
+	Std. Dev = √(variance)
+			 = √(σ^2)
+			 = σ
+
+Examples:
+	
+	Let X ~ Bernoulli(p)		f(x) = {1 -> p, 
+										0 -> p}
+		E(X) = Σ(x f(x))
+			 = xp + xq
+			 = 1p + 0q
+			 = p
+		Var(X):
+			E(x^2) = (1^2)p + 0^2(q) = p
+			E(x)^2 = p^2
+			Var(X) = p - p^2 = p(1 - p)
+			---- or -----
+			Var(X) = Σ(xi - p)f(xi)
+				   = Σ(xi - p)(p^x(1-p)^1-xi)
+
+	Let X ~ Exponential(λ) 		f(x) = λe^(-λx)
+
+		E(X) = 1/λ = µ
+		Var(X) = E(X^2) - E(X)^2
+			E(X^2) = ∫x^2 f(x) dx
+				   = λ ∫x^2 e^(-λx) dx
+		Var(X) = λ ∫x^2 e^(-λx) dx - (1/λ)^2
+			   = 1/(λ^2)
+
+	Let X ~ Geom(p)
+
+		E(X) = 1/p
+
+	Let X ~ Poisson(λ)				f(x) = (λ^k / k!) * e^-λ  		k = {0, 1, 2, ...}
+
+		E(X) = Σ(xi p(xi))
+			 = Σ(xi (λ^xi / xi!) * e^-λ) Sum from 0 .. inf
+			 = e^-λ Σ(λ^xi / xi!)  Sum from 1 .. inf
+			 = e^-λ λ Σ(λ^xi - 1 / m!) Sum from 0 .. inf 		m = k-1
+			 = e^-λ λ e^λ
+			 = λ
+		Var(X) = E(X^2) - E(X)^2
+			   = E(X^2) - λ^2
+
+		E(X^2) = Σ(xi^2 p(xi))
+		
+
+
+

@@ -3,6 +3,8 @@
 // WBS Assignment
 // Engineer Implementation
 
+#include "../api/catch.hpp"
+
 #include "Engineer.hpp"
 #include <stdexcept>
 
@@ -32,4 +34,12 @@ void Engineer::setDailyAvailability(std::chrono::hours dailyHours) {
 
     m_dailyAvailability = dailyHours;
     return;
+}
+
+TEST_CASE("Basic Engineer Creation", "[Schedule]") {
+    auto e = Engineer(0, "John Doe", 8);
+
+    REQUIRE(e.getID() == 0);
+    REQUIRE(e.getName() == "John Doe");
+    REQUIRE(e.getDailyAvailability().count() == 8);
 }

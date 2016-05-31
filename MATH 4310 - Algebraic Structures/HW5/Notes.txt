@@ -1,0 +1,162 @@
+Know how to prove set equality																		Know for Test
+
+Equivalence relations can be used to make new topology (rect -> cylinder, mobius, torus, klein)
+In this class we use equivlance relations to make new algebraic structures.
+
+Z_2 = {[a]_2}
+	[0]_2 = {-2, 0, 2, 4, 6}
+	[1]_2 = {-1, 1, 3, 5, 7}
+
+Z_3 = {[a]_3}
+	[0]_2 = {0, 3, 6, 9}
+	[1]_2 = {1, 4, 7, 10}
+	[2]_2 = {2, 5, 8, 11}
+
+Z_6 = {[a]_6}
+	[0]_2 = {0,  6, 12, 18}
+	[1]_2 = {1,  7, 13, 19}
+	[2]_2 = {2,  8, 14, 20}
+	[3]_2 = {3,  9, 15, 21}
+	[4]_2 = {4, 10, 16, 22}
+	[5]_2 = {5, 11, 17, 23}																			Transposition?
+
+Z_n as an algebraic structure with (+) and (*).
+[a] (+) [b] = [x + y where x \in [a], y \in [b]].
+			= simplify([a + b])
+
+[a] (*) [b] = [x * y where x \in [a], y \in [b]]
+			= simplify([a * b])
+
+	Properties:
+		# of elements in Z_n = n
+		[a][b] = [0] does not imply that a or b is 0
+		[4][4] =_5 [1] : multiplicative inverses are weird
+
+
+	Example:
+		- Solve x^2 + x = 0 in Z_4. Can always be solved in a finite structure by guess and check.
+		
+====================================================================================================
+
+In Zn there are two special classes of of numbers:
+
+	- Zero Divisors: A number [a] != [0] such that [a][b] = [0] [b] != [a]
+		Example: 
+			In Z6, [2][3] = [0], [2] != [3]
+			In Z15, [3][5] = [0], [3] != [5]
+
+		Given Zn, if n is composite, then Zn has Zero Divisors										*
+
+	- Unit: [a] in Zn is a unit if [a] has a multiplicative inverse
+		[a][b] = 1 => [b] = [a]^-1
+
+		Remark: If [a] is a unit, then [a] cannot be a Zero Divisor
+		Proof:
+			Given [a] as a unit, then
+
+				[a][b] = [1]
+
+			[a] being a zero divisor means that
+
+				[a][c] = [0]			[a], [c] != [0]
+
+			Multiply by [b] to see that
+
+				[b][a][c] = [b][0]
+				[1][c] = [0]
+				[c] = [0]				Contradiction!
+
+	Therefore: Units and Zero Divisors are disjoint. Further, Units and Zero Divisors paritition Zn.
+
+	When is [a] a unit?
+
+	Theorem: 
+		[a] in Zn is a unit if and only if gcd(a,n) = 1.
+
+	Proof: 	
+		[a][b] = [1]
+		[ab] = [1]
+		ab = 1 mod n
+		ab - 1 = kn
+		ab - kn = 1		Relatively prime! 
+		gcd(a,n) = 1
+
+		Therefore [a][b] = [1] => gcd(a,n) = 1
+		------------------------------------------------------
+		gcd(a, n) = 1
+		1 = au + nv				mod n
+		1 = au 					mod n
+		[a][u] = 1
+
+		Therefore [u] = [a]^-1.
+
+	Example:
+		Z12 	{[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11]}
+		Units:	       X				   X	     X					   X
+		Zero Divisors:		X	 X    X			X		  X	   X     X
+
+		Remark: If you multiply two zero divisors, you get a zero divisor
+
+	Solve: 
+		[5]x + [2] = [0]
+		[5]x = [0] - [2]
+		[5]x = [-2] = [10]
+		[5][5]x = [5][10]
+		[1]x = [50]
+		x = [2]
+
+	Solve:
+		[4]x + [1] = [11]
+		[4]x = [11] - [1]
+		[4]x = [10] 		No Solution
+
+	Solve:
+		[4]x = [8]
+		x = [2]
+		x = [2] + [3]
+		x = [2] + [6]
+
+	Remark: 
+		- Units lead to unique solutions
+		- Zero Divisors lead to many solutions
+
+	Theorem:
+		In Zp, p is prime, there are no Zero Divisors, all numbers are Units.
+			i.e. every [a] has a multiplicative inverse!!!
+
+	Definition:
+		Algebraic structures that guarantee multiplicative inverses are called fields.
+
+	Example:
+		Find the inverse of 24 in Z35.
+
+		Note: gcd(35, 24) = 1 so the inverse must exist.
+		Use the Euclidean Algorithm to find it.
+
+	Step 1:
+		35 = 24 + 11
+		24 = 2(11) + 2
+		11 = 5(2) + 1
+
+		Therefore 1 is the gcd.
+
+	Step 2:
+		Solve for the remainders.
+		11 = 35 - 24
+		2 = 24 - 2(11)
+		1 = 11 - 5(2)
+
+	Step 3:
+		Reduce to one equation
+		11 = 35 - 24
+		  1 = 11 - 5(24 - 2(11))
+		  1 = 11 - 5(24) + 10(11)
+	  	1 = 11(11) - 5(24)
+
+		  1 = 11(35 - 24) - 5(24)
+		  1 = 11(35) - 11(24) - 5(24)
+		1 = 11(35) - 16(24)
+
+		[1] ~_35 [-16][24]			In Z35
+		[1] = [19][24]
+

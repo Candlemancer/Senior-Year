@@ -1,0 +1,81 @@
+Section 3.3 cont'd
+
+Ex 27.
+	let R, S, T be rings with f:S -> T, g:R -> S as homomorphisms on that ring.
+	Show that f(g(x)) is a homomorphism
+
+	1. f(g(x + y)) = f(g(x)) + f(g(y))
+	2. f(g(x * y)) = f(g(x)) * f(g(y))
+
+	Let k(x) = f(g(x)), x, y in R.
+
+	k(x + y) = (fog)(x + y)
+			 = f(g(x + y))
+			 = f(g(x) + g(y))
+			 = f(g(x)) + f(g(y))
+			 = k(x) + k(y)
+
+Remarks on homework:
+	R is not a subset of R x S
+	A preimage is the stuff that gets sent to an image.
+
+Ex.
+	Let f:R -> R x R
+		f1(r) = (r, 0) (maps to X axis)
+		f2(r) = (0, r) (maps to Y axis)
+		f3(r) = (r, r) (maps to diagonal)
+		all are homomorphisms, injective, but not surjective (Monomorphism)
+
+		To show that f3 is injective, let x, y in R. f3(x) = f3(y). 
+		f3(x) = (x, x)
+		f3(y) = (y, y)
+		If (x, x) = (y, y), then x = y
+
+Ex.
+	Is f:R+ -> R 	f(x) = x / x + 1 injective?
+	f(x) = f(y)
+	x / x + 1 = y / y + 1
+	x(y + 1) = y(x + 1)
+	xy + x = yx + y
+	xy + x = xy + y
+	x = y
+
+Ex. 
+	Is f(x) = x / 1 + x^2 injective? (No).
+	Try to show that it's injective on 0 ≤ x ≤ 1
+
+Ex. f: R3 -> R2		f(x, y, z) = (x + y, y + z)
+	Injective?
+		f(x, y, z) = f(a, b, c)
+		(x + y, y + z) = (a + b, b + c)
+		x + y = a + b
+		y + z = b + c
+
+	Surjective:
+		Given (s, t) in R2, then f(s, 0, t) will always map to it for any s, t.
+
+Theorem:
+	Let f:R -> S be a ring homomorphism. 
+	Define the kernel of f:
+		K = {r in R | f(r) = 0}
+	1. K is a subring of R
+	2. f is one-to-one iff K = {0}.
+
+	Proof: 
+		Suppose f is a homomorphism, and K(f) = {0}. We want to show that f is one to one.
+		f(x) = f(y)
+		f(x) - f(y) = 0
+		f(x - y) = 0
+		f(z) = 0 	z = x - y
+		if z = 0, then x - y = 0, and x = y, ergo, they are one to one.
+
+	Example:
+		f:C -> C given by f(a + ib) = a - ib is one to one. Assume that f is a homomorphism.
+		f(a + ib) = 0
+		   a - ib = 0
+		Therefore a = 0, b = 0 => K(f) = 0.
+		Therefore injective.
+
+
+
+

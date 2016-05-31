@@ -1,0 +1,69 @@
+Jonathan Petersen
+A01236750
+HW1
+
+1.	Suppose we have an algorithm A whose running time is O(2^n). The Tianhe-2 can perform 
+	3.4 × 10^16 instructions per second.
+
+	a.	For the input size n = 100 (which is a relative small input), how much time does Tianhe-2
+	need to finish the algorithm? Give the time in terms of centuries.
+
+	2^100 instructions = 1.268 * 10^30 instructions / (3.4 * 10^16 instructions / second)
+		= 37,283,841,183,183 seconds = 1,181,453.6335 years = 11,814.536335 centuries
+
+
+	b.	For the input size n = 1000, how much time does Tianhe-2 need to finish the algorithm?
+	Give the time in terms of centuries.
+
+	2^1000 instructions = 1.072 * 10^301 instructions / (3.4 * 10^16 instructions / second)
+		= 3.151 * 10^284 seconds = 9.986 * 10^276 years = 9.986 * 10^274 centuries
+
+
+2.	How much slower does each of these algorithms get when you double the input size?
+	
+	a. 	n^2 -> (2n)^2 = 4n^2 / n^2 = 4 times as slow.
+	b.	n^3 -> (2n)^2 = 8n^2 / n^2 = 8 times as slow.
+	c.	100 * n^2 -> 100 * 4 * n^2 / 100 * n^2 = 4 times as slow.
+	d.	n * log(n) -> (2n) * log(2n) / n * log(n) = 2 * (log(2) + log(n) / log(n))
+			= 2 * ((log(2) / log(n)) + 1) = 2 + 2(log_n(2)) times as slow.
+	e.	2^n -> 2^(2n) = (2^n)^2 / 2^n = 2^n times as slow.
+
+3. 	For each of the following pairs of functions, indicate whether it is one of the three cases: 
+	f(n) = O(g(n)), f(n) = Ω(g(n)), or f(n) = Θ(g(n)).
+
+	a. 	f(n) = Θ(g(n))
+	b.	f(n) = Θ(g(n))
+	c.	f(n) = Θ(g(n))
+	d.	f(n) = Ω(g(n))
+	e.	f(n) = O(g(n))
+	f.	f(n) = Θ(g(n))
+
+4.	
+	1. Sort the n items
+	2. Add items to the Knapsack set (A), starting with the largest items first.
+	3. If you cannot fit an item into the set (A + k > K), ignore it.
+
+	Once you have finished checking all of the items in the set, the knapsack will be filled more
+	than halfway, assuming a solution exists. We can prove this by induction:
+
+	Let t be the amount of K that must be filled in order to solve the problem. At the highest level
+	t = 1/2;
+
+	Base Case:
+		The largest element is larger or equal to t.
+
+		This case is trivial, once we've added the largest element we can consider the problem
+		solved, though not necessarily optimally.
+
+	Inductive Case:
+		The largest element is less than t.
+
+		In this case, we know that the remaning space in K must be greater than t, and we know that 
+		all other elements must be smaller than t. Therefore at least one more element must fit in 
+		the remaining space. We can then repeat the problem with the remaining elements and a new 
+		value of t describing how much of the remaining space needs to be filled. 
+
+	The running time of the algorithm would be as follows:
+	 - Sorting the set would take nlog(n) time.
+	 - Attempting to add each item to the knapsack would take at worst n time.
+	Therefore the total running time would be at worst n^2 * log(n) time.

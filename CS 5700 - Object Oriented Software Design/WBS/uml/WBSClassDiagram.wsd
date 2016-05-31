@@ -1,0 +1,90 @@
+@startuml
+
+class Task {
+    + Task(int id, std::string label, std::string description, int hoursEstimate, std::shared_ptr<Task> parent = nullptr)
+    + virtual ~Task()
+    + {abstract} virtual void accept(std::shared_ptr<TaskVisitor> visitor)
+
+    + int getID()
+    + std::string getLabel()
+    + std::string getDescription()
+    + std::vector<std::shared_ptr<Workforce>> getEngineers()
+    + std::shared_ptr<Task> getParent()
+    + virtual int getOriginalHoursEstimate()
+    + {abstract} virtual int getCurrentHoursEstimate()
+    + {abstract} virtual double getPercentComplete()
+    + {abstract} virtual int getHoursRemaining()
+    + {abstract} virtual int getWorkDaysRemaining()
+
+    + void setLabel(std::string label)
+    + void setDescription(std::string desc)
+    + void setEngineers(std::vector<std::shared_ptr<Workforce>> engineers)
+    + void setParent(std::shared_ptr<Task> parent)
+
+    + void addEngineer(std::shared_ptr<Workforce> engr)
+    + bool operator==(Task* that)
+    + bool operator!=(Task* that)
+
+    # const int m_id;
+    # std::string m_label;
+    # std::string m_description;
+    # std::vector<std::shared_ptr<Workforce>> m_engineers;
+    # const std::chrono::hours m_originalHoursEstimate;
+    # std::chrono::hours m_currentHoursEstimate;
+    # double m_percentComplete;
+    # std::chrono::hours m_remainingHours;
+    # int m_remainingDays;
+    # std::shared_ptr<Task> m_parent;
+}
+Task <|-- LeafTask
+Task <|-- ParentTask
+
+class LeafTask {
+    + LeafTask(int id, std::string label, std::string description, int hoursEstimate)  
+    + virtual ~LeafTask()
+    + virtual int getCurrentHoursEstimate()
+    + virtual double getPercentComplete()
+    + virtual int getHoursRemaining()
+    + virtual int getWorkDaysRemaining()
+    + virtual void accept(std::shared_ptr<TaskVisitor> visitor)
+    + void setCurrentHoursEstimate(int hoursEstimate);
+    + void setPercentComplete(double percentComplete);
+}
+
+class ParentTask {
+    + ParentTask(int id, std::string label, std::string description)
+    + virtual ~ParentTask()
+    + virtual double getPercentComplete()
+    + std::vector<std::shared_ptr<Task>> getTasks()
+    + void setTasks(std::vector<std::shared_ptr<Task>> tasks)
+    + void addTask(std::shared_ptr<Task> task)
+
+    + TreeIterator begin();
+    + TreeIterator end();
+
+    # std::vector<std::shared_ptr<Task>> m_tasks;
+}
+ParentTask <|-- SequentialParentTask
+ParentTask <|-- ParallelParentTask
+
+class SequentialParentTask {
+    + SequentialParentTask(int id, std::string label, std::string description)
+    + virtual ~SequentialParentTask()
+    + virtual int getOriginalHoursEstimate()
+    + virtual int getCurrentHoursEstimate()
+    + virtual int getHoursRemaining()
+    + virtual int getWorkDaysRemaining()
+    + virtual void accept(std::shared_ptr<TaskVisitor> visitor)
+}
+
+class ParallelParentTask {
+    ParallelParentTask(int id, std::string label, std::string description)
+    virtual ~ParallelParentTask()
+    virtual int getOriginalHoursEstimate()
+    virtual int getCurrentHoursEstimate()
+    virtual int getHoursRemaining()
+    virtual int getWorkDaysRemaining()
+    virtual void accept(std::shared_ptr<TaskVisitor> visitor)
+}
+
+@enduml

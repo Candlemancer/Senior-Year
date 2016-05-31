@@ -1,0 +1,13 @@
+@startuml 
+
+title Undoing an Action
+
+actor User 
+User -> HTML : "User Clicks Undo Button"
+HTML -> HTMLAdapter : "HTML onClick event"
+HTMLAdapter -> CommandHistory
+create Command
+CommandHistory -> Command : "Command.undo()"
+HTML <-- Surface : "Return update to drawing surface"
+
+@enduml

@@ -1,0 +1,304 @@
+
+2. Statement of Theorem 1.1.   Know the  proof of uniqueness.
+	For every integer a and b, there exist unique integers q, r such that a = bq + r and 0 ≤ r < b.
+
+	Suppose a = bq + r and a = bs + t.
+	bq + r = bs + t
+	b(q - s) = t - r
+
+	0 ≤ r < b
+	-b < -r ≤ 0
+
+	-b < t - r < b
+	-b < b(q - s) < b
+	-1 < q - s < 1
+
+	q - s = 0
+	b(0) = t - r
+	t - r = 0
+	t = r.
+
+3. Definition on page 9 and remarks on divisor with proofs
+
+	a | b iff a = bk, k in Z
+
+	a and -a have the same divisors
+	a = bk => -a = b(-k)
+
+	every integer has only nonzero divisors less than |a|
+	a = bc => |a| = |b||c|
+		0 ≤ |b| ≤ |a|
+
+4. Definition of  gcd on page 8. Be able to calculate the gcd of 2 numbers  from the  definition
+
+	given a, b in Z. d is the gcd of a, b iff d | a, d | b, and d is the largest of its kind. 
+
+5. Theorem 1.2 (no proof) Linear Combo Theorem
+
+	d = au + bv given the def. of GCD. u, v in Z
+
+6. Cor1.3 (no proof)
+
+	d = gcd(a, b) iff d | a, d | b, if c | a and c | b then c | d.
+
+7. Theorem 1.5 (with proof  just step  1)
+
+	p is prime iff p | bc => p | b or p | c.
+
+	If p | bc, then gcd(p, b) = +/- 1, +/- p by definition of prime. Then the gcd(p, b) = 1, p.
+	If 1, then p | c by theorem 1.4, if p then p | b.
+
+8. Be able to explain how the Euclidean algorithm works.  Be able to calculate the gcd  of 2 numbers
+
+	The Euclidean algorithm works by finding recursively smaller and smaller remainders from the 
+	division algorithm, and then combining those remainders through back substitution to calculate
+	the gcd of two numbers as a linear combination of those two numbers.
+
+	It works because the gcd of any number and its remainder for a given divisor are the same, so 
+	finding the greatest common divisor of a small remainder must also be the gcd of the original 
+	number.
+
+9. Theorem 1.7 (no proof)
+	
+	Every integer n except 0, +/-1 is the product of primes.
+
+9. Be able to explain why the  Euclidean algorithm works,  (page 12, proof of Thm 1.6)
+
+	S = {am + bn | a, b, m, n in Z}
+	t = au + bv <- smallest positive element in S
+
+	a = tq + r 			0 ≤ r < t
+	r = a - tq
+	r = a - (au + bv)q
+	r = a - aqu + bqv
+	r = a(1 - qu) + b(qv)
+	r in S
+
+	r < t => r ≤ 0
+	r = 0
+	t | a
+
+11. Statement of Fund. Thm of Arith   (no proof)
+
+	a = p1^s1 * p2^s2 * ...
+	pn is prime
+	pn, sn are unique
+
+
+Chapter 2
+1.  Definition of equivalence relation (class notes)
+
+	A ~ B is an equiv. iff
+
+	 a ~ a
+	 a ~ b => b ~ a
+	 a ~ b, b ~ c -> a ~ c
+
+2. Definition of equivalence class [a] (class notes)
+
+	{x | x ~ a mod n, x in S}
+
+4. Prove that if  [a] intersect [b] is non-empty, then  [a] = [b]
+
+	[a] AND [b] = c
+	c ~ a mod n
+	c ~ b mod n
+
+	c ~ b => b ~ c
+	b ~ c, c ~ a => b ~ a
+	[b] = [a]
+
+
+5. Explain what it means to say that the equivalence class  of 'tilde' on S partition the set S
+
+	Every element in S belongs to exactly one unique equivalence class, each equivalence class is 
+	either identical to another class or disjoint from it.
+
+6. Theorem 2.1 (with proof)
+
+	a === a
+	a === b => b === a
+	a === b, b === c => a === c
+
+	a === a:
+	n | a - a
+	n | 0
+
+	a === b => b === a:
+	n | b - a
+	b - a = nk
+	a - b = n(-k)
+
+	a === b, b === c => a === c:
+	b - a = nk
+	c - b = nl
+	b - a + c - b = nk + nl
+	c - a = n(k + l).
+
+7. Theorem 2.2 (with  proof)
+
+	a === b, c === d => 
+		a + c === b + d
+		ac === bd
+
+	b - a = nk
+	c - d = nl
+	c - d - b + a = nl - nk
+	(c + a) - (b + d) = n(l - k)
+	(c + a) === (b + d)
+
+	ac - bd = ac + 0 - bd
+			= ac - bc + bc - bd
+			= c(a - b) + b(c - d)
+			= cnk + bnl
+			= n(ck + bl)
+	ac === bd
+
+8. Definition of congruence on page 36
+
+	a === b iff n | a - b
+
+9. Theorem  2.3 (with proof)
+
+	a === b => [a] = [b]
+
+	[a] => a in [a]
+	[b] => b in [b]
+
+	[a] = [b] => a === b
+
+	c in [a]
+	c === a
+	a === b
+	c === b
+	c in [b].
+
+10. Corollary 2.5  (with proof)
+	
+	If a = bq + r, then [a] = [r]
+	There are exactly n-1 congruence classes, [0], [1], ... [n-1]
+
+	a = nq + r 		0 ≤ r < n
+	a - r = nq
+	a === r
+	[a] = [r]
+
+	[a] in S = {[0], [1], ... [n-1]}
+	s, t in S
+	0 ≤ r < n
+	r in S
+	0 ≤ s < t < n
+	0 ≤ t - s < n
+	n !| t - s
+	t !=== s
+	So S must have distinct elements.
+
+11. Definition  on page 30.
+
+	Zn is the set of all congruence classes mod n.
+
+12. Explain how addition and multiplication is defined  in Z_n
+
+	given x in [a], y in [b], 
+		[a] + [b] = x + y = [x + y] = [a + b]
+		[a][b] = xy = [xy] = [ab]
+
+13. Theorem 2.7  part 8 and 9 (proofs)
+
+	[a] * ([b] + [c]) = [a] * [b] + [a] * [c]
+	([a] + [b]) * [c] = [a] * [c] + [b] * [c]
+	[a] * [b] = [b] * [a]
+
+	[a] * ([b] + [c]) = a * (b + c)
+					  = ab + ac
+					  = [a][b] + [a][c]
+
+	[a] * [b] = a * b
+			  = b * a
+			  = [b] * [a]
+
+
+14. Theorem 2.9  (just (1) implies 2)
+
+	[a]x = [1] iff gcd(a, n) = 1
+
+15. Definition of a zero divisor in Z_n
+
+	[a]x = [0] implies that [a] is a zero divisor in Zn, [a], x != [0], x in Z
+	n = p has no Zero divisors
+
+16  Definition of a  unit in Z_n
+
+	[a][b] = [1], gcd(a, n) = 1
+
+====================================================================================================
+
+1.1.5.
+	a = bq + r 			0 ≤ r < b
+	ac = (bq + r)c
+	ac = bcq + r
+
+1.2.1 Find GCDs
+
+1.2.6 if a | b and c | d, prove ac | bd
+
+	a = bk 		c = dl
+	ac = bkc
+	ac = bkdl
+	ac = bdm 		m = kl
+	ac | bd
+
+1.2.11 gcd(n, n+2), gcd (n, n+6)
+	
+	d | n, d | n+2
+	n = dk
+	n + 2 = dl
+	n = dl - 2
+	dk = dl - 2
+	2 = dl - dk
+	2 = d(l - k)
+	l > k
+	l - k > 0
+	d < 2
+	d ≥ 0
+
+	d in {0, 1}
+
+1.2.18 Prove gcd(ca, cb) = c * gcd(a, b)
+
+	d = gcd(ca, cb)
+	k = gcd(a, b)
+
+	d = ca + cb
+	d = c(a + b)
+	k = a + b
+	d = ck
+
+1.2.19 
+	a | b + c, gcd(b, c) = 1 => gcd(a, b) = 1 = gcd(a, c)
+
+
+1.3.7
+
+	p | a
+	p | a + bc
+
+
+1.3.11
+
+	p | a - b
+	p | c - d
+
+]
+
+
+
+
+
+a ~ b in Zp
+p | a - b
+a - b = pk
+a = pk + b
+
+for all k => pk = 0
+a = b

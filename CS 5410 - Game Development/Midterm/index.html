@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Midterm Game</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+	<script type="text/javascript" src="scripts/Random.js"></script>
+	<script type="text/javascript" src="scripts/MyGame.js"></script>
+	<script type="text/javascript" src="scripts/Scoring.js" defer></script>
+	<script type="text/javascript" src="scripts/Graphics.js" defer></script>
+	<script type="text/javascript" src="scripts/Particles.js" defer></script>
+	<script type="text/javascript" src="scripts/AnimatedObjects.js" defer></script>
+	<script type="text/javascript" src="scripts/Input.js" defer></script>
+	<script type="text/javascript" src="scripts/HighScores.js" defer></script>
+	<script type="text/javascript" src="scripts/Screens.js" defer></script>
+	<script type="text/javascript" src="scripts/Objects.js" defer></script>
+	<script type="text/javascript" src="scripts/GameModel.js" defer></script>
+	<script type="text/javascript" src="scripts/page-mainmenu.js" defer></script>
+	<script type="text/javascript" src="scripts/page-game.js" defer></script>
+	<script type="text/javascript" src="scripts/page-highscores.js" defer></script>
+	<script type="text/javascript" src="scripts/page-help.js" defer></script>
+	<script type="text/javascript" src="scripts/page-about.js" defer></script>
+</head>
+<body onload="MyGame.Screens.initialize();">
+	<div id="game">
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-mainmenu" class="screen">
+			<ul class="menu">
+				<li><button id="id-new-game">New&nbsp;Game</button></li>
+				<li><button id="id-high-scores">High&nbsp;Scores</button></li>
+				<li><button id="id-help">Help</button></li>
+				<li><button id="id-about">About</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Game ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-game" class="screen">
+			<canvas id="canvas-main" width="800" height="600"></canvas>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ High Scores ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-highscores" class="screen">
+			<h1>High Scores</h1>
+			<ol id="high-scores-list">
+				<li>7000</li>
+			</ol>
+			<ul class="menu">
+				<li><button id="id-high-scores-back">Back</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Help ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-help" class="screen">
+			<h1>Help</h1>
+			<p>This is some help on how to play the game</p>
+			<ul class="menu">
+				<li><button id="id-help-back">Back</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ About ~~~	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-about" class="screen">
+			<h1>About</h1>
+			<p>Developed by</p>
+			<p>Jonathan Petersen</p>
+			<a href="https://github.com/candlemancer">Github</a>
+			<ul class="menu">
+				<li><button id="id-about-back">Back</button></li>
+			</ul>
+		</div>
+		
+	</div>
+</body>
+</html>

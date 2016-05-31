@@ -1,0 +1,16 @@
+@startuml
+
+title Adding an Engineer or Engineer Team to a Task
+
+actor User
+create Workforce
+User -> Workforce
+User <-- Workforce : Returns Derived Class
+
+User -> Task : getEngineers()
+User <-- Task : Returns Current Engineers
+User -> User : Adds New Engineer To List
+User -> Task : setEngineers()
+User <-- Task
+
+@enduml

@@ -1,0 +1,123 @@
+4.1:
+	- Definition of R[x]
+	
+	- if p(x) deg n, q(x) deg m are in R[x], then p(x) * q(x) = c(x) deg ≤ m + n
+		c_l = Sum(i + j = e)(a_i * b_j)
+	- leading coefficient of product is product of leading coefficients
+	- constant coefficient of product is product of constant coefficients
+
+	- Special case when R is a field F. In F[x] you can do long division.
+
+	Examples:
+		Define a mapping from Z[x] to Z[x] by the following:
+			  f(x) = sum( a_i * x^i )
+			D(f(x)) = sum ( i * a_i * x^i-1 )
+
+		Question: Is D a ring homomorphism?	
+		
+			D is not a ring homomorphism
+
+4.2:
+	- Divisibility
+		IN Z:
+			1. def of div.
+			2. g.c.d.
+			3. primality
+			4. Fundamental Theorem of Arithmetic
+
+		IN Z[x]:
+			1. def of div.
+			2. gcd
+			3. primality
+			4. Fundamental Theorem of Polynomials 
+
+4.3:
+	- F[x]'s irreducible is analagous to Z's prime.
+	- f(x) in F[x] if :
+		- WARNING: f(x) = 3x^2 + 2 in Q
+
+		a polynomial is reducible iff
+			f(x) = g(x)h(x)		where the degree of g(x) ≥ 1 and degree of h(x) ≥ 1
+
+	- Every polynomial factors as a product of irreducibles
+
+	Examples:
+		Is x^2 - 3 irreducible?
+
+		In Q[x] : no
+		in R[x] : yes sqrt(3)
+		in M_2(R)[x] : sometimes?
+
+		-----
+
+		prove that [a b] is a subring?
+				   [0 c]
+
+		-----
+
+		polynomial with leading coefficient 1 is called Monic
+
+		-----
+
+		If x^2 - 3 were reducible, then 
+			x^2 - 3 = (ax + b)(cx + d)			* Hint: looking for contradiction
+			x^2 - 3 = a(x + r) * c(x + s)		!!!
+			x^2 - 3 = ac(x + r)(x + s)
+			ac = 1 								coeff. of x^2
+			x^2 - 3 = (x + r)(x + s)
+					= x^2 + rx + sx + rs
+					= x^2 + (r + s)x + rs
+
+			0 = r + s   => s = -r
+			-3 = rs     => -3 = -r^2
+
+			3 = r^2   !Contradiction!
+
+		There is no rational number r with r^2 = 3, so there is no factorization of x^2 - 3 in Q[x].
+
+		-----
+
+		Is x3 + x + 1 irreducible in Z2[x]?
+
+			x3 + x + 1 = f(x)g(x)		f(x) deg 1
+										g(x) deg 2
+
+			f(x) = {x, x + 1}
+			g(x) = x^2 + {0 | 1}x + {0 | 1}
+
+4.4:
+	
+	Let f(x) in R[x]. We can evaluate f(x) for a in R
+		if f(a) = 0 then a is a zero of the polynomial (Like a root of the function)
+
+	You can always take a polynomial and get a function
+	You don't always know the polynomial from the function
+
+	Remainder Theorem:
+		Let f(x) be a polynomial inside of F[x]. Let a in F, and consider x - a.					* Know for test
+		By the division algorithm, when we divide f(x) by (x - a), the remainder will have degreee 
+		r(x) < 1 => r(x) = 0.
+		If the remainder has degree 0, then r(x) is just a constant. 
+		f(x) = g(x)(x - a) + b 																		* !!!
+
+		f(a) = g(a)(a - a) + b
+			 = 0 + b
+			 = b
+
+		f(x) = g(x)(x - a) + f(a) 		: Remainder Theorem
+		(x - a) is a factor of f(x) iff f(a) = 0, a is a zero of the polynomial.
+
+	Example:
+		Is f(x) = x3 + x + 1 irreducible in Z2[x]?													* Know for test
+		If f is reducible, it must be factored into a linear and quadratic term, or three linears.
+		Because degree of f = 3, degree of factors must be 3 = 1 + 1 + 1, or 3 = 1 + 2
+
+		f(a):
+			a = 0: f(0) = 1
+			a = 1: f(1) = 1
+
+		No roots, no zeroes, therefore irreducible.
+
+		Irreducible problems for degree less than or equal to three is the same as finding zeroes.
+
+

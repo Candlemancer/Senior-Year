@@ -12,10 +12,10 @@ class ParallelParentTask : public ParentTask {
    public:
     inline ParallelParentTask(int id,
                               std::string label,
-                              std::string description,
-                              int hoursEstimate)
-        : ParentTask(id, label, description, hoursEstimate) {}
+                              std::string description)
+        : ParentTask(id, label, description) {}
     virtual ~ParallelParentTask() = default;
+    virtual int getOriginalHoursEstimate();
     virtual int getCurrentHoursEstimate();
     virtual int getHoursRemaining();
     virtual int getWorkDaysRemaining();

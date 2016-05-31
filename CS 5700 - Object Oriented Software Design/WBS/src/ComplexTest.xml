@@ -1,0 +1,80 @@
+<sequentialParent>
+  <ID>7</ID>
+  <label>Label</label>
+  <description>Description</description>
+  <originalHoursEstimate>730</originalHoursEstimate>
+  <currentHoursEstimate>730</currentHoursEstimate>
+  <percentComplete>0.495833</percentComplete>
+  <hoursRemaining>332</hoursRemaining>
+  <workDaysRemaining>44</workDaysRemaining>
+</sequentialParent>
+  <leaf>
+    <ID>0</ID>
+    <label>Leaf1</label>
+    <description>1st Leaf Task</description>
+    <originalHoursEstimate>100</originalHoursEstimate>
+    <currentHoursEstimate>100</currentHoursEstimate>
+    <percentComplete>0.250000</percentComplete>
+    <hoursRemaining>75</hoursRemaining>
+    <workDaysRemaining>10</workDaysRemaining>
+  </leaf>
+  <leaf>
+    <ID>1</ID>
+    <label>Leaf2</label>
+    <description>2nd Leaf Task</description>
+    <originalHoursEstimate>150</originalHoursEstimate>
+    <currentHoursEstimate>150</currentHoursEstimate>
+    <percentComplete>0.500000</percentComplete>
+    <hoursRemaining>75</hoursRemaining>
+    <workDaysRemaining>10</workDaysRemaining>
+  </leaf>
+  <leaf>
+    <ID>2</ID>
+    <label>Leaf3</label>
+    <description>3rd Leaf Task</description>
+    <originalHoursEstimate>200</originalHoursEstimate>
+    <currentHoursEstimate>200</currentHoursEstimate>
+    <percentComplete>0.750000</percentComplete>
+    <hoursRemaining>50</hoursRemaining>
+    <workDaysRemaining>7</workDaysRemaining>
+  </leaf>
+  <parallelParent>
+    <ID>6</ID>
+    <label>Label</label>
+    <description>Description</description>
+    <originalHoursEstimate>280</originalHoursEstimate>
+    <currentHoursEstimate>280</currentHoursEstimate>
+    <percentComplete>0.483333</percentComplete>
+    <hoursRemaining>132</hoursRemaining>
+    <workDaysRemaining>17</workDaysRemaining>
+  </parallelParent>
+    <leaf>
+      <ID>3</ID>
+      <label>Leaf4</label>
+      <description>4th Leaf Task</description>
+      <originalHoursEstimate>150</originalHoursEstimate>
+      <currentHoursEstimate>150</currentHoursEstimate>
+      <percentComplete>0.120000</percentComplete>
+      <hoursRemaining>132</hoursRemaining>
+      <workDaysRemaining>17</workDaysRemaining>
+    </leaf>
+    <leaf>
+      <ID>4</ID>
+      <label>Leaf5</label>
+      <description>5th Leaf Task</description>
+      <originalHoursEstimate>175</originalHoursEstimate>
+      <currentHoursEstimate>175</currentHoursEstimate>
+      <percentComplete>0.590000</percentComplete>
+      <hoursRemaining>72</hoursRemaining>
+      <workDaysRemaining>9</workDaysRemaining>
+    </leaf>
+    <leaf>
+      <ID>5</ID>
+      <label>Leaf6</label>
+      <description>6th Leaf Task</description>
+      <originalHoursEstimate>280</originalHoursEstimate>
+      <currentHoursEstimate>280</currentHoursEstimate>
+      <percentComplete>0.740000</percentComplete>
+      <hoursRemaining>73</hoursRemaining>
+      <workDaysRemaining>10</workDaysRemaining>
+    </leaf>

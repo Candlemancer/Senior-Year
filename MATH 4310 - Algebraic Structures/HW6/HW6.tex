@@ -1,0 +1,701 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{dcolumn}
+\newcolumntype{2}{D{.}{5.0pt}{2.0}}
+\title{Homework 6 \\ Section 3.1}
+\author{Jonathan Petersen \\ A01236750}
+\date{February 29th, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [3.] \textbf{Let $F = \lbrace 0, e, a, b \rbrace$ with the operations given in the 
+					text. Assume associativity and distributivity, and show that $F$ is a field.}
+
+			To show that $F$ is a field, we must prove nine things about $F$. Namely that
+			\begin{enumerate}
+				\item [(a)]$F$ is closed under addition.
+				\item [(b)]$F$ has associative addition.
+				\item [(c)]$F$ has commutative addition.
+				\item [(d)]$F$ has an additive identity.
+				\item [(e)]$F$ has an additive inverse for every element.
+				\item [(f)]$F$ is closed under multiplication.
+				\item [(g)]$F$ has associative multiplication.
+				\item [(h)]$F$ has distributive laws.
+				\item [(i)]$F$ has a multiplicative inverse for every element.
+			\end{enumerate}
+
+			And indeed, as follows:
+
+			\begin{enumerate}
+				\item [Property (a):] Since every element in the addition table for $F$ is itself an 
+					element of $F$, we can see by exhaustive inspection that $F$ is closed under
+					addition.
+				\item [Property (b):] Given by assumption.
+				\item [Property (c):] Again, by exhaustive inspection of the addition table of $F$ we 
+					see that the table is symmetric along the main diagonal (i.e. for any element
+					$a_{i,j}$ in row $i$ and column $j$ of the addition table, $a_{i,j} = a_{j,i}$).
+					This implies commutativity of addition on $F$.
+				\item [Property (d):] From the addition table:
+					\begin{align*}
+						0 + 0 & = 0 \\
+						e + 0 & = e \\
+						a + 0 & = a \\
+						b + 0 & = b
+					\end{align*}
+					Therefore 0 is the additive identity of $F$.
+				\item [Property (e):] From the addition table:
+					\begin{align*}
+						0 + 0 & = 0 \\
+						e + e & = 0 \\
+						a + a & = 0 \\
+						b + b & = 0
+					\end{align*}
+					And so by exhaustive inspection each element of $F$ has an additive inverse.
+				\item [Property (f):] Similar to Property (a), we note that every element of the
+					multiplication table of $F$ is itself an element of $F$, and so $F$ must be 
+					closed under multiplication.
+				\item [Property (g):] Given by assumption.
+				\item [Property (h):] Given by assumption.
+				\item [Property (i):] To show that each nonzero element of $F$ has a multiplicative 
+					inverse, we must first define the identity of $F$. From the multiplication 
+					table:
+					\begin{align*}
+						0 * e & = 0 \\
+						e * e & = e \\
+						a * e & = a \\
+						b * e & = b \\
+					\end{align*}
+					So $e$ must be an identity of $F$. Now, to show that every nonzero element in 
+					$F$ has a multiplicative inverse:
+					\begin{align*}
+						e * e & = e \\
+						a * b & = e \\
+						b * a & = e \\
+					\end{align*}
+					and since $0$ is the zero element of $F$, we can see that indeed, every nonzero
+					element of $F$ has a multiplicative inverse.
+			\end{enumerate}
+
+			Since all of the above hold, it is apparent that $F$ must be a field $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [5.b.] \textbf{Is a matrix of the form $\begin{bmatrix} a & b \\ 0 & c \end{bmatrix}$ 
+						with $a, b, c \in \mathbb{Z}$ a subring of $M(\mathbb{R})$? \\
+						Does it have an identity?}
+
+			Let $A = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix}$ with $a, b, c \in \mathbb{Z}$. To
+			show that the set of all $A$ is a subring of $M(\mathbb{R})$ we must prove the following
+			five things:
+
+			\begin{enumerate}
+				\item [(a)] The set of all $A$ is a subset of $M(\mathbb{R})$.
+				\item [(b)] The set of all $A$ is closed under addition.
+				\item [(c)] The set of all $A$ is closed under multiplication.
+				\item [(d)] The zero element of $M(\mathbb{R})$ is in the set of all $A$.
+				\item [(e)] Every $A$ has an additive inverse.
+			\end{enumerate}
+
+			Remark: As discussed in class, observe that if the set of all $A$ is closed under 
+			subtraction, it must be that properties (b), (d), and (e) are true. We will not use this
+			fact in this problem, but subsequent problems may take advantage of the fact.
+
+			Indeed:
+
+			\begin{enumerate}
+				\item [Property (a):] Since $\mathbb{Z} \subseteq \mathbb{R}$ and $0 \in \mathbb{R}$, 
+					and since $A$ is defined to be composed entirely of elements of $\mathbb{Z}$, it
+					holds true that the set of all $A$ is a subset of the set of all two-by-two 
+					matrices composed entirely of real numbers, namely $M(\mathbb{R})$.
+
+				\item [Property (b):] Given $A_1 = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix}$ and 
+					$A_2 = \begin{bmatrix} r & s \\ 0 & t \end{bmatrix}$ with $a, b, c, r, s, t \in
+					\mathbb{Z}$, we find
+					\begin{align*}
+						A_1 + A_2 & = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix} 
+									+ \begin{bmatrix} r & s \\ 0 & t \end{bmatrix} \\
+								  & = \begin{bmatrix} a + r & b + s \\ 0 & c + t \end{bmatrix} 
+					\end{align*}
+					and since $\mathbb{Z}$ is closed under addition, it must be that $a + r$, 
+					$b + s$, $0$, and $c + t$ are all integers, and thus $A_1 + A_2$ is in the 
+					set of all $A$ and the set of all $A$ is closed under addition. 
+
+				\item [Property (c):] Given the same setup of $A_1$ and $A_2$ as above, we see that
+					\begin{align*}
+						A_1 * A_2 & = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix} 
+									* \begin{bmatrix} r & s \\ 0 & t \end{bmatrix} \\
+								  & = \begin{bmatrix} ar & as + bt \\ 0 & ct \end{bmatrix} 
+					\end{align*}
+					which again uses the fact that $\mathbb{Z}$ is closed under multiplication to 
+					show that the set of all $A$ is also closed under multiplication.
+
+				\item [Property (d):] The zero element of $M(\mathbb{R})$ is 
+					$\begin{bmatrix}0 & 0 \\ 0 & 0 \end{bmatrix}$, which is an element of the set of
+					all $A$ when $a, b, c = 0$. 
+
+				\item [Property (e):] Since every element $z \in \mathbb{Z}$ has an additive inverse
+					$-z$, we can see that the additive inverse for any 
+					$A_1 = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix}$ must be
+					$A_2 = \begin{bmatrix} -a & -b \\ 0 & -c \end{bmatrix}$, leading to 
+					$A_1 + A_2 = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$, the zero element of 
+					the set of all $A$.
+			\end{enumerate}
+
+			Also, the standard identity of $M(\mathbb{R})$, 
+			$I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$, is also in the set of all $A$, when 
+			$a, c = 1$ and $b = 0$. Furthermore, it is also an identity of the set of all $A$, since
+			\begin{align*}
+				A * I & = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix} 
+						* \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \\
+					  & = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix} \\
+					  & = A
+			\end{align*}
+
+			Therefore, the set of all $A$ is a subring of $M(\mathbb{R})$ with an identity 
+			$_{\blacksquare}$
+		% ======================================================================================== %
+		\item [5.c.] \textbf{Is a matrix of the form $\begin{bmatrix} a & b \\ c & 0 \end{bmatrix}$ 
+						with $a, b, c \in \mathbb{R}$ a subring of $M(\mathbb{R})$? \\
+						Does it have an identity?}
+
+			Let $A = \begin{bmatrix} a & b \\ c & 0 \end{bmatrix} \qquad a, b, c \in \mathbb{R}$.
+			As discussed in the previous problem, we can show that the set of all $A$ can be shown
+			to be a subring of $M(\mathbb{R})$ by proving the following points:
+
+			\begin{enumerate}
+				\item [(a)] The set of all $A$ is a subset of $M(\mathbb{R})$.
+				\item [(b)] The set of all $A$ is closed under subtraction.
+				\item [(c)] The set of all $A$ is closed under multiplication.
+			\end{enumerate}
+
+			Indeed:
+
+			\begin{enumerate}
+				\item [Property (a):] By the same logic as the previous problem, since $a, b, c \in 
+					\mathbb{R}$ and $\mathbb{R} \subseteq \mathbb{R}$ the set of all 
+					$A \subseteq M(\mathbb{R})$.
+				\item [Property (b):] Given $A_1 = \begin{bmatrix} a & b \\ c & 0 \end{bmatrix}$ and 
+					$A_2 = \begin{bmatrix} r & s \\ t & 0 \end{bmatrix}$ with $a, b, c, r, s, t \in
+					\mathbb{R}$, we find
+					\begin{align*}
+						A_1 - A_2 & = \begin{bmatrix} a & b \\ c & 0 \end{bmatrix} 
+									+ \begin{bmatrix} r & s \\ t & 0 \end{bmatrix} \\
+								  & = \begin{bmatrix} a - r & b - s \\ 0 & c - t \end{bmatrix} 
+					\end{align*}
+					and since $\mathbb{R}$ is closed under subtraction, it must be that $a - r$, 
+					$b - s$, $0$, and $c - t$ are all real numbers, and thus $A_1 - A_2$ is in the 
+					set of all $A$ and the set of all $A$ is closed under subtraction. 
+				\item [Property (c):] Given the same setup of $A_1$ and $A_2$ as above, we see that
+					\begin{align*}
+						A_1 * A_2 & = \begin{bmatrix} a & b \\ c & 0 \end{bmatrix} 
+									* \begin{bmatrix} r & s \\ t & 0 \end{bmatrix} \\
+								  & = \begin{bmatrix} ar & as + bt \\ 0 & ct \end{bmatrix} 
+					\end{align*}
+					which again uses the fact that $\mathbb{R}$ is closed under multiplication to 
+					show that the set of all $A$ is also closed under multiplication.
+			\end{enumerate}
+
+			However, this time there is no way to form the identity $I$, since $A$ has a $0$ on the 
+			main diagonal. Therefore, the set of all $A$ is a subring of $M(\mathbb{R})$, but 
+			without an identity $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [5.d.] \textbf{Is a matrix of the form $\begin{bmatrix} a & 0 \\ a & 0 \end{bmatrix}$ 
+						with $a \in \mathbb{R}$ a subring of $M(\mathbb{R})$? \\
+						Does it have an identity?}
+
+			Let $A = \begin{bmatrix} a & 0 \\ a & 0 \end{bmatrix} \qquad a \in \mathbb{R}$. It then 
+			follows that:
+
+			\begin{enumerate}
+				\item [Property (a):] By the same logic as the previous problem, since $a, b, c \in 
+					\mathbb{R}$ and $\mathbb{R} \subseteq \mathbb{R}$ the set of all 
+					$A \subseteq M(\mathbb{R})$.
+				\item [Property (b):] Given $A_1 = \begin{bmatrix} a & 0 \\ a & 0 \end{bmatrix}$ and 
+					$A_2 = \begin{bmatrix} b & 0 \\ b & 0 \end{bmatrix}$ with $a, b \in \mathbb{R}$,
+					we find
+					\begin{align*}
+						A_1 - A_2 & = \begin{bmatrix} a & 0 \\ a & 0 \end{bmatrix} 
+									+ \begin{bmatrix} b & 0 \\ b & 0 \end{bmatrix} \\
+								  & = \begin{bmatrix} a - b & 0 \\ a - b & 0 \end{bmatrix} 
+					\end{align*}
+					and since $\mathbb{R}$ is closed under subtraction, it must be that $a - b$ is a
+					real number, and thus $A_1 - A_2$ is in the set of all $A$ and the set of all 
+					$A$ is closed under subtraction. 
+				\item [Property (c):] Given the same setup of $A_1$ and $A_2$ as above, we see that
+					\begin{align*}
+						A_1 * A_2 & = \begin{bmatrix} a & 0 \\ a & 0 \end{bmatrix} 
+									+ \begin{bmatrix} b & 0 \\ b & 0 \end{bmatrix} \\
+								  & = \begin{bmatrix} ab & 0 \\ ab & 0 \end{bmatrix} 
+					\end{align*}
+					which again uses the fact that $\mathbb{R}$ is closed under multiplication to 
+					show that the set of all $A$ is also closed under multiplication.
+			\end{enumerate}
+
+			Again, this time there is no way to form the identity $I$, since $A$ has a $0$ on the 
+			main diagonal. Therefore, the set of all $A$ is a subring of $M(\mathbb{R})$, but 
+			without an identity $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [6.a.] \textbf{Show that the set $R$ of all multiples of 3 is a subring of 
+						$\mathbb{Z}$.}
+
+			Given:
+			\begin{equation*}
+				R = \lbrace r = 3x | x \in \mathbb{Z} \rbrace
+			\end{equation*}
+			we may show that $R$ is a subring of $\mathbb{Z}$ using the simplified method discussed
+			in problem 5.
+
+			\begin{enumerate}
+				\item [Property (a):] Since $\mathbb{Z}$ is closed under multiplication, it is 
+					trivial to see that 
+					\begin{equation*}
+						r = 3x | x \in \mathbb{Z} \implies r \in \mathbb{Z}
+					\end{equation*} 
+					and so $R \subseteq \mathbb{Z}$.
+				\item [Property (b):] Let $r_1 = 3m$, $r_2 = 3n$ for some $m, n \in \mathbb{Z}$. 
+					Then 
+					\begin{align*}
+						r_1 - r_2 & = 3m - 3n \\
+								  & = 3(m - n) \\
+								  & = 3k \qquad \qquad k = m - n
+					\end{align*}
+					and since $\mathbb{Z}$ is closed under subtraction, $k \in \mathbb{Z}$ and 
+					$r_1 - r_2 \in R$.
+				\item [Property (c):] Given $r_1$, $r_2$ as above,
+					\begin{align*}
+						r_1 * r_2 & = 3m * 3n \\
+								  & = 3(3mn) \\
+								  & = 3k \qquad \qquad k = 3mn \implies k \in \mathbb{Z}
+					\end{align*}
+					so again, $R$ is closed under multiplication.
+			\end{enumerate}
+
+			Therefore, $R$ is a subring of $\mathbb{Z}$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [6.b.] \textbf{Let $k$ be a fixed integer. Show that the set of all multiples of $k$ 
+						is a subring of $\mathbb{Z}$.}		
+
+			Given:
+			\begin{equation*}
+				R = \lbrace r = kx | x, k \in \mathbb{Z} \rbrace
+			\end{equation*}
+			we may show that $R$ is a subring of $\mathbb{Z}$ using the simplified method discussed
+			in problem 5.
+
+			\begin{enumerate}
+				\item [Property (a):] Since $\mathbb{Z}$ is closed under multiplication, it is 
+					trivial to see that 
+					\begin{equation*}
+						r = kx | x, k \in \mathbb{Z} \implies r \in \mathbb{Z}
+					\end{equation*} 
+					and so $R \subseteq \mathbb{Z}$.
+				\item [Property (b):] Let $r_1 = km$, $r_2 = kn$ for some $m, n, k \in \mathbb{Z}$. 
+					Then 
+					\begin{align*}
+						r_1 - r_2 & = km - kn \\
+								  & = k(m - n) \\
+								  & = ki \qquad \qquad i = m - n \implies i \in \mathbb{Z}
+					\end{align*}
+					so $R$ is closed under subtraction.
+				\item [Property (c):] Given $r_1$, $r_2$ as above,
+					\begin{align*}
+						r_1 * r_2 & = km * kn \\
+								  & = k(kmn) \\
+								  & = ki \qquad \qquad i = kmn \implies i \in \mathbb{Z}
+					\end{align*}
+					so again, $R$ is closed under multiplication.
+			\end{enumerate}
+
+			Therefore, $R$ is a subring of $\mathbb{Z}$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [9.a.] \textbf{Let $R$ be a ring and consider the subset $R^*$ of $R \times R$ defined
+						by $R^* = \lbrace (r, r) | r \in R \rbrace$.}
+					 \textbf{If $R = \mathbb{Z}_6$, list the elements of $R^*$.}
+
+					 \begin{equation*}
+					 	R^* = \lbrace ([0], [0]), ([1], [1]), ([2], [2]), ([3], [3]), ([4], [4]), 
+					 				  ([5], [5]) \rbrace
+					 \end{equation*}
+
+		% ======================================================================================== %
+		\item [9.b.] \textbf{For any ring $R$, show that $R^*$ is a subring of $R \times R$.}
+
+			Following the simplified proof:
+			\begin{enumerate}
+				\item [Property (a):] By definition, every element of $R^*$ is an element of 
+					$R \times R$. Therefore $R^* \subseteq R \times R$.
+				\item [Property (b):] Let $r_1 = (a, a)$, $r_2 = (b, b)$ for some $a, b \in R$. 
+					Then 
+					\begin{align*}
+						r_1 - r_2 & = (a - b, a - b) \\
+								  & = (c, c) \qquad \qquad c = a + b
+					\end{align*}
+					and since $R$ is a ring, $c = a + b \implies c \in R$, so $R^*$ is closed under 
+					subtraction.
+				\item [Property (c):] Given $r_1$, $r_2$ as above,
+					\begin{align*}
+						r_1 * r_2 & = (ab, ab) \\
+								  & = (c, c) \qquad \qquad c = ab \implies c \in R
+					\end{align*}
+					so again, $R^*$ is closed under multiplication.
+			\end{enumerate}
+
+			Therefore, $R^*$ is a subring of $R \times R$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [10.] \textbf{Is $S = \lbrace (a, b) | a + b = 0 \rbrace$ a subring of $\mathbb{Z} 
+						\times \mathbb{Z}$? Justify your answer.}
+
+			Consider closure under multiplication. Let $s_1 = (a, b)$, $s_2 = (c, d)$ for some 
+			$a, b, c, d \in \mathbb{Z}$ such that $a + b = 0$ and $c + d = 0$. Observe that 
+			$a + b = 0$ implies that $b = -a$ and likewise that $d = -c$. So:
+			
+			\begin{align*}
+				s_1 * s_2 & = (ac, bd) \\
+				ac + bd & = ac + (-a)(-c) \\
+						& = ac + ac \\
+						& \neq 0
+			\end{align*}
+			
+			Or, in other words, $S$ is not closed under multiplication. Therefore, $S$ cannot be a 
+			subring of $\mathbb{Z} \times \mathbb{Z}$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [13.] \textbf{Let $\mathbb{Z}[\sqrt{2}]$ denote the set $\lbrace a + b\sqrt{2} | a, b 
+						\in \mathbb{Z} \rbrace$. Show that $\mathbb{Z}[\sqrt{2}]$ is a subring of 
+						$\mathbb{R}$.}
+
+			Following the simplified proof:
+			\begin{enumerate}
+				\item [Property (a):] Since $a + b\sqrt{2} \in \mathbb{R}$ for any $a, b \in 
+					\mathbb{Z}$, it must be that $\mathbb{Z}[\sqrt{2}] \subseteq \mathbb{R}$.
+				\item [Property (b):] Let $z_1 = a + b\sqrt{2}$, $z_2 = c + d\sqrt{2}$ for some 
+					$a, b, c, d \in \mathbb{Z}$. Then 
+					\begin{align*}
+						z_1 - z_2 & = a + b\sqrt{2} - (c + d\sqrt{2}) \\
+								  & = a - c + b\sqrt{2} - d\sqrt{2} \\
+								  & = (a - c) + (b - d)\sqrt{2} \\
+								  & = m + n\sqrt{2} \qquad \qquad m = a - c, n = b - d
+					\end{align*}
+					and so $\mathbb{Z}[\sqrt{2}]$ is closed under subtraction.
+				\item [Property (c):] Given $z_1$, $z_2$ as above,
+					\begin{align*}
+						z_1 * z_2 & = (a + b\sqrt{2})(c + d\sqrt{2}) \\
+								  & = ac + ad\sqrt{2} + (b\sqrt{2})c + (b\sqrt{2})(d\sqrt{2}) \\
+								  & = ac + ad\sqrt{2} + bc\sqrt{2} + 2bd \\
+								  & = ac + 2bd + (ad + bc)\sqrt{2} \\
+								  & = m + n\sqrt{2} \qquad \qquad m = ac + 2bd, n = ad + bc
+					\end{align*}
+					so again, $\mathbb{Z}[\sqrt{2}]$ is closed under multiplication.
+			\end{enumerate}
+
+			Therefore, $\mathbb{Z}[\sqrt{2}]$ is a subring of $\mathbb{R}$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\pagebreak
+		\item [15.a.] \textbf{Write out the addition and multiplication tables for $\mathbb{Z}_2 
+						\times \mathbb{Z}_3$.}
+
+			\begin{center}
+				\renewcommand\arraystretch{1.3}
+				\setlength\doublerulesep{0pt}
+				\begin{tabular}{r || *{6}{c|} }
+								 $+$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & 
+								 $([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ \\[0.3pt]
+								 \hline\hline
+					$([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & 
+					$([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ \\[0.3pt]\hline
+					$([0]_2, [1]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & $([0]_2, [0]_3)$ & 
+					$([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ & $([1]_2, [0]_3)$ \\[0.3pt]\hline
+					$([0]_2, [2]_3)$ & $([0]_2, [2]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & 
+					$([1]_2, [2]_3)$ & $([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ \\[0.3pt]\hline
+					$([1]_2, [0]_3)$ & $([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ & 
+					$([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ \\[0.3pt]\hline
+					$([1]_2, [1]_3)$ & $([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ & $([1]_2, [0]_3)$ & 
+					$([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & $([0]_2, [0]_3)$ \\[0.3pt]\hline
+					$([1]_2, [2]_3)$ & $([1]_2, [2]_3)$ & $([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ & 
+					$([0]_2, [2]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ \\[0.3pt]\hline
+				\end{tabular}
+			\end{center}
+			\begin{center}
+				\renewcommand\arraystretch{1.3}
+				\setlength\doublerulesep{0pt}
+				\begin{tabular}{r || *{6}{c|} }
+							$\times$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & 
+							$([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ \\[0.3pt]
+							\hline\hline
+					$([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & 
+					$([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ \\[0.3pt]\hline
+					$([0]_2, [1]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & 
+					$([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ \\[0.3pt]\hline
+					$([0]_2, [2]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [2]_3)$ & $([0]_2, [1]_3)$ & 
+					$([0]_2, [0]_3)$ & $([0]_2, [2]_3)$ & $([0]_2, [1]_3)$ \\[0.3pt]\hline
+					$([1]_2, [0]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [0]_3)$ & 
+					$([1]_2, [0]_3)$ & $([1]_2, [0]_3)$ & $([1]_2, [0]_3)$ \\[0.3pt]\hline
+					$([1]_2, [1]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [1]_3)$ & $([0]_2, [2]_3)$ & 
+					$([1]_2, [0]_3)$ & $([1]_2, [1]_3)$ & $([1]_2, [2]_3)$ \\[0.3pt]\hline
+					$([1]_2, [2]_3)$ & $([0]_2, [0]_3)$ & $([0]_2, [2]_3)$ & $([0]_2, [1]_3)$ & 
+					$([1]_2, [0]_3)$ & $([1]_2, [2]_3)$ & $([1]_2, [1]_3)$ \\[0.3pt]\hline
+				\end{tabular}
+			\end{center}
+
+		% ======================================================================================== %
+		\item [16.a.] \textbf{Let 
+						$A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}$ and 
+						0 $= \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$ in $M(\mathbb{R})$. Let 
+						$S$ be the set of all matrices $B$ such that $AB = $ 0. List three matrices
+						in $S$.}
+
+			\begin{align*}
+				S_1 & = \begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \\
+				S_2 & = \begin{bmatrix} 2 & -2 \\ -2 & 2 \end{bmatrix} \\
+				S_3 & = \begin{bmatrix} 3 & -3 \\ -3 & 3 \end{bmatrix} \\
+				S_a & = \begin{bmatrix} a & -a \\ -a & a \end{bmatrix} \qquad a \in \mathbb{R} \\
+			\end{align*}
+		% ======================================================================================== %
+		\item [16.b.] \textbf{Prove that $S$ is a subring of $M(\mathbb{R})$.}
+
+			Following the simplified proof:
+			\begin{enumerate}
+				\item [Property (a):] Assuming all of the entries of $S$ are real numbers, then it 
+					is obvious that $S \subseteq M(\mathbb{R})$.
+				\item [Property (b):] Using the generalization in the previous problem, let
+					\begin{align*}
+						S_a & = 
+							\begin{bmatrix} a & -a \\ -a & a \end{bmatrix} \qquad a \in \mathbb{R}\\
+						S_b & = 
+							\begin{bmatrix} b & -b \\ -b & b \end{bmatrix} \qquad b \in \mathbb{R}\\
+					\end{align*}
+					Then
+					\begin{align*}
+						S_a - S_b & = 
+							\begin{bmatrix} a - b & -a - -b \\ -a - -b & a - b \end{bmatrix} \\
+								  & = 
+							\begin{bmatrix} a - b & -(a - b) \\ -(a - b) & a - b \end{bmatrix} \\
+								  & = 
+							\begin{bmatrix} n & -n \\ -n & n \end{bmatrix} \qquad n = a - b \\
+					\end{align*}
+					and because $n \in \mathbb{R}$, we see that $S$ is closed under subtraction.
+				\item [Property (c):] Given $S_a$, $S_b$ as above,
+					\begin{align*}
+						S_a * S_b & = \begin{bmatrix} ab + (-a)(-b) & a(-b) + (-a)b \\
+									  				  (-a)b + a(-b) & (-a)(-b) + ab \end{bmatrix} \\
+								  & = \begin{bmatrix} ab + ab & -ab + -ab \\
+									  				  -ab + -ab & ab + ab \end{bmatrix} \\
+  								  & = \begin{bmatrix} 2ab & -2ab \\ -2ab & ab \end{bmatrix} \\
+  								  & = \begin{bmatrix} n & -n \\ -n & n \end{bmatrix} \qquad \qquad
+  								  		n = 2ab \implies n \in \mathbb{R} \\
+					\end{align*}
+					so again, $S$ is closed under multiplication.
+			\end{enumerate}
+
+			Therefore, $S$ is a subring of $M(\mathbb{R})$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [25.] \textbf{Define a new addition and multiplication on $\mathbb{Q}$ by }
+
+					\begin{equation*}
+						r \oplus s = r + s + 1 \qquad and \qquad r \otimes s = rs + r + s
+					\end{equation*}
+
+					\textbf{Prove that with these new operations $\mathbb{Q}$ is a commutative ring 
+						with identity. Is it an integral domain?}
+
+			Let $S$ denote $\mathbb{Q}$ with our new operations. To show that $S$ is a commutative 
+			ring with identity and consider its status as an integral domain, we must consider the 
+			following:
+
+			\begin{enumerate}
+				\item [(a)]$S$ is closed under addition.
+				\item [(b)]$S$ has associative addition.
+				\item [(c)]$S$ has commutative addition.
+				\item [(d)]$S$ has an additive identity.
+				\item [(e)]$S$ has an additive inverse for every element.
+				\item [(f)]$S$ is closed under multiplication.
+				\item [(g)]$S$ has associative multiplication.
+				\item [(h)]$S$ has distributive laws.
+				\item [(i)]$S$ has commutative multiplication.
+				\item [(j)]$S$ has an identity.
+				\item [(k)]$s_1 \neq 0$ and $s_2 \neq 0$ implies $s_1 \otimes s_2 \neq 0$.
+			\end{enumerate}
+
+			Let $a, b, c$ be arbitrary elements of $S$. Then we see:
+
+			\begin{enumerate}
+				\item [Property (a):] 
+					\begin{equation}
+						a \oplus b = a + b + 1 
+					\end{equation}
+					Since $\mathbb{Q}$ is closed under addition, this implies that $a + b + 1 \in 
+					\mathbb{Q}$ and so $S$ is closed under addition.
+				\item [Property (b):]
+					\begin{align*}
+						(a \oplus b) \oplus c & = (a + b + 1) + c + 1 \\
+						a \oplus (b \oplus c) & = a + (b + c + 1) + 1 \\
+					\end{align*}
+					Since addition in $\mathbb{Q}$ is associative,
+					\begin{align*}
+						(a + b + 1) + c + 1 & = a + b + c + 2 \\
+						a + (b + c + 1) + 1 & = a + b + c + 2 \\
+						a + (b + c + 1) + 1 & = a + (b + c + 1) + 1
+					\end{align*}
+					and so $S$ has associative addition.
+				\item [Property (c):]
+					\begin{align*}
+						a \oplus b & = a + b + 1 \\
+						b \oplus a & = b + a + 1 \\
+					\end{align*}
+					Since addition in $\mathbb{Q}$ is commutative, $a + b + 1 = b + a + 1$ and so
+					$S$ has commutative addition.
+				\item [Property (d):]
+					Consider $i$ such that $a \oplus i = a$. Then
+					\begin{align*}
+						a \oplus i & = a + i + 1 = a\\
+						i & = a + -a + -1 \\
+						i & = -1
+					\end{align*}
+					So $-1$ is the additive identity of $S$.
+				\item [Property (e):]
+					Consider $x$ such that $a \oplus x = 0$. Then
+					\begin{align*}
+						a \oplus x & = a + x + 1 = 0 \\
+						x & = -a + -1
+					\end{align*}
+					Since $-a$ and $-1$ are both in $\mathbb{Q}$, and since $\mathbb{Q}$ is closed
+					under addition, this means that $x \in \mathbb{Q}$ exists for any $a$ which in 
+					turn implies that every element of $S$ has an additive inverse, namely $x$.
+				\item [Property (f):]
+					\begin{align*}
+						a \otimes b & = ab + a + b \\
+					\end{align*}
+					Since $\mathbb{Q}$ is closed under both standard addition and multiplication, 
+					this implies that $ab + a + b \in \mathbb{Q}$ and $S$ is closed under 
+					multiplication as well.
+				\item [Property (g):]
+					\begin{align*}
+						(a \otimes b) \otimes c & = (ab + a + b)c + (ab + a + b) + c \\
+												& = abc + ac + bc + ab + a + b + c \\
+						a \otimes (b \otimes c) & = a(bc + b + c) + a + (bc + b + c) \\
+												& = abc + ab + ac + a + bc + b + c \\
+												& = abc + ac + bc + ab + a + b + c \\
+												& = (a \otimes b) \otimes c \\
+					\end{align*}
+					So $S$ has associatve multiplication.
+				\item [Property (h):]
+					\begin{align*}
+						a \otimes (b \oplus c) & = a(b \oplus c) + a + (b \oplus c) \\
+											   & = a(b + c + 1) + a + (b + c + 1) \\
+											   & = ab + ac + a + a + b + c + 1 \\
+											   & = (ab + a + b) + (ac + a + c) + 1 \\
+											   & = (a \otimes b) \oplus (a \otimes c) \\
+					\end{align*}
+					So $S$ has distributive laws.
+				\item [Property (i):]
+					\begin{align*}
+						a \otimes b & = ab + a + b \\
+						b \otimes a & = ba + b + a \\
+					\end{align*}
+					Since $\mathbb{Q}$ has commutative addition and multiplication, 
+					$ab + a + b = ba + b + a$ and so $S$ also has commutative multiplication.
+				\item [Property (j):]
+					Consider $i$ such that $a \otimes i = a$. Then
+					\begin{align*}
+						a \otimes i & = ai + a + i = a \\
+						ai + i & = 0 \\
+						i(a + 1) & = 0
+					\end{align*}
+					Since $\mathbb{Q}$ is an integral domain, this implies that either $i = 0$ or 
+					$(a + 1) = 0$. So for an arbitrary element $a \in S$, the multiplicative
+					identity of $a$ is $0$, unless $a = -1$, in which case any $i \in \mathbb{Q}$
+					is an identity, including $i = 0$. Either way, $S$ always has a multiplicative
+					identity. 
+				\item [Property (k):]
+					Consider the opposite:
+					\begin{align*}
+						ab + a + b & = 0 \qquad a, b \neq 0 \\
+						ab + a = -b \\
+						a(b + 1) = -b \\ 
+						a = \frac{-b}{b + 1} \\					
+					\end{align*}
+					Since fractions are well defined and closed on $\mathbb{Q}$, this implies that 
+					$a \in \mathbb{Q}$ and that $a \otimes b = 0$ when $a = \frac{-b}{b + 1}$, even
+					if $a$ and $b$ are nonzero. Therefore, this property is false for $S$.
+			\end{enumerate}
+
+			Since properties (a) - (j) were true, it holds that $S$ is a commutative ring with 
+			identity. But since property (k) did not hold for $S$, it is not an integral domain
+			$_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [27.] \textbf{Let $S$ be the set of rational numbers written with an odd denominator.
+						Prove that $S$ is a subring of $\mathbb{Q}$ but is not a field.}
+
+			Following the simplified proof:
+			\begin{enumerate}
+				\item [Property (a):] Since $\frac{a}{2k + 1} \in \mathbb{Q}$ for any $a, k \in 
+					\mathbb{Z}$, it must be that $S \subseteq \mathbb{Q}$.
+				\item [Property (b):] Let $s_1 = \frac{a}{2m + 1}$, $s_2 = \frac{b}{2n + 1}$ for 
+					some $a, b, m, n \in \mathbb{Z}$. Then 
+					\begin{align*}
+						s_1 - s_2 & = \frac{a}{2m + 1} - \frac{b}{2n + 1} \\
+								  & = \frac{a(2n + 1) - b(2m + 1)}{(2m + 1)(2n + 1)} \\
+								  & = \frac{a(2n + 1) - b(2m + 1)}{4mn + 2m + 2n + 1} \\
+								  & = \frac{c}{2d + 1} \\
+								c & = a(2n + 1) - b(2m + 1) \qquad d = 2mn + m + n
+					\end{align*}
+					Since $\mathbb{Q}$ is closed under multiplication and addition, 
+					$c, d \in \mathbb{Q}$ and $S$ is closed under subtraction.
+				\item [Property (c):] Given $s_1$, $s_2$ as above,
+					\begin{align*}
+						s_1 * s_2 & = \frac{a}{2m + 1} * \frac{b}{2n + 1} \\
+								  & = \frac{ab}{(2m + 1)(2n + 1)} \\
+								  & = \frac{ab}{2d + 1} \qquad \qquad d = 2mn + m + n
+					\end{align*}
+					so again, $S$ is closed under multiplication.
+			\end{enumerate}
+
+			Therefore, $S$ is a subring of $\mathbb{Q}$. To show that $S$ is not a field, we must 
+			show that there does not exist a multiplicative inverse of $S$. That is, that the 
+			equation
+
+			\begin{align*}
+				s_1 * s_2 = 1 \qquad \qquad s_1, s_2 \neq 0
+			\end{align*}
+
+			does not always have a solution. Indeed, consider the example when $s_1 = \frac{2}{3}$.
+			The multiplicative inverse of $\frac{2}{3}$ in $\mathbb{Q}$ is $\frac{3}{2}$, but that
+			number does not have an odd denominator, and as such cannot be an element of $S$. 
+			Therefore, $S$ is not a field $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [30.] \textbf{The addition table and part of a multiplication table for a four-element
+						ring are given in the text. Complete the multiplication table.}		
+		% ======================================================================================== %
+
+		\begin{center}
+			\renewcommand\arraystretch{1.3}
+			\setlength\doublerulesep{0pt}
+			\begin{tabular}{r||*{4}{2|}}
+				$\times$ & $w$ & $x$ & $y$ & $z$ \\
+				\hline\hline
+				$w$ & $w$ & $w$ & $w$ & $w$ \\ 
+				\hline
+				$x$ & $w$ & $y$ & $w$ & $y$ \\ 
+				\hline
+				$y$ & $w$ & $w$ & $w$ & $w$ \\ 
+				\hline
+				$z$ & $w$ & $y$ & $w$ & $y$ \\ 
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{enumerate}
+\end{document}
+

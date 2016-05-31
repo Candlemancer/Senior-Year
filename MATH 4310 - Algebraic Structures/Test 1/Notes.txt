@@ -1,0 +1,145 @@
+Jan 21st
+
+	- gcd(a, b) => d can be expressed as d = ua + vb.
+	- If you find u, v such that 1 = ua + bv, then the gcd of a, b = 1
+		since if c | a, b then c | 1, or that c = |1|, gcd(c) = 1.
+		Can be used to prove that the gcd of (a, b) = 1.
+
+	- theorem 1.4 pg 14 is fair game for the test.
+	Proof:
+		Since gcd(a, b) = 1, we can use the linear combination properties of the gcd to write 
+
+			1 = au + bv   		u, v are ints
+
+		We also know that a | bc, or that 
+
+			bc = ak.
+
+		So:
+
+			c = acu + bcv
+			  = acu + akv
+			  = a(cu + kv)
+
+		since (cu + kv) is an integer, 
+
+			c = am			m is int
+			a | c ;
+
+	if p | ab, then p | a or p | b
+
+	- FUNDAMENTAL THEOREM OF ARITHMETIC
+	- gcd = 1 implies no shared prime factors.
+
+Feb 9th.
+
+	A Zero Divisor in Zn is any congruence class [a] such that [a][b] = [0] in Zn, with a and b
+	both being nonzero elements of Zn. You can find the Zero Divisors by finding all of the 
+	factors of [0] in Zn.
+
+	Addendum: There are no zero divisors if n is prime
+
+	[a] = [b] in Zn means that [a] and [b] represent the same congruence class, or in other words 
+	a = kn + i and b = jn + i for i, j, k in Z.
+
+	[a] is a unit if [a][b] = [1], ergo [a] != [0] and [a] is not a Zero Divisor. Also [a] is a unit
+	if gcd(a, n) = 1
+
+	Know for test:
+		- calculate the inverse of a unit.
+
+	Example:
+		Find [9]^-1 [15]^-1 in Z28
+
+		1. Use the Euclidean Algorithm
+
+			28 = 3(9) + 1			28 = 1(15) + 13
+									15 = 1(13) + 2
+									13 = 6(2) + 1
+
+		2. Rewrite the GCD as a linear combination
+
+			1 = au + bn 	mod n
+			1 = au 			mod n
+
+		3. Solve for all for all of the remainders
+
+			1 = 28 - 3(9)			13 = 28 - 15
+			[1] = [0] - [3][9]		2 = 15 - 13
+			[1] = [25][9]			1 = 13 - 6(2)
+
+			[9]^-1 = [25]			1 = 13 - 6(15 - 13)
+									1 = (28 - 15) - 6(15 - (28 - 15))
+									1 = 28 - 15 - 6(15) + 6(28) - 6(15)
+									1 = 7(28) - 13(15)
+
+									[1] = [-13][15] in Z28
+									[-13] = [15]
+
+
+	Why does the division algorithm work to give the GCD?
+
+		a = bq + r
+		b = rs - t
+		...
+
+	It's easy to remember why this works. It is simply the fact that gcd(a, b) = gcd(b, r) ...
+
+	Why is that true?
+
+		Let A be the set of divisors of a, b,
+		let B be the set of divisors of b, r.
+
+		We will show that A = B, and therefore that max(A) = max(B), which is by definition the GCD,
+		and so gcd(a, b) = gcd(b, r).
+
+		Let c \in A.
+
+			c | a 	=> a = kc
+			c | b 	=> b = lc
+
+		By using the division algorithm, we see that
+
+			kc = lcq + r
+			r = kc - lcq
+			r = c(k - lq)
+
+		Ergo, c | r, and since c | b and c | r, c is in B.
+		Now show the same for d \in B.
+
+	================================================================================================
+	Bonus pregunta?
+
+	Find the inverse of [2] + [3]i in Z5, i = sqrt(-1).
+
+	(a + bi)-1 = (a - bi) / (a^2 + b^2)																Know for test, really.
+	(2 + 3i)-1 = (2 - 3i) / (4 + 9)
+	[2] + [3]i-1 = [2] - [3]i ([4] + [9])-1
+				 = [2] - [3]i ([3])-1
+				 = [2]([2] - [3]i)
+				 = [4] - [6]i
+				 = [4] - [1]i
+
+
+	================================================================================================
+	Bonus Pregunta Dos
+
+	Find the inverse of [[2], [1]]	in Z5
+						[[1], [4]]
+
+		1 / (8 - 1) [[4], [-1]]	in Z5
+					[[-1], [2]]
+
+		[1] / [2] [[4], [-1]]
+				  [[-1], [2]]
+
+		[3] [[4], [4]]
+			[[4], [2]]
+
+		[[12], [12]]
+		[[12], [6] ]
+
+		[[2], [2]]
+		[[2], [1]]
+
+	Any formula that works on R or Q or C probably works on Zp

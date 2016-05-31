@@ -1,0 +1,33 @@
+Definition:
+	f(x) = g(x) mod p(x)
+	[f(x)]p ~ [g(x)]p    => g(x) - f(x) = m(x)p(x)
+
+	- if p(x) is of degree n, then [f(x)]_p is of degree < n
+
+	Example: 
+		Z2[x] mod x2 + x + 1 in Z2
+
+		Mult table:
+			[0]	[1]	   [x]	 [x + 1]		
+		[0]	 0	 0	    0 	    0
+		[1]	 	[1]    [x]	 [x + 1]		
+		[x]		     [x + 1]   [1]
+	[x + 1]					   [x]
+
+	If p(x) is irreducible, then [f(x)]p is a field													 !
+
+- [f(x)]p = [g(x)]p 		Definition
+- [f(x)]p * [g(x)]p			Work the problem
+- Write out multiplication table of some [f(x)]p
+- [f(x)]p is a field iff p(x) is irreducible
+
+	Example:
+		R[x] mod x2 + 1
+		So the only congruence classes are
+		[ax + b] a, b in R
+
+		[ax + b] * [cx + d] = [acx2 + (bc + ad)x + bd]
+							= [(bc + ad)x + bd - ac]				! Complex numbers
+
+		R[x] mod x2 + 1 is isomorphic to the complex numbers!
+		Isomorphism: [ax + b] -> [b + ai]

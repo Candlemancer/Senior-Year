@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tower Defense</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="scripts/Reference.js" defer></script>
+	<script type="text/javascript" src="scripts/ParticleSystem.js" defer></script>
+	<script type="text/javascript" src="scripts/Screens.js" defer></script>
+	<script type="text/javascript" src="scripts/Scoring.js" defer></script>
+	<script type="text/javascript" src="scripts/Input.js" defer></script>
+	<script type="text/javascript" src="scripts/Graphics.js" defer></script>
+	<script type="text/javascript" src="scripts/AnimatedObjects.js" defer></script>
+	<script type="text/javascript" src="scripts/CreepSource.js" defer></script>
+	<script type="text/javascript" src="scripts/Projectiles.js" defer></script>
+	<script type="text/javascript" src="scripts/Towers.js" defer></script>
+	<script type="text/javascript" src="scripts/Level.js" defer></script>
+	<script type="text/javascript" src="scripts/Cursor.js" defer></script>
+	<script type="text/javascript" src="scripts/UIController.js" defer></script>
+	<script type="text/javascript" src="scripts/GameLoop.js" defer></script>
+	<script type="text/javascript" src="scripts/page-mainmenu.js" defer></script>
+	<script type="text/javascript" src="scripts/page-game.js" defer></script>
+	<script type="text/javascript" src="scripts/page-highscores.js" defer></script>
+	<script type="text/javascript" src="scripts/page-options.js" defer></script>
+	<script type="text/javascript" src="scripts/page-game-over.js" defer></script>
+	<script type="text/javascript" src="scripts/page-about.js" defer></script>
+</head>
+<body onload="TowerDefense.Screens.initialize()">
+	<div id="game">
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-mainmenu" class="screen">
+			<h1>Tower Defense</h1>
+			<!-- <h2>By Jonathan Petersen</h2> -->
+			<ul class="menu">
+				<li><button id="id-new-game">New&nbsp;Game</button></li>
+				<li><button id="id-high-scores">High&nbsp;Scores</button></li>
+				<li><button id="id-help">Options</button></li>
+				<li><button id="id-about">About</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Game ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-game" class="flexible screen">
+			<canvas id="game-canvas" width="750" height="650"></canvas>
+			<div id="game-controls">
+				<h1>Tower Defense</h1>
+				<hr>
+					<div id="playerStatus" class="flexible">
+						<span>Score: </span>
+						<span id="playerScore">0</span>
+						<span>Lives: </span>
+						<span id="playerLives">20</span>
+						<span>Credits: </span>
+						<span id="playerCredits">0</span>
+					</div>
+				<hr>
+				<p>Buy more towers:</p>
+				<div id="newTowers" class="flexible">
+					<div class="flexCell gridTop">
+						<button onclick="TowerDefense.UIController.changeBrushToBasicTower()">
+							Regular Tower
+						</button>
+						<p>	
+							Standard Tower <br>
+							Ground and Air <br>
+							1000 Credits
+						</p>
+					</div>
+					<div class="flexCell gridTop">
+						<button onclick="TowerDefense.UIController.changeBrushToMissileTower()">
+							Missile Tower
+						</button>
+						<p>
+							Missle Tower <br>
+							Air - Homing <br>
+							1000 Credits
+						</p>
+					</div>
+					<div class="flexCell gridBottom">
+						<button onclick="TowerDefense.UIController.changeBrushToGrenadeTower()">
+							Grendade Tower
+						</button>
+						<p>
+							Grenade Tower <br>
+							Ground - Splash <br>
+							2000 Credits
+						</p>
+					</div>
+					<div class="flexCell gridBottom">
+						<button onclick="TowerDefense.UIController.changeBrushToFreezingTower()">
+							Freezing Tower
+						</button>
+						<p>
+							Freezing Tower <br>
+							Ground - Slow <br>
+							2000 Credits
+						</p>
+					</div>
+				</div>
+				<hr>
+				<span>Upgrade Level: </span>
+				<span id="currentTowerUpgradeLevel"></span> <br>
+				<span>Next Upgrade Costs: </span>
+				<span id="currentTowerUpgradeCost">0</span> 
+				<span>Credits</span> <br>
+				<button onclick="TowerDefense.UIController.upgradeTower()">Upgrade</button>
+				<button onclick="TowerDefense.UIController.sellTower()">Sell</button>
+				<hr>
+				<span>Current Level: </span>
+				<span id="currentLevel">0</span> <br>
+				<button onclick="TowerDefense.UIController.startNextLevel()">Start Next Level</button>
+				<hr>
+				<button onclick="TowerDefense.UIController.toggleBGM()">Toggle BGM</button>
+			</div>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ High Scores ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-highscores" class="screen">
+			<h1>High Scores</h1>
+			<ol id="high-scores-list">
+				<li>7000</li>
+			</ol>
+			<ul class="menu">
+				<li><button id="id-high-scores-back">Back</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-options" class="screen">
+			<h1>Controls</h1>
+			<form>
+				<label>Upgrade Tower</label>
+				<input type="text" name="upgradeField" value="U" 
+					   onfocus="TowerDefense.UIController.promptForKeyChange(this);">
+				</input> <br>
+				<label>Sell Tower</label>
+				<input type="text" name="sellField" value="S" 
+					   onfocus="TowerDefense.UIController.promptForKeyChange(this);">
+				</input> <br>
+				<label>Next Level</label>
+				<input type="text" name="nextLevelField" value="G" 
+					   onfocus="TowerDefense.UIController.promptForKeyChange(this);">
+				</input> <br>
+				<label>Player Name</label>
+				<input type="text" id="playerNameField" value="Player">
+				</input> <br>
+			</form>
+
+			<ul class="menu">
+				<li><button id="id-help-back">Back</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ About ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-about" class="screen">
+			<h1>About</h1>
+			<p>Developed by</p>
+			<p>Jonathan Petersen</p>
+			<p><a href="https://github.com/candlemancer">Github</a></p>
+			<ul class="menu">
+				<li><button id="id-about-back">Back</button></li>
+			</ul>
+		</div>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Game Over ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="page-game-over" class="screen">
+			<h1>Game Over!</h1>
+			<p>Score: <span id="gameOverHighScore">
+				0
+			</span></p>
+			<ul class="menu">
+				<li><button id="id-game-over-back">Back</button></li>
+			</ul>
+		</div>
+	</div>
+
+	<audio id="creepDeathAudio"><source src="audio/Creep Death.wav" type="audio/wav"></audio>
+	<audio id="explosionAudio"><source src="audio/Explosion.wav" type="audio/wav"></audio>
+	<audio id="explosion2Audio"><source src="audio/Explosion2.wav" type="audio/wav"></audio>
+	<audio id="towerSellAudio"><source src="audio/Tower Sell.wav" type="audio/wav"></audio>
+	<audio id="towerPlaceAudio"><source src="audio/Tower Place.wav" type="audio/wav"></audio>
+	<audio id="towerShootAudio"><source src="audio/Tower Shoot.wav" type="audio/wav"></audio>
+	<audio id="towerShootAudio"><source src="audio/Tower Shoot.wav" type="audio/wav"></audio>
+	<audio loop id="backgroundMusic">
+		<source src="audio/Super_Metroid_Dancing_in_the_Jungle_OC_ReMix.mp3" type="audio/mpeg">
+	</audio>
+</body>
+</html>

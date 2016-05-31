@@ -1,0 +1,56 @@
+@startuml
+
+class Sensor {
+	int sensorID
+	double milesFromStart
+}
+
+class SensorUpdate {
+}
+SensorUpdate -- Sensor : sensorID
+SensorUpdate -- Racer : bibNumber
+SensorUpdate o-- Time : currentTime
+
+class Racer {
+	string name
+}
+Racer o-- Date : DOB
+Racer o-- Time : finishTime
+
+class RaceGroup {
+	string groupLabel
+	int numRacers
+	int[] numberBlock
+
+}
+RaceGroup *-- Racer : bibNumber
+RaceGroup *-- Racer : startTime
+RaceGroup o-- Time : startTime
+
+class Date {
+	int month
+	int day
+	int year
+}
+
+class Time {
+	double seconds
+	string print()
+}
+
+class Server {
+}
+Server o-- SensorUpdate : updates
+
+class CheatingComputer {
+	bool registerCallback()
+}
+CheatingComputer o-- SensorUpdate : updates
+
+class RacerState {
+	bool isCheater
+	double milesTraveled
+}
+RacerState *-- Racer
+
+@enduml

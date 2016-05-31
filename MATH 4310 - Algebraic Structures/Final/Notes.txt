@@ -1,0 +1,294 @@
+Final:
+	Thursday May 5th,
+	1:30 PM
+
+	Chapter 5,
+	Chapter 6 - Exactly some of the homework problems
+
+	Make up problems: List of topics
+
+Final Grade:
+	40% Homework
+	60% Tests
+
+	or 
+
+	40% Tests
+	60% Homework
+
+	whichever is higher.
+
+Chapter 5: 
+	- Not mind-losing suggestion: 
+		Consider F = Q[x] / <x2 + x + 1>.
+		Keep the square brackets to represent congruence classes.
+
+		We will be working problems in F,
+		introduce a new indeterminate z, u, v, etc.
+
+
+	Examples:
+		Show that Q[√2] = {a + b√2 | a, b in Q} (in R) is a ring / subring of R.
+			√2 * √2 = 2
+
+		Now consider Q[x]/<x2 - 2> = {[a + bx] | a, b in Q}
+
+			[x][x] = [x2] = 2
+
+		Are those two rings isomorphic?
+		Let f: Q[√2] -> Q[x]/<x2 - 2>. Then the following must be true:
+
+			f(1) = [1]
+			f(2) = f(1) + f(1) = f(2)
+
+		Let's guess that f(√2) = [x].
+
+			f(a + b√2) = [a + bx] = [a] + [b][x]
+
+		To show injectivity, we take
+
+			f(a + b√2) = [0]
+			[a + bx] = [0]
+			[a + bx] - [0] = h(x)[x2 - 2]
+
+		By analysis of degrees, h(x) = 0. Therefore
+
+			a = 0, b = 0.
+
+		Check the homomorphism properties.
+
+----------------------------------------------------------------------------------------------------
+
+	Is Q[√2] isomorphic to Q[√3]? 			Hypothesis: no.
+
+	Let f: Q(√2) -> Q(√3) be an isomorphism. Then
+
+		f(√2) = r + s√3						r, s in Q
+		f(2) = f(1 + 1) = f(1) + f(1)
+		f(1) = 1
+		f(2) = 2
+		f(2) = f(√2 * √2) = f(√2) * f(√2)
+			 = (r + s√3)(r + s√3)
+
+	Then it must be
+
+		2 = (r +s√3)2
+		  = r2 + 3s2 + 2rs√3
+		2 + 0√3 = r2 + 3s2 + 2rs√3
+
+	And
+
+		2 = r2 + 3s2
+		0 = 2rs
+
+	Which is a contradiction.
+
+----------------------------------------------------------------------------------------------------
+
+Definition:
+	If we start with some field F, and make a new field K by adjoining some elements, we call K 
+	an extension field.
+
+	Let F be a subset of K. F is a subfield of K, K is an extension of F.
+
+----------------------------------------------------------------------------------------------------
+
+Last Time:
+	If p(x) is irreducible in Q[x], then Q[x] / p(x) is a field which:
+		1.	Q[x] / p(x) is an extension field of Q. 
+		2.	The element [x] in F = Q[x] / p(x) is a root of p(z) in F[z].
+
+	Example:
+
+		Let F = Q, pf(x) = x3 + x + 1. 
+		Then pz(z) = z3 + z + 1 in F and
+		pz([x]) = [x]3 + [x] + 1 = [x3 + x + 1]
+		So the remainder mod [x3 + x + 1] is zero,
+		and [x] is a root of pz(z)!												!!!
+
+	Summary:
+		Given :
+		Q 				p(x)	 	Irreducible
+		Q` 				p`(x)		At Least one factor
+		Q`` 			p``(x)		At least two factors
+		...
+
+		Q` = Q[x] / p(x)
+		You can draw conclusions of the set of Q`s from p(x)
+
+		With a compass and ruler, given a length, you can make rational numbers and square roots.
+
+----------------------------------------------------------------------------------------------------
+
+Example 9, pg 139:
+	Show that Z2[x] / (x3 + x + 1) contains all three roots of z3 + z + 1.
+
+	Solution: 
+		We already know one root of z3 + z + 1 in Z2[x] / (x3 + x + 1).
+		root 1 = [x].
+
+		[x] |  1 	 0 			1 			1
+			   1	[x]		[x2 + 1]	[x3 + x + 1] = 0
+
+		[x]	|  1  	0
+
+		z2 + [x]z + [x2 + 1]
+
+----------------------------------------------------------------------------------------------------
+Chapter 6.1
+
+	Let a ring R = Z, and S = 3Z = {0, +/-3, +/-6}. From chapter 3, this is a subring of R.
+	Recall that if a, b in S then a * b in S.
+	Observe also that given r not in S, then a * r in S.
+
+	In the study of rings, there are special subrings which are very important. These subrings 
+	are called ideals.
+
+	Definition:
+		Let I in R. Then I is an ideal if
+		1. I is a subring of R.
+		2. If r in R and a in I, then r * a in I and a * r in I.
+
+	I is an ideal if and only if:
+		1. a, b in I => a - b in I.
+		2. r in R, a in I => ra in I and ar in I.
+
+----------------------------------------------------------------------------------------------------
+
+Ideals:
+	- Ring R, ideal I is a subring of R with the following properties:
+	- closed under subtraction, closed under multiplication from all R.
+	- Ideals are VERY important in abstract algebra.
+
+Definition:
+	[a] = {b in R | b - a in I}							! Big idea of Chapter 6
+
+	[a] * [b] = [c] for any a in [a] and b in [b]
+
+Theorem:
+	Let R be a ring, I an ideal in the ring.
+		if a ~ c mod I
+		and b ~ d mod I,
+		then ab ~ cd.
+
+		a - c = r 		r in I
+		b - d = s 		s in I
+
+		a = c + r
+		b = d + s
+
+		ab = (c + r)(d + s)
+		   = cd + rd + cs + rs
+
+		ab - cd = rd + cs + rs
+
+		rs is in I, since I is a subring.
+		rd is in I, since I is an ideal.
+		cs is in I, since I is an ideal.
+		ab - cd is in I, since rd + cs + rs is in I.
+
+	If you have an ideal, then the congruence classes in your ring modulo that ideal makes a new 
+	ring. 
+
+Theorem:
+	If R is a ring and I is an ideal, then {[a] mod I | a in R} is a new ring called R / I.
+
+Question:
+	When is R / I an integral domain? 
+		When I is a prime ideal
+	When is R / I a field? 
+		When I is a maximal ideal
+
+----------------------------------------------------------------------------------------------------
+
+Lemma:
+	Let R be a communative ring, fix an a in R and let I be the set of all elements 
+		{ra | r in R} = <a>
+	Then the set I is an ideal.
+
+	Let x, y in I. 
+		x = ra
+		y = sa
+
+		x - y = ra - sa = (r - s)a 		Closed under subtraction
+
+	Let t in R, then
+		x * t = ra * t = (tr)a 			Closed under multiplication
+		t * x = t * ra = (tr)a
+
+	Ideals of this kind are called prinipal ideals.
+
+	More generally, if a, b are in R, then
+		<a, b> = {ra + sb | r, s, a, b in R} is an ideal.
+
+
+Excercises:
+	Let R be a ring and suppose I is an ideal with 1R in the ideal.
+
+	Take any r in R, then r * 1 must be in the ideal, since I is an ideal. 
+	Therefore all r in R is in the ideal, and I = R.
+
+	Let R = Z, and I = <13, 30> (All numbers which are a linear combination of 13 and 30.)
+	Therefore the gcd(13, 30) = 1 and 1 in I
+	Then I = Z
+
+	-----
+
+	Let I be an ideal in Z. Show that I is the ideal generated by some number <m>.
+	Let m be the smallest positive number in I. 
+	Let a be any number in I.
+	Check a = qm + r (divide a by m). Then 0 ≤ r < m
+	Then a - mq = r
+	and since a in I, mq in I, r in I which means that
+	r = 0, a = mq and a in <m>. 																	! Know for test.
+	Every ideal in Z is a principal ideal, since Z has a division algorithm.
+
+	-----
+
+	What does <a> in <b> in Z say about a, b?
+
+	<a> in <b>
+	a in <b>
+	a = rb
+	b | a
+
+	-----
+
+	If I is an ideal and 3 in I in Z,
+	Then I = <m>
+	and <3> in <m> in Z
+	and m | 3
+
+	-----
+
+	0 in 6 in I in Z
+
+	I = <m>
+	m | 6 -> m in {1, 2, 3, 6}
+
+	I = Z, 
+	I = <2>
+	I = <3>
+	I = <6>
+
+	Factorization is basically, given an ideal, show me all of the ideals greater than it. !!!
+
+	-----
+
+	<15> && <10> = <m>
+	lcm(15, 10) = 30
+	m = 30
+
+	-----
+
+	[0 a]
+	[0 b] in M(R) a subring?
+	Is it an ideal? 
+
+	[r s][0 a]	 [0 ra + sb]
+	[t u][0 b] = [0 ta + ub]
+
+	[0 a][r s]	 [at -]
+	[0 b][t u] = [bt -]
+
+

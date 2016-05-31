@@ -1,0 +1,104 @@
+Theorem 3.5
+
+0 * a = 0
+a(-b) = -a(b) = -ab
+-(-a) = a 
+-(a + b) = -a + -b
+-(a - b) = -a + b
+(-a)(-b) = ab
+
+Prove: -(a + b) = -a + -b, 	
+Let	x = -a + -b
+	(a + b) + x = (a + b) + (-a + -b)
+				= a + b + -a + -b
+				= a + -a + b + -b
+				= 0 + 0
+				= 0
+
+Therefore x = -(a + b), and so -(a + b) = -a + -b
+
+Prove (-a)(-b) = ab
+
+	(-a)(-b) + -ab = (-a)(-b) + -a(b)
+				   = (-a)(-b + b)
+				   = -a(0)
+				   = 0
+
+Therefore (-a)(-b) = ab.
+
+====================================================================================================
+
+a^n = a * a * a * a * ... * a (n times, n factors)
+n.a = a + a + a + a + ... + a (n times, n summands)
+-na = -a + -a + -a + ... + -a (n times, n summands)
+
+Ex. In a general ring expand (a + b)^2
+	(a + b)^2 = (a + b) * (a + b)
+			  = (a + b)a + (a + b)b
+			  = aa + ab + ba + bb
+			  = a^2 + ab + ba + b^2
+
+====================================================================================================
+
+Given a ring that must have a 0, a subring S must be a subset of R and must satisfy the eight axioms
+of a ring, using the + and * from R.
+
+To check that S is a subring, just check
+
+ - Closure under +
+ - 0 in S
+ - -a in S
+ - Closure with *
+
+Theorem 3.6
+
+Let S in R
+
+Then S is a subring if :
+
+	1. a, b in S => a - b in S
+	2. a, b in S => a * b in S
+
+If a in S, then a in S. Therefore a - a = 0, and 0 in S by 1. (i.e. if S is closed under 
+subtraction, then S must contain 0).
+
+If a in S, and 0 in S, then 0 - a = -a by 1 and -a must be in S.
+
+====================================================================================================
+
+Let R and S be rings, then we make a new ring T called the Cartesian Product.
+
+	T = R x S
+
+	1. T{} = {(r, s) | r in R, s in S}
+	2. + = (r1 + s1) +_T (r2 + s2) = (r1 + r2, s1 + s2)
+	3. * = (r1 + s1) *_T (r2 + s2) = (r1 * r2, s1 * s2)
+
+Whenever you take the cartesian product of two rings, you will get zero divisors at least along the 
+axis.
+
+====================================================================================================
+
+R = {0, e, b, c}, associative, distributive. Show that R is a ring with identity. Is R commutative?
+Is R a field?
+
+1. Closed under addition
+2. Associative
+3. Commutative
+	The addition table is symmetric, by exhaustive inspection
+4. Additive identity
+	0 is the additive identity
+5. Additive inverse
+	-e <=> e
+	-b <=> b
+	-c <=> c
+6. Closure for multiplication
+7. Associative multiplication
+8. Distributive laws
+
+
+
+
+
+
+

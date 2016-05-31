@@ -1,0 +1,19 @@
+@startuml
+
+title Creating a WBS Tree
+
+loop
+	actor User
+	User -> TaskBuilder : Build WBS
+	
+	create Task
+	TaskBuilder -> Task 
+	TaskBuilder <-- Task
+	User <-- TaskBuilder
+end
+
+User -> ParentTask : addChild()
+ParentTask -> Task : Get Child Completion Info
+ParentTask <-- Task
+
+@enduml

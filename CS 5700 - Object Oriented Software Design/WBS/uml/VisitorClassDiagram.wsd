@@ -1,0 +1,37 @@
+@startuml
+
+class TaskVisitor {
+    + TaskVisitor()
+    + virtual ~TaskVisitor()
+    + {abstract} virtual void visit(std::shared_ptr<LeafTask> leaf)
+    + {abstract} virtual void visit(std::shared_ptr<SequentialParentTask> parent)
+    + {abstract} virtual void visit(std::shared_ptr<ParallelParentTask> parent)
+}
+TaskVisitor <|-- XMLOutputVisitor
+TaskVisitor <|-- OutlineVisitor
+
+class XMLOutputVisitor {
+    + XMLOutputVisitor(std::string filename)
+    + virtual ~XMLOutputVisitor()
+    + virtual void visit(std::shared_ptr<LeafTask> leaf)
+    + virtual void visit(std::shared_ptr<SequentialParentTask> parent)
+    + virtual void visit(std::shared_ptr<ParallelParentTask> parent)
+
+    - const static int INDENT_WIDTH
+    - std::string getIndent(std::shared_ptr<Task> node)
+    - std::string printTag(std::string label, std::string value)
+    - std::fstream fout
+}
+
+class OutlineVisitor {
+    + OutlineVisitor(std::string filename)
+    + virtual ~OutlineVisitor()
+    + virtual void visit(std::shared_ptr<LeafTask> leaf)
+    + virtual void visit(std::shared_ptr<SequentialParentTask> parent)
+    + virtual void visit(std::shared_ptr<ParallelParentTask> parent)
+
+    - std::string getPrefix(std::shared_ptr<Task> node)
+    - std::fstream fout
+}
+
+@enduml

@@ -1,0 +1,76 @@
+Homomorphisms, Bijectivity:
+
+	Given f: R -> S
+
+	- Injective - 
+		Definition: 
+			If f(a) = f(b), then a = b.
+		How to Solve: 
+			Just solve f(a) = f(b) for a. If you find that a = b, then you're done. If you find two
+			solutions for a, then it's not injective.
+		How to Disprove:
+			Find two elements such that f(a) = f(b) and a != b.
+		Example:
+			f(x) = x / x + 1 				Injective
+			f((a, b)) = a 					Not Injective
+			f(x) = x^8 + 7x^6 + 2x^2 + 1	Not Injective, Not Easily Solvable
+
+	- Surjective -
+		Definition: 
+			For every c in S, there exists an a in R such that f(a) = c.
+		How to Solve:
+			Just solve f(a) = c for a. 
+		How to Disprove:
+			Give some c such that there is no f(a) = c.
+		Example:
+			f((a, b)) = [ a   b   ]			f: R x R -> M(R)
+						[ a a - b ]
+				So 	[ 1 2 ]	 is a counterexample.
+					[ 3 4 ]
+	- Shortcuts -
+		1. Kernel:
+			Given:
+				- f:R -> S as a ring homomorphism
+				- ker(f) = {0}
+				  ker(f) = {x | f(x) = 0S, x in R}
+			Claim:
+				 f is injective.
+			Disprove:
+				Find x such that f(x) = 0
+
+		2. # of elements:																			Know for Test
+			Given:
+				f:R -> S, #(R) = #(S) and finite
+				f is injective
+			Claim:
+				f is surjective
+			Example:
+				Let:	f:Zmn -> Zm x Zn
+				Claim: 	f is injective if gcd(m, n) = 1
+						surjective for free
+
+		3. Inverse:
+			Given:
+				f: R -> S, f is invertible
+			Definition:
+				Inverse of f means that there exists some f-1:S -> R such that
+				f-1(f(r)) = id_R
+				f(f-1(s)) = id_S
+			Claim:
+				f is bijective iff f has an inverse
+			Example:
+				f: R x R -> R x R
+				f(x, y) = (2x + 1, x + y)
+
+				u = 2x + 1
+				v = x + y
+
+				x = (u - 1) / 2
+				y = v - x
+				  = v - (u - 1) / 2
+
+				f(f-1(a, b)) = (a, b)		
+
+	Two methods for checking that something is an isomorphism:
+		1. find the inverse function
+		2. Check that #(R) = #(S) and ker(f) = 0

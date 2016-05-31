@@ -10,12 +10,13 @@
 
 class SequentialParentTask : public ParentTask {
    public:
-    inline SequentialParentTask(int id,
-                                std::string label,
-                                std::string description,
-                                int hoursEstimate)
-        : ParentTask(id, label, description, hoursEstimate) {}
+    inline
+
+        SequentialParentTask(int id, std::string label, std::string description)
+        : ParentTask(id, label, description) {}
+
     virtual ~SequentialParentTask() = default;
+    virtual int getOriginalHoursEstimate();
     virtual int getCurrentHoursEstimate();
     virtual int getHoursRemaining();
     virtual int getWorkDaysRemaining();

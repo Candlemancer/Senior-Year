@@ -4,6 +4,7 @@
 // Task Base Class Implementation
 
 #include "Task.hpp"
+#include <cmath>
 
 Task::Task(int id,
            std::string label,
@@ -13,19 +14,30 @@ Task::Task(int id,
     : m_id(id),
       m_label(label),
       m_description(description),
-      // m_engineers(),
+      m_engineers(),
       m_originalHoursEstimate(hoursEstimate),
       m_currentHoursEstimate(hoursEstimate),
       m_percentComplete(0),
       m_remainingHours(hoursEstimate),
-      m_remainingDays(hoursEstimate / 24),
+      m_remainingDays(std::ceil(hoursEstimate / 8.0)),
       m_parent(parent) {}
 
-// TreeIterator Task::begin() {
-//     std::shared_ptr<Task> p_task = shared_from_this();
-//     return
-// }
+void Task::addEngineer(std::shared_ptr<Workforce> engr) {
+    m_engineers.push_back(engr);
+}
 
-// TreeIterator Task::end() {
-//     return TreeIterator(nullptr);
-// }
+bool Task::operator==(Task* that) {
+    return (
+        this->getID() == that->getID() &&
+        this->getLabel() == that->getLabel() &&
+        this->getDescription() == that->getDescription() &&
+        this->getEngineers() == that->getEngineers() &&
+        this->getOriginalHoursEstimate() == that->getOriginalHoursEstimate() &&
+        this->getCurrentHoursEstimate() == that->getCurrentHoursEstimate() &&
+        this->getHoursRemaining() == that->getHoursRemaining() &&
+        this->getWorkDaysRemaining() == that->getWorkDaysRemaining());
+}
+
+bool Task::operator!=(Task* that) {
+    return !(*this == that);
+}

@@ -1,0 +1,148 @@
+@startuml
+
+hide empty members
+hide empty methods
+
+class fabric.Canvas {
+	setBackgroundColor(String)
+	setBackgroundColor(fabric.Pattern)
+	setBackgroundImage(fabric.Image)
+	getActiveObject()
+	add(fabric.Object)
+	remove(fabric.Object)
+	item(index)
+	getObjects()
+}
+fabric.Canvas *-- fabric.Object
+
+class fabric.Object {
+	double left
+	double top
+	double width
+	double height
+	string fill
+	double opacity
+	string stroke
+	double strokeWidth
+	double scaleX
+	double scaleY
+	double angle
+	boolean flipX
+	boolean flipY
+
+	get(property)
+	set(property)
+}
+
+class fabric.Circle {
+	radius
+}
+fabric.Circle --|> fabric.Object
+fabric.Circle -- ShapeFactory
+
+class fabric.Ellipse {
+	rx,
+	ry
+}
+fabric.Ellipse --|> fabric.Object
+fabric.Ellipse -- ShapeFactory
+
+class fabric.Line {
+	x1,
+	y1,
+	x2,
+	y2
+}
+fabric.Line --|> fabric.Object
+fabric.Line -- ShapeFactory
+
+class fabric.Polygon {
+	points[]
+}
+fabric.Polygon --|> fabric.Object
+fabric.Polygon -- ShapeFactory
+
+class fabric.Rect {
+	width, 
+	height
+}
+fabric.Rect --|> fabric.Object
+fabric.Rect -- ShapeFactory
+
+class fabric.Triangle {
+	width,
+	height
+}
+fabric.Triangle --|> fabric.Object
+fabric.Triangle -- ShapeFactory
+
+class fabric.Image {
+	Image(ImageElement)
+	Image(url, callback)
+}
+fabric.Image --|> fabric.Object
+fabric.Image *-- fabric.Canvas
+
+class KeyboardManagerSingleton
+
+class CommandFactory {
+	Command commandFactory()
+}
+CommandFactory -- Command.Command
+CommandFactory -- HTMLAdapter
+
+class Command.Command {
+	void execute()
+	void undo()
+}
+
+class Command.DrawCommand --|> Command.Command
+class Command.ModifyCommand --|> Command.Command
+class Command.ChangeBackgroundCommand --|> Command.Command
+class Command.DeleteCommand --|> Command.Command
+class Command.DuplicateCommand --|> Command.Command
+class Command.ChangeBrushCommand --|> Command.Command
+class Command.ChangeShapeColorCommand --|> Command.Command
+
+
+class ShapeFactory {
+	fabric.Object shapeFactory()
+}
+
+class HTMLAdapter {
+	void newDrawing()
+	void undo()
+	void deleteObject()
+	void duplicateObject()
+	void changeShapeColor()
+	void changeBackgroundColor()
+	void changeBackgroundImage()
+	void saveImageAsJSON()
+	void saveImageAsPNG()
+	void _download(filename, data)
+	void _getHistory()
+}
+HTMLAdapter -- KeyboardManagerSingleton
+
+class SurfaceSingleton {
+    Color changeBrush(newBrush)
+    Surface getInstance()
+    itemID draw(fabric.Object)
+    void removeObject(id)
+    fabric.Object.state modify(id, state)
+    void deleteCurrentObject()
+    itemID duplicateCurrentObject()
+    Color changeBackground(back, isFile)
+    Color changeActiveShapeColor(newColor)
+
+    fabric.Object.state onObjectModified()
+    fabric.Object.state onObjectSelected()
+    fabric.Object onMouseDown()
+}
+SurfaceSingleton *-- fabric.Canvas
+SurfaceSingleton -- Command.Command
+SurfaceSingleton -- ShapeFactory
+SurfaceSingleton -- HTMLAdapter
+
+
+@enduml

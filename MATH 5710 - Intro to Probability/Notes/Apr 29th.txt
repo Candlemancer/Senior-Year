@@ -1,0 +1,64 @@
+Final:
+	8 problems
+	3 from chapter 5
+	Monday 1:30 in our room
+
+Joint distribution:
+
+	RV's X, Y
+	f(x, y)
+
+	- f(x, y) must be nonnegative and integrate to 1
+	- To find CDF, integrate from -infiity to x, -infinity to y of f(x, y) (f(u, v))
+	- marginal densities is integrating in the other variable
+	- conditional density funciton is f(x, Y = y) (y constant) = f(x,y) / f(y)
+	- Expected value of x | y = integral from -inf to inf of x(f(x | y)) dx 
+
+Chapter 2 - Random Variables:
+	
+	Discrete RV: 
+		- Bernoulli:			f(x) = {1 	p 		if success, 
+										0 	1 - p 	if failure}
+
+		- Binomial(n, p):		How many trials until n successes:
+								f(k) = P(X = k) = (n C k) * p^k * q^(n - k)
+
+		- Geometric	:			How many times until first success:
+								f(k) = q^(k - 1)p
+
+		- Negative Binomial:	How many times until r successes:
+								f(k) = (k - 1 C r - 1) * p^r * q^(k - r)
+
+		- Hypergeometric: 		Exactly the conditional probability.
+
+		- Poisson(l):			Poisson is the limit of the binomial
+								l = np
+								f(k) = (l^k / k!)e^(-l)
+
+	Continuous RV:
+		- Gamma:				f(x) = (l^a / g(a)) * x^(a - 1) * e^(-lx)		x ≥ 0
+								Maximum: 
+									f'(x) = c(a - 1)x^(a - 2)e^(-lx) - le(-lx)cx^(a - 1)
+										  = cx^(a - 2)e^-lx[a - 1 - lx] = 0
+									x = (a - 1) / l
+
+		- Exponential:			f(x) = le^(-lx) 	x ≥ 0
+
+		- Normal: 				f(x) = (1 / √(2π)s) * e^(-(x - µ) / 2s^2)
+
+Chapter 1 - Sample spaces and probability measures:
+	
+	Example: 
+		From an ordinary deck of 52 cards, cards are drawn successively until the first ace is 
+		drawn. What is the probability that the first ace is drawn at the nth draw?
+
+		P(X) = 	(48 C n - 1) * n - 1
+				(52 C n)
+
+		What is the probability that the first ace appears after the nth draw?
+
+		P(X) = P(not ace for n draws)	= 	(48 C n)
+											(52 C n)
+
+
+

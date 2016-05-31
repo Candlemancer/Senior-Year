@@ -1,0 +1,90 @@
+Given
+
+	x3 + 4x2 + 2x + 7
+	= ((x + 4)x + 2)x + 7
+
+	x4 + 3x3 - 2x + 7
+	= ((((x + 3)x + 0)x - 2)x + 7
+
+Synthetic Division, what is it good for? 
+	
+	If you wish to divide a polynomial f(x) by x - a, the calculation can be organized efficiently.
+
+	Take ex. 1
+
+	2 	| 	1	4	2	7
+		________2___6___28
+			1	6	14	35
+
+	x3 + 4x2 + 2x + 7 = (x - 2)(x2 + 6x + 14) + 35
+
+
+	-1	|	1	3	0	-2	7
+		_______-1__-2____0__7
+			1	2  -2	-0	7
+
+	- Synthetic division also works over any finite integral domain
+	- Reboot the Rational Root Test if you find a root. 
+
+If you have a polynomial with integer coefficients, and you can factor it with fractions then you 	* Know for Test!
+can factor it with integers.
+
+	
+
+Is f(x) = x4 - 5x + 1 reducible in Q[x]?
+	- Einstein is out
+	- Rational Root Test gives +/- 1, no go.
+	* Polynomial of degree 3 only reducible if it has a root.
+	- In this case, we can only say that f has no linear factors.
+	- If f factors, it must be as a product of quadratic terms.
+
+	x4 - 5x2 + 1 = (ax2 + bx + c)(rx3 + sx + t)    					a, b, c, r, s, t in Q
+				 = (ax2 + bx + c)(rx3 + sx + t)		by Thrm 4.23, 	a, b, c, r, s, t in Z
+
+		1 = ar => in Z, a = +/- 1, r = +/- 1 => wlog, a, r = 1
+
+	x4 - 5x2 + 1 = (x2 + ax + b)(x2 + cx + d)
+
+	4: 	 1 = 1
+	3:	 0 = a + c
+	2:	-5 = d + b + ac
+	1:	 0 = ad + bc
+	0:	 1 = bd
+
+	c = -a
+
+	-5 = d + b -a2
+	 0 = ad - ba	= (d - b)a
+	 1 = bd
+
+	 Case 1: b = 1, d = 1
+	 	-5 = -2 -a2		NO integer solution
+
+	 Case 2: b = -1, d = -1
+	 	-5 = +2 -a2		NO integer solution
+
+	Irreducible!
+
+
+One last out?:
+	Suppose f(x) is reducible in Z[x]. Then f(x) = g(x)h(x) 	in Z
+
+	Change everything to Zp.
+
+	If it factors in Z, it'll factor in Zp.
+	If f(x) is irreducible in Zp, then it's irreducible in Z.										Really cool!
+	
+
+----------------------------------------------------------------------------------------------------
+
+If a polynomial is reducible, it can be expressed as f(x) = h(x)g(x) in Q[x].
+If it's reducible in Q[x], then it's reducible in Z[x].
+If it's reducible in Z[x], then it's reducible in Zp[x].
+
+If f(x) factors, then f(x+1) factors.
+If f(x + 1) is irreducible, then f(x) is irreducible
+
+If p is prime, then x^p-1 + x^p-2 + ... + x + 1 is irreducible in Q[x], (Z[x], Zp[x])
+In Z2[x], the only irreducible quadratic is x2 + x + 1
+
+	Problems in 18 will be on the test!

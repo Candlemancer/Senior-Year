@@ -1,0 +1,8 @@
+{"Shapes": [{"Triangle": [{"Point": [{"x": 0.0}, {"y": 1.0}]}, {"Point": 
+			[{"x": -1.0}, {"y": 0.0}]}, {"Point": [{"x": 1.0}, {"y": 0.0}]}]}, {"Circle": 
+			[{"Radius": 10.0}]}, {"Circle": [{"Radius": 12.0}]}, {"Ellipse": [{"SubMajorAxis": 3.0},
+			 {"SubMinorAxis": 1.5}]}, {"Square": [{"Point": [{"x": 1.0}, {"y": 1.0}]}, {"Point": 
+			 [{"x": -1.0}, {"y": 1.0}]}, {"Point": [{"x": -1.0}, {"y": -1.0}]}, {"Point": 
+			 [{"x": 1.0}, {"y": -1.0}]}]}, {"Ellipse": [{"SubMinorAxis": 6.0}, 
+			 {"SubMajorAxis": 7.3}]}, {"IsoscelesTriangle": [{"Point": [{"x": 0.0}, {"y": 0.0}]}, 
+			 {"Point": [{"x": 1.0}, {"y": 5.0}]}, {"Point": [{"x": 2.0}, {"y": 0.0}]}]}]}

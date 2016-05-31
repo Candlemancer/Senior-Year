@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{centernot}
+\usepackage{polynom}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\title{Homework 10 \\ Section 4.1}
+\author{Jonathan Petersen \\ A01236750}
+\date{April 4th, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [3.b.] \textbf{List all polynomials with degree less than 3 in $\mathbb{Z}_3[x]$.}
+
+			The following is a list of all polynomials of the form
+			\begin{equation*}
+				a_2x^2 + a_1x + a_0 \qquad \qquad a_i \in \mathbb{Z}_3
+			\end{equation*}
+
+			\begin{enumerate}
+				\item [1.] $[0]x^2 + [0]x + [0] = [0]$ \\
+				\item [2.] $[0]x^2 + [0]x + [1] = [1]$ \\
+				\item [3.] $[0]x^2 + [0]x + [2] = [2]$ \\
+				\item [4.] $[0]x^2 + [1]x + [0] = [1]x$ \\
+				\item [5.] $[0]x^2 + [1]x + [1] = [1]x + [1]$ \\
+				\item [6.] $[0]x^2 + [1]x + [2] = [1]x + [2]$ \\
+				\item [7.] $[0]x^2 + [2]x + [0] = [2]x$ \\
+				\item [8.] $[0]x^2 + [2]x + [1] = [2]x + [1]$ \\
+				\item [9.] $[0]x^2 + [2]x + [2] = [2]x + [2]$ \\
+				\item [10.] $[1]x^2 + [0]x + [0] = [1]x^2$ \\
+				\item [11.] $[1]x^2 + [0]x + [1] = [1]x^2 + [1]$ \\
+				\item [12.] $[1]x^2 + [0]x + [2] = [1]x^2 + [2]$ \\
+				\item [13.] $[1]x^2 + [1]x + [0] = [1]x^2 + [1]x$ \\
+				\item [14.] $[1]x^2 + [1]x + [1]$ \\
+				\item [15.] $[1]x^2 + [1]x + [2]$ \\
+				\item [16.] $[1]x^2 + [2]x + [0] = [1]x^2 + [2]x$ \\
+				\item [17.] $[1]x^2 + [2]x + [1]$ \\
+				\item [18.] $[1]x^2 + [2]x + [2]$ \\
+				\item [19.] $[2]x^2 + [0]x + [0] = [2]x^2$ \\
+				\item [20.] $[2]x^2 + [0]x + [1] = [2]x^2 + [1]$ \\
+				\item [21.] $[2]x^2 + [0]x + [2] = [2]x^2 + [2]$ \\
+				\item [22.] $[2]x^2 + [1]x + [0] = [2]x^2 + [1]x$ \\
+				\item [23.] $[2]x^2 + [1]x + [1]$ \\
+				\item [24.] $[2]x^2 + [1]x + [2]$ \\
+				\item [25.] $[2]x^2 + [2]x + [0] = [2]x^2 + [2]x$ \\
+				\item [26.] $[2]x^2 + [2]x + [1]$ \\
+				\item [27.] $[2]x^2 + [2]x + [2]$ \\
+			\end{enumerate}
+
+			\newpage
+
+		% ======================================================================================== %
+		\item [5.a.] \textbf{Find polynomials $q(x)$ and $r(x)$ such that $3x^4 - 2x^3 + 6x^2 - x + 
+							 2 = \\ (x^2 + x + 1)q(x) + r(x)$, and $r(x) = 0$ or deg $r(x) <$ deg 
+							 $g(x)$ in $\mathbb{Q}[x]$.}
+
+			\polylongdiv{3x^4 - 2x^3 + 6x^2 - x + 2}{x^2 + x + 1}
+
+			Therefore 
+			\begin{align*}
+				q(x) & = 3x^2 - 5x + 8 \\
+				r(x) & = -4x - 6 \\
+			\end{align*}
+
+		% ======================================================================================== %
+		\item [5.c.] \textbf{Find polynomials $q(x)$ and $r(x)$ such that $2x^4 + x^2 - x + 1 = \\
+							 (2x - 1)q(x) + r(x)$, and $r(x) = 0$ or deg $r(x) <$ deg $g(x)$ in 
+							 $\mathbb{Z}_5[x]$.}
+
+			\newpage
+
+		% ======================================================================================== %
+		\item [6.c.] \textbf{Are all polynomials of degree $\leq k$, where $k$ is a fixed positive 
+							 integer, a subring of $R[x]$? Justify your answer.}
+
+			No, since polynomials of degree $\leq k$ are not closed under multiplication. Consider
+			$(x + 1)$ and $(x - 1)$ as elements of a subset of $\mathbb{R}[x]$ with $k = 1$. Then 
+			\begin{align*}
+				(x + 1)(x - 1) & = x^2 - 1 \\
+			\end{align*}
+			which is of degree $k = 2$, and hence, polynomials of degree $\leq k$ are not a subring
+			of $\mathbb{R}[x]$.
+
+		% ======================================================================================== %
+		\item [6.d.] \textbf{Are all polynomials in which the odd powers of $x$ have zero 
+							 coefficients a subring of $R[x]$? Justify your answer.}
+
+			Yes. Since subtraction of polynomials is done by coefficient, it is impossible to create
+			a nonzero coefficient in an odd power of $x$, since $0 - 0$ is always $0$. Therefore, 
+			the subring is closed under subtraction. In a like manner, since multiplicaiton of two
+			even numbers will always result in an even number, it is impossible to multiply any two
+			even powers of $x$ and obtain an odd power of $x$. Since our polynomials are multiplied
+			term-by-term, and all of the terms have even powers of $x$, there is no way for the 
+			multiplicaiton of even powered polynomials to result in a polynomial with any odd powers
+			of $x$. Therefore, polynomials in which the odd powers of $x$ have zero coefficients are
+			a subring of $R[x]$.
+
+		% ======================================================================================== %
+		\item [6.e.] \textbf{Are all polynomials in which the even powers of $x$ have zero 
+							 coefficients a subring of $R[x]$? Justify your answer.}
+
+			Yes. By symmetry of the above, since subtraction of polynomials is done by coefficient, 
+			it is impossible to create a nonzero coefficient in an even power of $x$ with only odd 
+			inputs, and the subring is closed under subtraction. In a like manner, it is impossible 
+			to multiply any two odd powers of $x$ and obtain an even power of $x$, and so there is 
+			no way for the multiplicaiton of odd powered polynomials to result in a polynomial with 
+			any even powers of $x$. Therefore, polynomials in which the even powers of $x$ have zero
+			coefficients are a subring of $R[x]$.
+
+		% ======================================================================================== %
+		\item [11.] \textbf{Show that $1 + 3x$ is a unit in $\mathbb{Z}_9$.}
+
+			To show that $1 + 3x$ is a unit in $\mathbb{Z}_9$ we must find some value $k$ such that
+			\begin{equation*}
+				(1 + 3x)k = 1
+			\end{equation*}
+			in $\mathbb{Z}_9$. Consider $(1 - 3x)$:
+			\begin{align*}
+				(1 + 3x)(1 - 3x) & = 1 - 3x + 3x - 9x^2 \\
+								 & = 1 + 0 - 0x^2 \\
+								 & = 1
+			\end{align*}
+			Therefore, $k = 1 - 3x$ and $1 + 3x$ is a unit in $\mathbb{Z}_9$.
+
+		% ======================================================================================== %
+	\end{enumerate}
+\end{document}
+

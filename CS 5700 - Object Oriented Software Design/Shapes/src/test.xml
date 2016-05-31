@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='us-ascii'?><Shapes><Triangle><Point><x>0</x>
+		<y>1</y></Point><Point><x>-1</x><y>0</y></Point><Point><x>1</x><y>0</y></Point></Triangle>
+		<Circle><Radius>10.0</Radius></Circle><Circle><Radius>12.0</Radius></Circle><Ellipse>
+		<SubMajorAxis>3.0</SubMajorAxis><SubMinorAxis>1.5</SubMinorAxis></Ellipse><Square><Point><x>
+		1</x><y>1</y></Point><Point><x>-1</x><y>1</y></Point><Point><x>-1</x><y>-1</y></Point>
+		<Point><x>1</x><y>-1</y></Point></Square><Ellipse><SubMinorAxis>6.0</SubMinorAxis>
+		<SubMajorAxis>7.3</SubMajorAxis></Ellipse><IsoscelesTriangle><Point><x>0</x><y>0</y></Point>
+		<Point><x>1</x><y>5</y></Point><Point><x>2</x><y>0</y></Point></IsoscelesTriangle></Shapes>
+		

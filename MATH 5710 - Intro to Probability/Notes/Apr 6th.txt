@@ -1,0 +1,51 @@
+Homework:
+	If x, y are independent r.v.s and Z = y - x
+	find covariance(X, Z) in terms of Var(X) and Var(Y)
+
+	= Cov(X, Y - X)
+	= Cov(X, Y) - Cov(X, X)									
+	= 0 - Var(X)
+
+	find correlation(X, Z)
+	Cor(X, Z) = Cov(X, Z) / sqrt( Var(X) * Var(Z) )
+		  Var(Z) = Var(Y - X) = Cov(Z, Z)
+		= Var(Y) + Var(-X) 									- independent
+		= Var(Y) + Var(X)
+	= -Var(X) / sqrt( Var(X) * (Var(Y) + Var(X)) )
+	= -Std. Dev(X) / sqrt( Var(X) + Var(Y) )
+
+----------------------------------------------------------------------------------------------------
+
+Moment generating function:
+
+	- Given a RV X, 
+		M_x(t) = E(e^tX)									- Definiton
+
+	- similar to E(Y) with Y = e^tX
+
+
+	Example:
+	Given Poisson(λ)
+
+	Mx(t) = Σ(xi p(xi))				p(k) = λ^k / k! * e^-λ
+		  = e^-λ * Σ(e^tk * λ^k / k!)
+		  = e^-λ * Σ((e^t * λ)^k / k!))
+		  = e
+
+	- If you take the derivative of Mx(t) with respect to t, you get ∫e^tx * x * dx
+	- M'x(0) = E(X)
+	- M''x(0) = E(X^2)
+	- M('n)x(0) = E(X^n)
+
+	- Quick way to tell lots of things about the function
+
+	1. If you know the moment generating function, you know E(x^n)
+	2. If the MGF is finite and well defined at the origin, then the MGF uniquely defines f(x)
+		- MGF is invertible
+		- MGF is the laplace transform of f(x), including the complex values
+	3. Let Y = aX + b, then MGF(Y) = MGF(aX) * e^bt
+	4.
+
+
+	- Centered moments can be found from regular moments and linearity of Expected Values
+

@@ -14,6 +14,18 @@ double ParentTask::getPercentComplete() {
     return totalPercent;
 }
 
+void ParentTask::setTasks(std::vector<std::shared_ptr<Task>> tasks) {
+    m_tasks = tasks;
+    for (auto&& task : m_tasks) {
+        task->setParent(shared_from_this());
+    }
+}
+
+void ParentTask::addTask(std::shared_ptr<Task> task) {
+    task->setParent(shared_from_this());
+    m_tasks.push_back(task);
+}
+
 TreeIterator ParentTask::begin() {
     return TreeIterator(shared_from_this());
 }

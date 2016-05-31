@@ -1,0 +1,79 @@
+// Jonathan Petersen
+// A01236750
+// NoSQL Assignment
+
+----View 1 : Count the randomArrayItems
+{
+   "_id": "_design/countRandomArrayItems",
+   "_rev": "5-a3e3bce7aef890789efc9a02f30acc7d",
+   "language": "javascript",
+   "views": {
+       "countRandomArrayItems": {
+           "map": "function(doc) {\n    for (var i in doc.data) {\n        var person = doc.data[i];\n        emit(person.randomArrayItem, 1);\n    }\n}",
+           "reduce": "function(key, values, rereduce) {\n    return values.length;\n}"
+       }
+   }
+}
+
+----View 2 : Names of people with max age by gender and isActive
+{
+   "_id": "_design/maxAgeByGenderAndActivity",
+   "_rev": "1-898eafc31301c4258c8fc1245f7dada4",
+   "language": "javascript",
+   "views": {
+       "maxAgeByGenderAndActivity": {
+           "map": "function(doc) {\n    if (doc.data) {\n        for (i in doc.data) {\n            var person = doc.data[i];\n            key = [person.gender, person.isActive];\n            value = {age: person.age, name: person.name};\n            emit(key, value);\n        }\n    }\n}",
+           "reduce": "function(keys, values, rereduce) {\n    var maxAge = -Infinity;\n    var list = [];\n\n    for (i in values) {\n        if (values[i].age > maxAge) {\n            maxAge = values[i].age;\n        }\n    }\n\n    for (i in values) {\n        if (values[i].age == maxAge) {\n            list.push(values[i].name);\n        }\n    }\n\n    return {age: maxAge, names: list};\n}"
+       }
+   }
+}
+
+----View 3: A count of the people by tags, that is, count all the people with the given value in the tags array.
+{
+   "_id": "_design/countPeopleByTags",
+   "_rev": "1-d33d426b894cb2a8c5cb56472e429dd9",
+   "language": "javascript",
+   "views": {
+       "countPeopleByTags": {
+           "map": "function(doc) {\n    if (doc.data) {\n        for (i in doc.data) {\n            var person = doc.data[i];\n            for (j in person.tags) {\n                key = person.tags[j];\n                value = 1;\n                emit(key, value);\n            }\n        }\n    }\n}",
+           "reduce": "_count;"
+       }
+   }
+}
+
+----View 4: The average age of people by company.
+{
+   "_id": "_design/averageAgeByCompany",
+   "_rev": "1-34db029339226a5f87c772495fe68f58",
+   "language": "javascript",
+   "views": {
+       "averageAgeByCompany": {
+           "map": "function(doc) {\n    if (doc.data) {\n        for (i in doc.data) {\n            var person = doc.data[i];\n            key = person.company;\n            value = person.age;\n            emit(key, value);\n        }\n    }\n}",
+           "reduce": "function(keys, values, rereduce) {\n    var sum = 0;\n    for (i in values) {\n        sum += values[i];\n    }\n\n    // NOTE: This .toPrecision call is here to match my output exactly to\n    // the provided output.\n    return (sum / values.length).toPrecision(3);\n}"
+       }
+   }
+}
+
+----View 5: The JSON of the latitude, longitude, and address of each employee that has a latitude of more than 80.
+{
+   "_id": "_design/latitudeGreaterThanEighty",
+   "_rev": "1-335f69611ca1c63f362b9112b2fa8bdc",
+   "language": "javascript",
+   "views": {
+       "latitudeGreaterThanEighty": {
+           "map": "function(doc) {\n    if (doc.data) {\n        for (i in doc.data) {\n            var person = doc.data[i];\n            if (person.latitude > 80.0) {\n                key = person.id;\n                value = {\n                    latitude: person.latitude,\n                    longitude: person.longitude,\n                    address: person.address\n                };\n                emit(key, value);\n            }\n        }\n    }\n}"
+       }
+   }
+}
+
+----View 6: Names of people and their frineds that start with the letter "J" if they have at least one friend whose name starts with the letter "J".
+{
+   "_id": "_design/jNameFriends",
+   "_rev": "1-37cc7553b8058c06ae865429d4600d97",
+   "language": "javascript",
+   "views": {
+       "jNameFriends": {
+           "map": "function(doc) {\n    if (doc.data) {\n        for (i in doc.data) {\n            var person = doc.data[i];\n\n            for (j in person.friends) {\n                var friendName = person.friends[j].name;\n\n                if (friendName.charAt(0) == 'J') {\n                    key = person.name;\n                    value = friendName;\n                    emit(key, value);\n                }\n            }\n        }\n    }\n}"
+       }
+   }
+}

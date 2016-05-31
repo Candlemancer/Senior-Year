@@ -1,0 +1,48 @@
+@startuml
+
+hide empty members
+hide empty methods
+
+class SudokuFile {
+	static SudokuPuzzle fromFile()
+	static toFile(SudokuPuzzle)
+}
+SudokuFile -- SudokuPuzzle : "constructs"
+
+class SudokuPuzzle {
+	std::vector<char> symbols
+	std::vector<std::vector<char> puzzle
+	int dimensions
+
+    toString()
+    getPuzzle()
+    getColumnView()
+    getZoneView()
+    getRow()
+    getColumn()
+    getZone()
+    getSymbols()
+}
+
+abstract class Solver {
+	pure virtual solve(SudokuPuzzle)
+	solveWithTimer(SudokuPuzzle)
+}
+Solver -- SudokuPuzzle : "solves"
+
+class BacktrackSolver {
+
+}
+BacktrackSolver --|> Solver
+
+class StochasticSolver {
+
+}
+StochasticSolver --|> Solver
+
+class DancingLinksSolver {
+
+}
+DancingLinksSolver --|> Solver
+
+@enduml

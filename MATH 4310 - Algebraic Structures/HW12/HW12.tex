@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{centernot}
+\usepackage{polynom}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\title{Homework 12 \\ Section 4.4, 4.5}
+\author{Jonathan Petersen \\ A01236750}
+\date{April 11th, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [4.4.6.a.] \textbf{Verify that every element of $\mathbb{Z}_3$ is a root of $x^3 - x
+								 \in \mathbb{Z}_3[x]$.}
+		
+			\begin{align*}
+				[0]_3: \qquad [0]^3 - [0] & = [0] - [0] = [0] \\
+				[1]_3: \qquad [1]^3 - [1] & = [1] - [1] = [0] \\
+				[0]_3: \qquad [2]^3 - [2] & = [6] - [2] = [0] \\
+			\end{align*}
+
+		% ======================================================================================== %
+		\item [4.4.6.b.] \textbf{Verify that every element of $\mathbb{Z}_5$ is a root of $x^5 - x
+								 \in \mathbb{Z}_5[x]$.}
+
+			\begin{align*}
+				[0]_5: \qquad [0]^5 - [0] & = [0] - [0] = [0] \\
+				[1]_5: \qquad [1]^5 - [1] & = [1] - [1] = [0] \\
+				[2]_5: \qquad [2]^5 - [2] & = [32] - [2] = [0] \\
+				[3]_5: \qquad [3]^5 - [3] & = [243] - [3] = [0] \\
+				[4]_5: \qquad [4]^5 - [4] & = [1024] - [4] = [0] \\
+			\end{align*}
+
+		% ======================================================================================== %
+		\item [4.4.6.c.] \textbf{Make a conjecture about roots of $x^p - x \in \mathbb{Z}_p[x]$.}
+
+			$x^p - x \in \mathbb{Z}_p[x]$ has a root at every $z \in \mathbb{Z}_p$.
+
+		% ======================================================================================== %
+		\item [4.4.10.] \textbf{Find a prime $p > 5$ such that $x^2 + 1$ is reducible in 
+								$\mathbb{Z}_p[x]$.}
+
+			\begin{align*}
+				x^2 + 1 & = (x - 5)(x - 8) \qquad \text{in }\mathbb{Z}_{13}[x]
+			\end{align*}
+
+		% ======================================================================================== %
+		\item [4.4.17.] \textbf{Find a polynomial of degree $2$ in $\mathbb{Z}_6[x]$ that has four
+								roots in $\mathbb{Z}_6$. Does this contradict Corollary 4.17?}
+
+			\dots
+			(Incomplete, but probably involves the zero divisors of $\mathbb{Z}_6$)
+
+			However, regardless of the polynomial found, it does not contradict Corollary 4.17, as 
+			Corollary 4.17 only holds when talking about fields, and $\mathbb{Z}_6[x]$ is not a 
+			field, since $6 = 2 * 3$ is not prime.			
+
+		% ======================================================================================== %
+		\item [4.5.1.c.] \textbf{Use the Rational Root Test to write $3x^5 + 2x^4 - 7x^3 + 2x^2$ as
+								 a product of irreducible polynomials in $\mathbb{Q}[x]$.}
+
+			Since $a_0 = 0$ in this polynomial, the Rational Root Test is ill-defined. However, it
+			is clear that we can factor out the polynomial $x^2$ from the given polynomial to form
+			\begin{align*}
+				3x^5 + 2x^4 - 7x^3 + 2x^2 & = (x^2)(3x^3 + 2x^2 - 7x + 2)
+			\end{align*}
+
+			From here, we may apply the Rational Root Test on $3x^3 + 2x^2 - 7x + 2$ to find futher
+			factors.
+
+		% ======================================================================================== %
+		\item [4.5.1.f.] \textbf{Use the Rational Root Test to write $6x^4 - 31x^3 + 25x^2 + 33x 
+								 + 7$ as a product of irreducible polynomials in $\mathbb{Q}[x]$.}
+
+
+
+
+		% ======================================================================================== %
+		\item [4.5.5.a.] \textbf{Use Einstein's Criterion to show that $x^5 - 4x + 22$ is 
+								 irreducible in $\mathbb{Q}[x]$.}
+
+			Let $p = 2$. Then $p$ divides all of the coefficients of the given polynomial except for
+			the leading coefficient. Futher, $p^2 = 4$, which does not divide the constant 
+			coefficient. Therefore, by Einstein's Criterion, the polynomial is irreducible in 
+			$\mathbb{Q}[x]$.
+
+		% ======================================================================================== %
+		\item [4.5.5.b.] \textbf{Use Einstein's Criterion to show that $10 - 15x + 25x^2 - 7x^4$ is 
+								 irreducible in $\mathbb{Q}[x]$.}
+
+			Let $p = 5$. Then $p$ divides all of the coefficients of the given polynomial except for
+			the leading coefficient. Futher, $p^2 = 25$, which does not divide the constant 
+			coefficient. Therefore, by Einstein's Criterion, the polynomial is irreducible in 
+			$\mathbb{Q}[x]$.
+
+		% ======================================================================================== %
+		\item [4.5.5.c.] \textbf{Use Einstein's Criterion to show that $5x^11 - 6x^4 + 12x^3 + 36x 
+								 - 6$ is irreducible in $\mathbb{Q}[x]$.}
+
+			Let $p = 6$. Then $p$ divides all of the coefficients of the given polynomial except for
+			the leading coefficient. Futher, $p^2 = 36$, which does not divide the constant 
+			coefficient. Therefore, by Einstein's Criterion, the polynomial is irreducible in 
+			$\mathbb{Q}[x]$.
+
+		% ======================================================================================== %
+		\item [4.5.6.] \textbf{Show that there are infinitely many $k$ such that $x^9 + 12x^5 
+							   - 21x + k$ is irreducible in $\mathbb{Q}[x]$.}
+
+			Observe that the only prime factor that $12$ and $21$ share is $3$. Futhermore, $3$ does
+			not divide $1$, the leading coefficient. Therefore, by Einstein's Criterion, our 
+			polynomial is irreducible for any value of $k$ when $3 \mid k$ and $3^2 = 9$ does not 
+			divide $k$. Since the set of all multiples of three that are not multiples of nine is
+			infinite, there must be an infinite number of values of $k$ that make our polynomial 
+			irreducible in $\mathbb{Q}[x]$.
+
+		% ======================================================================================== %
+	\end{enumerate}
+\end{document}
+

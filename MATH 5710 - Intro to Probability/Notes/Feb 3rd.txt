@@ -1,0 +1,37 @@
+Feb 3rd:
+
+Binomial Distribution: # of success in n trials
+	(nCk)(p^k)(1-p)^n-k 
+	
+Geometric Distribution: # of trials until the first success
+	P(X = k) = p(1-p)^k-1
+
+Negative Binomial Distribution: # of trials until r successes
+	P(X = k) = (k-1)C(r-1) p^r(1-p)^k-r
+
+====================================================================================================
+Feb 8th:
+	
+Poisson Distribution: Generalization of the binomal distribution
+P(X = k) = λ^k / k  *  e ^ -λ
+np = λ
+
+====================================================================================================
+
+Fact: Derivative of CDF is PDF.
+
+Univariate Jacobean Rule:
+	Given X, f(x), F(x)
+	let Y = g(x) 			where g(x) is differentiable and strictly monotonic (get inverse)
+	Then we can calculate f(y), F(y).
+
+	f_y(y) = f_x(g^-1(y)) * d/dy g^-1(y)
+
+	F_y(y) = P(Y ≤ y) 
+		   = P(g(x) ≤ y)
+		   = P(X ≤ g^-1(y))
+		   = F_x(g-1(y))
+
+
+	∫Fy(y) = fy(y)
+	fy(y) = d/dy Fx(g-1(y)) = fx(g-1(y)) * | d/dy g-1(y) |

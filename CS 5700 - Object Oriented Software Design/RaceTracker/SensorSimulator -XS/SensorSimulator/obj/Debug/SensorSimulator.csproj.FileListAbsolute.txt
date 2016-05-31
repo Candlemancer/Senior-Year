@@ -1,0 +1,14 @@
+Y:\tmp\SensorSimulator\SensorSimulator\bin\Debug\SensorSimulator.exe.config
+Y:\tmp\SensorSimulator\SensorSimulator\bin\Debug\SensorSimulator.exe
+Y:\tmp\SensorSimulator\SensorSimulator\bin\Debug\SensorSimulator.pdb
+Y:\tmp\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.Properties.Resources.resources
+Y:\tmp\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.SimulationForm.resources
+Y:\tmp\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.csproj.GenerateResource.Cache
+Y:\tmp\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.exe
+Y:\tmp\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.pdb
+Y:\tmp\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.csprojResolveAssemblyReference.cache
+Y:\tmp\SensorSimulator\SensorSimulator\bin\Debug\Messages.dll
+Y:\tmp\SensorSimulator\SensorSimulator\bin\Debug\Messages.pdb
+Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator\SensorSimulator\bin\Debug\SensorSimulator.exe.config
+Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.exe
+Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator\SensorSimulator\obj\Debug\SensorSimulator.pdb

@@ -1,0 +1,237 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{centernot}
+\title{Homework 8 \\ Section 3.3}
+\author{Jonathan Petersen \\ A01236750}
+\date{March 16th, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [11.b.] \textbf{State one reason why $g:E \rightarrow E$ where $E$ is the ring of
+							  even integers and $g(x) = 3x$ is not a homomorphism.}
+
+			$g$ does not preserve multiplication on $E$. For example,
+			\begin{equation*}
+				2 * 4 = 8 \centernot \implies 6 * 12 = 18
+			\end{equation*}
+
+		% ======================================================================================== %
+		\item [11.c.] \textbf{State one reason why $h:\mathbb{R} \rightarrow \mathbb{R}$ and 
+							  $h(x) = 2^x$ is not a \linebreak homomorphism.}
+
+			$h$ does not preserve the identity. The identity of $\mathbb{R}$ is 1, but $h(1) = 2$.
+			By exensions, this implies that $h$ does not preserve multiplication, as the identity
+			is the only element of a ring such that $a * i = a$ for some $a$ in the ring and $i$ as
+			the ring's identity. 
+
+		% ======================================================================================== %
+		\item [12.c.] \textbf{Is $g:\mathbb{Q} \rightarrow \mathbb{Q}$, $g(x) = \frac{1}{x^2 + 1}$ 
+							  a homomorphism?}
+
+			No. $g$ does not preserve the identity of $\mathbb{Q}$. The identity of $Q$ is 
+			$i = \frac{1}{1}$, but $g(i) = \frac{1}{2}$. 
+
+		% ======================================================================================== %
+		\item [12.d.] \textbf{Is $h:\mathbb{R} \rightarrow M(\mathbb{R})$, $h(a) = \begin{bmatrix}
+							  -a & 0 \\ a & 0 \end{bmatrix}$ a homomorphism?}
+
+			No. Once more, $h$ does not preserve the identity. The identity of $M(\mathbb{R})$ is 
+			$\begin{bmatrix}
+				1 & 0 \\
+				0 & 1 \\
+			\end{bmatrix}$
+			and the identity of $\mathbb{R}$ is 1, but $h(1) = 
+			\begin{bmatrix}
+				-1 & 0 \\
+				 1 & 0 \\
+			\end{bmatrix}$.
+
+		% ======================================================================================== %
+		\item [13.a.] \textbf{Prove that $f:R \times S \rightarrow R$ given by $f(r, s) = r$ is an 
+							  epimorphism.}
+
+			To prove that $f$ is an epimorphism, we must prove that $f$ is both surjective and a
+			homomorphism. As follows:
+
+			\underline{Claim: $f$ is surjective}
+
+			Let $b$ be an arbitrary element of the range space $R$. To show that $f$ is surjective, 
+			we must find some $a$ in $R \times S$ such that $f(a, s) = b$ for all $b$. But this is
+			trivial, since we can simply let $a = b$, and we see that $f(b, s) = b$ for any value 
+			of $b$ and $s$. 
+
+			\underline{Claim: $f$ is a homomorphism}
+
+			To prove that $f$ is a homomorphism, we must show that it preserves addition and 
+			multiplication. Observe
+			\begin{align*}
+				f((r_1, s_1) + (r_2, s_2)) & = f((r_1 + r_2, s_1 + s_2)) \\
+										   & = r_1 + r_2 \\
+										   & = f((r_1, s_1)) + f((r_2, s_2)) \\
+			\end{align*}
+			\begin{align*}
+				f((r_1, s_1) * (r_2, s_2)) & = f((r_1r_2, s_1s_2)) \\
+										   & = r_1r_2 \\
+										   & = f((r_1, s_1)) * f((r_2, s_2)) \\
+			\end{align*}
+
+			Therefore, $f$ is an epimorphism $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [13.c.] \textbf{If both $R$ and $S$ are nonzero rings, prove that the homomorphisms
+							  $f(r, s) = r$ and $g(r, s) = s$ are not injective.}
+
+			Let $a, b$ be arbitrary nonzero elements in $R$ and $S$ respectively. It is clear that 
+			$f(a, 0_S) = a$ and $f(a, b) = a$, but that $0_S \neq b$. Therefore, $f$ cannot be 
+			injective. By a similar logic, $g(0_R, b) = b$ and $g(a, b) = b$, but $0_R \neq a$, so
+			$g$ likewise cannot be injective $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [25.] \textbf{Let $L$ be the ring of all matrices in $M(\mathbb{Z})$ of the form 
+							$\begin{bmatrix}
+								a & 0 \\
+								b & c \\
+							\end{bmatrix}$.
+							Show that the function $f:L \rightarrow \mathbb{Z}$ given by $f\left({
+							\begin{bmatrix}
+								a & 0 \\
+								b & c \\
+							\end{bmatrix}}\right) = a$ is an epimorphism but not an isomorphism.}
+
+			To prove that $f$ is an epimorphism but not an isomorphism, we must prove that 
+			\begin{enumerate}
+				\item $f$ is a homomorphism.
+				\item $f$ is surjective.
+				\item $f$ is not injective.
+			\end{enumerate}
+
+			\underline{Claim: $f$ is a homomorphism}
+
+			Again, we must show that $f$ preserves addition and multiplication to show that is a 
+			ring homomorphism.
+
+			\begin{align*}
+				f\left({\begin{bmatrix}
+					a_1 & 0 \\
+					b_1 & c_1 \\
+				\end{bmatrix} + \begin{bmatrix}
+					a_2 & 0 \\
+					b_2 & c_2 \\
+				\end{bmatrix}}\right) & = f\left({\begin{bmatrix}
+					a_1 + a_2 & 0 + 0 \\
+					b_1 + b_2 & c_1 + c_2 \\
+				\end{bmatrix}}\right) \\
+					& = a_1 + a_2 \\
+					& = f\left({\begin{bmatrix}
+						a_1 & 0 \\
+						b_1 & c_1 \\
+					\end{bmatrix}}\right) + f\left({\begin{bmatrix}
+						a_2 & 0 \\
+						b_2 & c_2 \\
+					\end{bmatrix}}\right) \\
+			\end{align*}
+			\begin{align*}
+				f\left({\begin{bmatrix}
+					a_1 & 0 \\
+					b_1 & c_1 \\
+				\end{bmatrix} * \begin{bmatrix}
+					a_2 & 0 \\
+					b_2 & c_2 \\
+				\end{bmatrix}}\right) & = f\left({\begin{bmatrix}
+					a_1a_2 + 0b_2 & 0a_1 + 0c_2 \\
+					b_1a_2 + c_1b_2 & 0b_1 + c_1c_2 \\
+				\end{bmatrix}}\right) \\
+					& = f\left({\begin{bmatrix}
+						a_1a_2 & 0 \\
+						b_1a_2 + c_1b_2 & c_1c_2 \\
+					\end{bmatrix}}\right) \\
+					& = a_1a_2 \\
+					& = f\left({\begin{bmatrix}
+						a_1 & 0 \\
+						b_1 & c_1 \\
+					\end{bmatrix}}\right) * f\left({\begin{bmatrix}
+						a_2 & 0 \\
+						b_2 & c_2 \\
+					\end{bmatrix}}\right) \\
+			\end{align*}
+			Therefore, $f$ is a ring homomorphism.
+
+			\underline{Claim: $f$ is surjective}
+
+			Let $x$ be an arbitrary element of $\mathbb{Z}$, and $l$ be an arbitrary element of $L$.
+			We can see that for any $x$, $f(l) = x$ if $a_l = x$. Therefore, $f$ is surjective.
+
+			\underline{Claim: $f$ is not injective}
+
+			Using the above setup, we can see that there exist many ways for $f(l) = x$, one for 
+			each distinct value of $b_l$ and $c_l$. One such example are the matrices
+			\begin{equation*}
+				l_1 = \begin{bmatrix} x & 0 \\ 1 & 1 \\ \end{bmatrix}
+			\end{equation*}
+			and 
+			\begin{equation*}
+				l_2 = \begin{bmatrix} x & 0 \\ 2 & 2 \\ \end{bmatrix}
+			\end{equation*}
+			which are clearly distinct but have the same mapping. Therefore, $f$ is not injective.
+
+			Thusly, it is clear that $f$ is an epimorphism but not an isomorphism $_{\blacksquare}$
+
+	\newpage
+
+		% ======================================================================================== %
+		\item [31.] \textbf{Let $f:R \rightarrow S$ be a ring homomorphism and $T$ be a subring of 
+							$S$. Let $P = \lbrace r \in R | f(r) \in T \rbrace$. Prove that $P$ is
+							a subring of $R$.}
+
+			To prove that $P$ is a subring of $R$, we must show that $P$ is a subset of $R$ and that
+			$P$ is closed under subtraction and multiplication. That is, we must show that
+
+			\begin{enumerate}
+				\item $P \subseteq R$
+				\item $p_1 - p_2 \in P$
+				\item $p_1 * p_2 \in P$
+			\end{enumerate} 
+
+			By definition, every element of $P$ is an element of $R$, so the first condition is 
+			trivial. Let us examine the second condition. By the definition of $P$, $p = f(r)$ for
+			a given value $p$, and $f(r)$ is in $T$, a subring of $S$. Because $f$ is a homomorphism
+			\begin{align*}
+				p_1 - p_2 & = f(r_1) - f(r_2)\\
+						  & = f(r_1 - r_2) \\
+			\end{align*}
+
+			We can see from the definition of $P$ that $p$ is surjunctive, or that for every 
+			element $t \in T$, there must be some $p$ such that $p = f(r) = t$. Since $T$ is a 
+			subring of $S$, we know it is closed under subtraction, and therefore
+			\begin{align*}
+				f(r_1) - f(r_2) & = f(r_1 - r_2) \\
+			\end{align*}
+			implies that $f(r_1 - r_2) \in T$. 
+
+			Combining these two facts, we can see that
+			\begin{align*}
+				p_1 - p_2 & = f(r_1 - r_2) \qquad f(r_1 - r_2) \in T \\
+					      & = t \\
+					  p_3 & = t \\
+			\end{align*}
+			or rather, that $P$ is closed under subtraction.
+
+			Using similar proofs, we see that 
+			\begin{align*}
+				p_1 * p_2 & = f(r_1) * f_(r_2) \\
+						  & = f(r_1 * r_2) \\
+						  & = t_3 \\
+					  p_3 & = t_3 \\
+			\end{align*}
+			or that $P$ is closed under multiplication. Therefore, $P$ has all of the necessary and 
+			sufficent qualities to be a subring of $R$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+	\end{enumerate}
+\end{document}
+

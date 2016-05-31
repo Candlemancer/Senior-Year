@@ -1,0 +1,12 @@
+Jonathan Petersen
+
+Section 1.1
+ 5, 8, 9, 10
+
+Notes:
+- what are divisors
+- gcd
+- linear combination of gcd, relatively prime
+- Let a, b be integers, then d is the gcd of a, b 
+	if d | a, d | b, 
+	and if c | a, c | b, then c | d

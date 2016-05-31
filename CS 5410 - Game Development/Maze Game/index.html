@@ -1,0 +1,52 @@
+<!-- Jonathan Petersen -->
+<!-- A01236750 -->
+<!-- Maze Game Assignment -->
+<!-- Landing Page -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maze Game by Jonathan Petersen</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="Reference.js" defer></script>
+	<script type="text/javascript" src="MazeSolver.js" defer></script>
+	<script type="text/javascript" src="MazeFactory.js" defer></script>
+	<script type="text/javascript" src="GameLoop.js" defer></script>
+</head>
+<body onload="MazeGame()">
+<div id="gamePanel">
+	<div id="scorePanel">
+		<div id="time">
+			<span>Time: </span>
+			<span id="playerTime">00:00:000</span>
+		</div>
+		<div id="score">
+			<span>Score: </span>
+			<span id="playerScore">00000</span>			
+		</div>
+	</div>
+	<br>
+	<canvas id="gameCanvas" width="500" height="500"></canvas>
+</div>
+<div id="controlPanel">
+	<div id="controls">
+		<h3>--- Maze Game ---</h3>
+		<select onchange="changeMazeSize(this)">
+			<option value="5">5 × 5</option>
+			<option value="10">10 × 10</option>
+			<option value="15">15 × 15</option>
+			<option value="20">20 × 20</option>
+		</select> <br>
+		<button onclick="MazeGame()">Start New Maze</button> <br>
+		<button onclick="alert('Game Developed by Jonathan Petersen\nCreated for CS 5410')">Credits</button> <br>
+		<button onclick="alert(highScores);">High Scores</button> <br>
+		<br>
+	</div>
+	<div id="highs">
+		<span>High Scores:</span>
+		<p id="playerHighScores"></p>
+	</div>
+</div>
+</body>
+</html>

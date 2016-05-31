@@ -1,0 +1,95 @@
+
+
+Let R be a ring. Then
+	f:R[x] -> R
+
+Where R[x] is a polynomial with Ground Ring R, or in other words:
+	f(a_n * x^n + ... + a2 * x^2 + a1 * x + a0) -> a0
+	- This is a ring homomorphism
+
+----------------------------------------------------------------------------------------------------
+
+Let R, S be rings, with f as a ring homomorphism. Define 
+	F: R[x] -> S[x]
+Then plug everything into f, and F is a ring homomorphism called the 								* Know for test.
+	Change of Coefficients Homomorphism.
+
+----------------------------------------------------------------------------------------------------
+The Dreaded Division Algorithm:
+
+	- n = aq + b																		   0 ≤ b < q
+	- p(x) = a(x)q(x) + r(x)  							   Where the degree of r(x) < degree of q(x)
+
+Division Algorithm leads to gcd algorithm
+Division Algorithm leads to factorization
+
+Therfore, any polynomial can be factored into products of primes
+
+Warning! 
+	Suppose we are trying to factor in a ring:
+	a = bc
+	Then
+	a = b(u * u-1)c
+	  = bu * u-1(c)
+
+	Ex. 6 = 2 * 3 = -2 * -3
+
+----------------------------------------------------------------------------------------------------
+
+1. Zero Divisors: 		ab = 0, 	a != 0, b != 0
+2. Unit:				ab = 1 = ba
+3. Associates: 			a = bu 		u is a unit.
+	Two elements, a, b in R are called associates if a = bu and u is a unit.
+
+	Ex. Z10
+		ZD: 2, 4, 5, 6, 8
+		U: 1, 3, 7, 9
+		A: {2, 6}, {4, 6}
+			2 * 3 = 6, associates
+			5 is not an associate of 8
+			4 * 9 = 6
+
+	Ex. 3x3 Matrices
+		A = BP
+		If A, B are associates, then A, B must have same rank.
+
+When we talk about the factorization of polynomials, we can say that the factorization is unique
+up to associates.
+
+----------------------------------------------------------------------------------------------------
+
+Ex. Pg 99, #5.a
+	Find the GCD of x4 - x3 - x2 + 1 and x3 - 1 		in Q[x]
+
+		(x - 1)(x2 + x + 1)
+
+		x3(x - 1) - (x2 - 1)
+		x2(x - 1) - (x - 1)(x + 1)
+		(x - 1)(x2 - (x + 1))
+		(x - 1)(x2 - x - 1)
+
+		p(x) = a(x)b(x) + r(x)
+
+				  x   -1
+		x3 - 1 | x4 - x3 - x2 + 0x + 1
+				 x4             -x
+				  0 - x3 - x2 +  x + 1
+				    - x3		   + 1
+				         - x2 +  x + 0
+
+		= (x3 - 1)(x - 1) + (-x2 + x)
+		     a       b			 r   
+
+
+		     	  -x    -1
+		-x2 + x | x3 + 0x2 + 0x - 1
+				  x3 -  x2
+				  		x2		- 1
+				  	    x2 -  x
+				  	    	  x - 1
+		=> x - 1 is the gcd
+
+
+	(x - 1)   = (x3 - 1) - (-x - 1)(-x2 + x)
+	(-x2 + x) = (x4 - x3 - x2 + 1) - (x3 - 1)(x - 1)
+

@@ -1,0 +1,81 @@
+Let R be a ring, S, T \in R be subrings. 
+Is S AND T a subring?																				Very Important
+Is S OR T a subring?
+
+Subring: Subset of original ring that is a ring unto itself using the same properties of the parent 
+	ring.
+
+Case S AND T:
+	Since S is a subring, S is closed under subtraction and multiplication.
+	Since T is a subring, T is closed under subtraction and multiplicaiton.
+	Let a, b \in S AND T.
+	Is a - b in S AND T?
+	Since a, b \in S AND T, a, b \in S
+	Since S is closed under subtraction, a - b \in S.
+	By a similar property, a, b \in T, and a - b \in T.
+	a - b \in S and a - b \in T => a - b \in S AND T
+	S AND T is closed under subtraction.
+
+	Is a * b in S AND T?
+	a * b \in S AND T => a * b \in S
+	a * b \in S AND T => a * b \in T
+	a * b \in S AND a * b \in T => a * b \in S AND T.
+
+Case S OR T:
+	No. 
+	Recall that Z is a ring, any multiple of 3 is a subring, any multiple of 2 is a subring.
+	Let S = 3k for some k in Z
+	let T = 2k for some k in Z
+	then S OR T
+	= 0, 2, 3, 4, 6, ...
+	2 + 3 = 5, not in S OR T
+	Therefore S OR T is not a subring.
+
+====================================================================================================
+
+The definitions for Zero Divisors and Units are the same in any ring
+
+	Zero Divisors: 			a * b = 0 iff a != 0, b != 0
+	Unit :					a * b = 1 for some a, b in the ring, b = a-1
+							- if a is a unit, b is a unit, then ab is a unit.
+								a b b-1 a-1 = 1
+
+							* Zero divisors and units are disjoint
+
+	Integral Domain: 		1. Commutative Ring
+							2. Identity
+							3. No Zero Divisors
+
+	No Zero divisors implies that 
+			if a != 0, 
+			ab = ac
+			ab - ac = 0
+			a(b - c) = 0
+			b - c = 0 			<- Integral domain property.
+			b = c
+			ab = ac => b = c
+	A ring is an integral domain iff the cancellation law applies.
+
+	Integral Domains : Z, R[x], Q[x], any field.
+
+	Units in Z: {-1, 1}
+	Units in Q[x]: {All Degree 0 polynomials (constants)}
+	Units in M(R): {All invertible matrices}
+
+====================================================================================================
+
+Let R, S be rings.
+R = {a, b, c}
+S = {r, s, t}
+
+Let 
+	a = r
+	b = s
+	c = t
+	if ab = c then rs = t => Rings are the same
+	b^2 = a, s^2 = s => Rings are not the same
+
+Two rings are the same if their addition and multiplicaiton tables can be put into one-to-one 
+correspondence.
+
+====================================================================================================

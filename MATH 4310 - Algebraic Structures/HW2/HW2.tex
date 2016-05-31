@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\title{Homework 2 \\ Section 1.2}
+\author{Jonathan Petersen \\ A01236750}
+\date{January 24th, 2016}
+\begin{document}
+	\maketitle
+	\hrule
+	\begin{enumerate}
+		% ==========================================================================================
+		\item[3.]	\textbf{Prove that if $a | b$ and $b | c$, then $a | c$.}
+
+			Since $a | b$, we know that
+			\begin{equation*}
+				b = am \qquad m \in \mathbb{Z}
+			\end{equation*}
+
+			By a similar argument,
+			\begin{equation*}
+				c = bn \qquad n \in \mathbb{Z}
+			\end{equation*}
+
+			Substituting $b = am$ in this equation, we find that
+			\begin{align*}
+				c &= amn \\
+				c &= ak \qquad k = mn
+			\end{align*}
+
+			Since $m, n \in \mathbb{Z}$, and since multiplication is closed over $\mathbb{Z}$,
+			$k \in \mathbb{Z}$. Therefore it must be that, $a | c$ $_{\blacksquare}$
+
+		% ==========================================================================================
+		\item[8.]	\textbf{Prove that $gcd(n, n+1) = 1$ for every integer $n$.}
+
+			Let $x$ be the GCD of $n, n+1$. By the Linear Combination property, we know that $x$ 
+			can be written as:
+
+			\begin{align*}
+				x &= nu + (n+1)v \qquad u, v \in \mathbb{Z} \\
+				x &= nu + nv + v
+			\end{align*}
+
+			If we then let $u = -1$ and $v = 1$, we find that:
+
+			\begin{align*}
+				x &= -n + n + 1 \\
+				x &= 1 \\
+				1 &= nu + (n+1)v
+			\end{align*}
+
+			Or, in other words, that $gcd(n, n+1) | 1$. As discussed in class, this shows that the 
+			GCD of $n, n+1$ must be 1, as 1 is the only divisor of 1 $_{\blacksquare}$
+
+
+		% ==========================================================================================
+		\item[11.]	\textbf{If $n \in \mathbb{Z}$, what are the possible values of} 
+		\begin{enumerate}
+			\item[a.]	$gcd(n, n+2)$ \\
+				1, 2
+			\item[b.]	$gcd(n, n+6)$ \\
+				1, 2, 3
+		\end{enumerate}
+
+		% ==========================================================================================
+		\item[14.]	\textbf{Find the smallest positive integer in the given set.}
+		\begin{enumerate}
+			\item[a.]	$\lbrace 6u + 15v \vert u, v \in \mathbb{Z} \rbrace$. 
+
+				Since $3 | 6$ and $3 | 15$, we see that
+				
+				\begin{equation*}
+					6u + 15v = 3(2u + 5v)
+				\end{equation*}
+
+				Furthermore, to find the smallest positve integer in the set it is obvous that we 
+				must make $2u + 5v$ as small as possible, without becoming zero. The smallest 
+				possible positive integer would be $2u + 5v = 1$, and indeed if $u = -7, v = 3$ we
+				find that
+
+				\begin{align*}
+					3(2u + 5v) &= 3(2(-7) + 5(3)) \\
+							   &= 3(-14 + 15) \\
+							   &= 3(1) 
+				\end{align*}
+
+				Which must be the smallest value as shown above.
+
+			\item[b.]	$\lbrace 12r + 17s \vert r, s \in \mathbb{Z} \rbrace$. 
+
+				By similar reasoning, if we can find $r, s$ such that $12r + 17s = 1$, it must also 
+				be the smallest positive integer. And indeed, if we set $r = -7, s = 5$ we see that
+
+				\begin{align*}
+					12r + 17s &= 12(-7) + 17(5) \\
+							  &= -84 + 85 \\
+							  &= 1
+				\end{align*}
+
+				Which must mean that 1 is the smallest positive integer in the set.
+		\end{enumerate}
+
+		% ==========================================================================================
+		\item[22.]	\textbf{If $gcd(a, c) = 1$ and $gcd(b, c) = 1$, prove that $gcd(ab, c) = 1$.}
+
+		Given that $gcd(a, c) = 1$ and $gcd(b, c) = 1$, we know by the Linear Combination property
+		that 
+
+		\begin{align*}
+			1 &= au_1 + cv_1 \\
+			1 &= bu_2 + cv_2
+		\end{align*}
+
+		and it then follows that
+
+		\begin{equation*}
+			a = abu_2 + acv_2
+		\end{equation*}
+
+		which, by substitution, means that
+
+		\begin{align*}
+			1 &= (abu_2 + acv_2) + cv_1 \\
+			  &= abu_2 + c(av_2 + v_1) \\
+			  &= abu_3 + cv_3 \qquad \qquad u_3 = u_2, v_3 = av_2 + v_1
+		\end{align*}
+
+		By the converse of the Linear Combination property in the special case when considering a 
+		GCD of 1, this shows that if $gcd(a, c) = 1$ and $gcd(b, c) = 1$, then $gcd(ab, c) = 1$
+		$_{\blacksquare}$
+
+		% ==========================================================================================
+		\item[20.] 	Extra Credit: Prove that $gcd(a, b) = gcd(a, b + at)$ for every $t \in 
+					\mathbb{Z}$.
+
+	\end{enumerate}
+\end{document}
+

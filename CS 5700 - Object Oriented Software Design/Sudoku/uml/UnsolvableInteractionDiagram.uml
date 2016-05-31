@@ -1,0 +1,15 @@
+@startuml
+
+title Solving an Unsolvable Sudoku
+
+Main -> SudokuFile : Create SudokuPuzzle using fromFile()
+create SudokuPuzzle
+SudokuFile -> SudokuPuzzle : Construct SudokuPuzzle
+Main <-- SudokuPuzzle
+
+create Solver
+Main -> Solver : Solve this puzzle with solve()
+Solver -> Solver : Check if the returned Puzzle is the same as the initial input
+Main <-- Solver : Return original puzzle, print failure message
+
+@enduml

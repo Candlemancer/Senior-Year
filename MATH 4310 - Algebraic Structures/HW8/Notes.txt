@@ -1,0 +1,238 @@
+Isomorphisms:
+----------------------------------------------------------------------------------------------------
+
+Rough Idea:																							Know for Test!
+	Two rings R and S are isomorphic if they have all the same algebraic properties.
+
+Examples of properties:
+	- R is commutative
+	- R has a multiplicative identity
+	- R is an integral domain
+	- R has five units
+
+Remark:
+	There will be a Cartesian Product on the test, never integral domains, have zero divisors		Know for Test	
+
+Definition:
+	Homomorphism (pg. 75): 
+		Let f: R -> S 
+		Let f be a function mapping R to S. f is a homomorphism if it preserves addition and 
+		multiplication.
+		- f(a +_R b) = f(a) +_S f(b)		a, b in R
+		- f(a *_R b) = f(a) *_S f(b)		a, b in R
+
+		Ex:
+		f: Z -> Z 		f(n) = 2n
+		0 -> 0
+		1 -> 2
+		5 -> 10
+		f(a + b) = 2(a + b) = 2a + 2b
+		f(a) + f(b) = 2a + 2b
+			Addition is preserved!
+		f(ab) = 2(ab) = 2ab
+		f(a) * f(b) = 2a * 2b = 4ab
+			Multiplication is not!
+		Domain: All integers
+		Range: All integers
+		Image: All even integers
+
+		Ex:
+		f: Z -> Z 		f(n) = n + 1
+		3 -> 4
+		4 -> 5
+		Domain: Z
+		Range: Z
+		Image: Z
+		a + b -> (a + b) + 1 
+		a -> a + 1
+		b -> b + 1
+		f(a) + f(b) = a + b + 2
+		ab -> ab + 1
+		f(a)f(b) = (a + 1)(b + 1) 
+
+		Ex:
+		F: C -> C 		f(a + ib) = a - ib
+		0 + 0i -> 0 - 0i
+		1 + 0i -> 1 - 0i
+		u = a + ib
+		v = c + id
+		f(u + v) = f((a + c) + (b + d)i) = a + c - (b + d)i
+		f(u) + f(v) = a - bi + c - di = a + c - (b + d)i
+			Addition is preserved!
+		f(uv) = ac + adi + cbi - bd
+			  = (ac - bd) + (ad + cb)i
+			  = (ac - bd) - (ad + cb)i
+			Multiplication is preserved
+		Complex conjucation (f) is a ring homomorphism.
+		Domain: C
+		Range: C
+		Image: C
+
+	Remark:
+		Domain: Everything mapped from R
+		Range: 	Everything that could be mapped to in S 
+		Image:  Everything that actually is mapped to in S
+
+Theorem 3.10:
+	If f is a homomorphism then the following must be true:
+		f(0R) = 0S
+		f(1R) = 1S
+
+Review:
+	Given f: R -> S
+
+	One-to-one: f maps every distinct element of R to a distinct element of S
+	f(a) = f(b) => a = b
+	(Only domain matters)
+	
+	Onto: Every element of S is mapped to from an element of R
+	For every x in S, there is an a in R such that f(a) = x
+	(Only range matters)
+
+Definition:
+	Isomorphism:
+		Let R and S be rings. A mapping f from R to S is an isomorphism if 
+			1. f is a homomorphism
+			2. f is one-to-one
+			3. f is onto
+
+	Shortcuts for one-to-one and onto:
+		Suppose R and S are finite rings and the cardinality(#) of R = #(S). 
+		If f is one-to-one then f is onto and vice versa. (f is a bijection)
+		(Sometimes called the pigeonhole principle)
+
+		In linear algebra the same thing happens. 
+		Given ɸ: V -> W
+		if dim(V) = dim(W)
+		then ɸ is one-to-one => ɸ is onto.
+
+Examples of algebraic properties:
+	Let R, S be rings. Suppose f: R -> S is a ring isomorphism.
+	If R is commutative, show that S is commutative.
+
+	Let u, v be in S. To prove that S is commutative, we will show that uv = vu.					* Know for Test
+	Since f is onto, we know that there must be a distinct m,n in R such that m -> u
+	and n -> v. 
+
+	uv = f(m) * f(n)
+	   = f(mn)
+	   = f(nm)
+	   = f(n) * f(m)
+	   = vu
+
+----------------------------------------------------------------------------------------------------
+Section 3.3 pt 2:
+
+
+Ring Homomorphism:
+
+	Given f: R -> S 	a, b in R
+	f(a + b) = f(a) + f(b)
+	f(a * b) = f(a) * f(b)
+
+	Domain: R
+	Range: S
+
+	To show that f is a homomorphism, just work out each side.
+	To show that f is not a homomorism, just give a counterexample.
+
+
+f is one-to-one (injective) [f(a) = f(b) => a = b]
+f is onto (surjective) [for any b in S, there exists an a in R such that f(a) = b]					* Exact definition
+both together are called bijective.
+
+
+Fancy Words:
+
+	Monomorphism: injective homomorphism
+	Epimorphism: surjective homomorphism
+	Isomorphism: bijective homomorphism
+	Automorphism: self-mapping isomorpism
+
+
+Theorem 3.10:
+
+	If f: R -> S is a homomorpism:
+	1. 0 -> 0																						* Know proofs for test	
+	2, 3. f(a - b) = f(a) - f(b)
+	4. if f is surjective and R has an identity, then S must have an identity.						*
+	5. if R and S have identities, and a is a unit in R, then f(a) is a unit in S. 					*
+
+	Proof 1:
+		Let f(0R) = Z
+		f(0) = f(0 + 0)
+			 = f(0) + f(0).
+		Z = Z + Z 					(Rings can always cancel additively.)
+		0S = Z
+
+	Proof 4:
+		Let f(1R) = e.
+		Because f is onto, there is an a in R such that f(a) = b.
+		b * e = f(1) * f(a)
+			  = f(a * 1)
+			  = f(a)
+		b * e = b
+
+	Proof 5:
+		If a is a unit in R.
+		ax = 1R
+		f(a * x) = f(a) * f(x)
+		1S = f(a) * f(x)
+
+	Corollary:
+		If f:R -> S is an isomorpism, then 
+			# of units in R = # of units in S
+
+		Show that Z2 x Z4 is not isomorphic to Z8.
+		Proof:
+			Count the number of units.
+
+			Remark: The units in Zn are all numbers relatively prime to n.
+
+			Units in Z8: 1, 3, 5, 7
+			Units in Z2 x Z4: 
+				Units in Z2 x Units in Z4
+				([1], [1]), ([1], [3])
+
+			Since 
+			# units in Z8 != # Units in Z2 x Z4
+			4 != 2
+			The two are not isomorphic.
+
+	Exercise:
+		Is Z3 isomorphic to M(Z2)
+
+Remark:
+	Collect a list of properties to check:
+	- # of elements
+	- # of units
+	- commutativity
+	- 0 maps to 0
+	- identity
+	- field-ness
+	- # of zero divisors (integral domain-ness)
+
+Images:
+	Let f:R -> S be a ring homomorphism.
+	Image(f) = {b in S | b = f(a) for a in R}
+	If f is a homomorphism, then the image space is Im(f) is a subring of S.
+
+	Proof:
+		Let x, y be in Im(f).
+		To prove that Im(f) is a subring, we will show that Im(f) is closed under subtraction and
+		multiplication
+			x - y in Im(f)
+			x * y in Im(f)
+
+		Since x, y in Im(f), there are a, b such that 
+			f(a) = x, 
+			f(b) = y.
+
+			x - y = f(a) - f(b)
+				  = f(a - b)
+
+			So x - y is in the image of f
+			Same thing for products.
+
+
+

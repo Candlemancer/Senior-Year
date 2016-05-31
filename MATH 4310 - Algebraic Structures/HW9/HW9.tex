@@ -1,0 +1,278 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{centernot}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\title{Homework 9 \\ Section 3.3}
+\author{Jonathan Petersen \\ A01236750}
+\date{March 21st, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [3.] \textbf{Show that $f:R \rightarrow R^*$ with $R^* = \lbrace (r, r) | (r, r) \in 
+						   R \times R, r \in R \rbrace$ given by $f(a) = (a, a) $is an isomorphism.}
+
+			To show that $f$ is an isomorphism, we must show that it is a bijective homomorphism, or
+			that it meets the following four criteria:
+			\begin{enumerate}
+				\item $f(a + b) = f(a) + f(b)$ ($f$ preserves addition) \\
+				\item $f(a * b) = f(a) * f(b)$ ($f$ preserves multiplication) \\
+				\item $f(a) = f(b) \implies a = b$ ($f$ is injective) \\
+				\item For any $c$ in the range, there exists some $f(a) = c$. ($f$ is surjective)
+			\end{enumerate}
+
+			We shall check each criteria individually. First, to show that $f$ preserves addition we
+			observe
+			\begin{align*}
+				f(a + b) & = (a + b, a + b) \qquad \qquad a, b \in R \\
+						 & = (a, a) + (b, b) \\
+						 & = f(a) + f(b) \\
+			\end{align*}
+
+			Therefore, $f$ preserves addition. By a similar fashion, let us check if $f$ preserves
+			multiplication.
+			\begin{align*}
+				f(a * b) & = (a * b, a * b) \qquad \qquad a, b \in R \\
+						 & = (a, a) * (b, b) \\
+						 & = f(a) * f(b) \\
+ 			\end{align*}
+
+ 			So $f$ preserves multiplicaton and is therefore a homomorphism. To check that $f$ is 
+ 			injective, consider
+ 			\begin{align*}
+ 				f(a) = c \qquad f(b) & = c \qquad \qquad a, b \in R \qquad c \in R^* \\
+ 				f(a) & = (a, a) \\
+ 				c & = (a, a) \\
+ 				f(b) & = (b, b) \\
+ 				c & = (b, b) \\
+ 				(a, a) & = (b, b) \\
+ 				a & = b \\
+ 			\end{align*}
+
+ 			Which shows that $f$ is injective. Finally, we check if $f$ is surjective. Let
+ 			\begin{align*}
+ 				(c, c) & \in R^* \\
+ 				c & \in R \\
+ 				f(c) & = (c, c) \\
+ 			\end{align*}
+
+ 			Thusly, $f$ meets the four criteria and we may conclude that $f$ is an isomorphism
+ 			$_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [8.] \textbf{Let $\mathbb{Q}(\sqrt{2}) = \lbrace r + s\sqrt{2} | r, s \in \mathbb{Q}
+						   \rbrace$. Prove that $f:\mathbb{Q}(\sqrt{2}) \rightarrow 
+						   \mathbb{Q}(\sqrt{2})$ given by $f(r + s\sqrt{2}) = r - s\sqrt{2}$ is an 
+						   isomorphism.}
+
+			Following the structure in problem 3, we shall check that this problem also meets the 
+			same four criteria. First, to show that $f$ preserves addition we observe
+			\begin{align*}
+				f(a + b) & = f(a_1 + a_2\sqrt{2} + b_1 + b_2\sqrt{2}) 
+										\qquad a,b \in \mathbb{Q}(\sqrt{2}) \\
+						 & = f((a_1 + b_1) + (a_2 + b_2)\sqrt{2}) \\
+						 & = (a_1 + b_1) - (a_2 + b_2)\sqrt{2} \\
+						 & = a_1 + b_1 - a_2\sqrt{2} - b_2\sqrt{2} \\
+						 & = a_1 - a_2\sqrt{2} + b_1 - b_2\sqrt{2} \\
+						 & = f(a) + f(b) \\
+			\end{align*}
+
+			Therefore, $f$ preserves addition. By a similar fashion, let us check if $f$ preserves
+			multiplication.
+			\begin{align*}
+				f(a * b) & = f(a_1 + a_2\sqrt{2} * b_1 + b_2\sqrt{2}) 
+									\qquad a,b \in \mathbb{Q}(\sqrt{2}) \\
+						 & = f(a_1 * b_1) + (a_1 * b_2\sqrt{2}) + (a_2\sqrt{2} * b_1) + 
+						 			(a_2\sqrt{2} * b_2\sqrt{2}) \\
+						 & = f((a_1 * b_1 + 2 * a_2 * b_2) + (a_1 * b_2 + a_2 * b_1)\sqrt{2}) \\
+						 & = (a_1 * b_1 + 2 * a_2 * b_2) - (a_1 * b_2 + a_2 * b_1)\sqrt{2} \\
+						 & = (a_1 * b_1) - (a_2\sqrt{2} * b_1) - (a_1 * b_2\sqrt{2}) + 
+						 			(a_2\sqrt{2} * b_2\sqrt{2})\\
+						 & = (a_1 - a_2\sqrt{2}) * (b_1 - b_2\sqrt{2}) \\
+						 & = f(a) * f(b) \\
+ 			\end{align*}
+
+ 			So $f$ preserves multiplicaton and is therefore a homomorphism. To check that $f$ is 
+ 			injective, consider
+ 			\begin{align*}
+ 				f(a) = c \qquad f(b) & = c \qquad \qquad a, b, c \in \mathbb{Q}(\sqrt{2}) \\
+ 				f(a) & = a_1 - a_2\sqrt{2} \\
+ 				c & = a_1 - a_2\sqrt{2} \\
+ 				f(b) & = b_1 - b_2\sqrt{2} \\
+ 				c & = b_1 - b_2\sqrt{2} \\
+ 				a_1 - a_2\sqrt{2} & = b_1 - b_2\sqrt{2} \\
+ 				a_1 & = b_1 \qquad a_2 = b_2 \\
+ 			\end{align*}
+
+ 			Which shows that $f$ is injective. Finally, we check if $f$ is surjective. Let
+ 			\begin{align*}
+ 				c_1 + c_2\sqrt{2} & \in \mathbb{Q}(\sqrt{2}) \\
+ 				c_1 + c_2\sqrt{2} + 0 - 2c_2\sqrt{2} & \in \mathbb{Q}(\sqrt{2}) \\
+ 				c_1 - c_2\sqrt{2} & \in \mathbb{Q}(\sqrt{2}) \\
+ 				f(c_1 - c_2\sqrt{2}) & = c_1 + c_2\sqrt{2} \\
+ 			\end{align*}
+
+ 			Thusly, $f$ meets the four criteria and we may conclude that $f$ is an isomorphism
+ 			$_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [9.] \textbf{If $f:\mathbb{Z} \rightarrow \mathbb{Z}$ is an isomorphism, prove that 
+						   $f$ is the identity map.}
+
+			Recall that $f(0) = 0$ for all rings. Furhtermore, since $f$ is an isomorphism, it 
+			preserves addition. Therefore
+			\begin{align*}
+				f(0) & = 0 \\
+				f(1) = f(0 + 1) = f(0) & + f(1) = 0 + 1 = 1 \\
+				f(2) = f(1 + 1) = f(1) & + f(1) = 1 + 1 = 2 \\
+				f(3) = f(2 + 1) = f(2) & + f(1) = 2 + 1 = 3 \\
+				\vdots \\
+				f(n) = f(n-1) + f(1) = f(n-1) & + f(1) = n - 1 + 1 = n \\
+			\end{align*}
+
+		% ======================================================================================== %
+			Teacher Solution:
+				Since $1 \in Z$ and $0 \in Z$, we know that the above is true.
+
+		% ======================================================================================== %
+		\item [15.] \textbf{Let $f:R \rightarrow S$ be a homomorphism of rings. if $r$ is a zero 
+							divisor in $R$, is $f(r)$ a zero divisor in $S$?}			
+
+			Yes. Observe
+			\begin{align*}
+				r * x & = 0_R \\
+				f(r) * f(x) & = f(0_R) \\
+							& = 0_S \\ 
+			\end{align*}
+			Therefore $f(r)$ is a zero divisor of $f(x)$ in $S$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [17.] \textbf{Show that the complex conjugation function $f:\mathbb{C} \rightarrow 
+							\mathbb{C}$ given by $f(a + ib) = a - ib$ is a bijection.}
+
+			Let $a + ib$ and $c + id$ be arbitrary elements in $\mathbb{C}$. Then if 
+			\begin{align*}
+				f(a + ib) = x - yi \qquad \qquad x - yi \in \mathbb{C} \\
+				f(c + id) = x - yi \\
+				x = a = c & y = b = d \\
+				a = c & b = d \\
+			\end{align*} 
+			Therefore $f$ is injective. Now consider again some arbitrary $x - yi$ in $\mathbb{C}$.
+			\begin{align*}
+				x - yi = f(x + yi)
+			\end{align*}
+			And since $x + yi$ must also be in $\mathbb{C}$, $f$ is surjective. Since $f$ is both
+			injective and surjective, $f$ is bijective $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [19.] \textbf{Show that $S = \lbrace 0, 4, 8, 12, 16, 20, 24 \rbrace$ is a subring of
+							$\mathbb{Z}_{28}$. Then prove that the map $f:\mathbb{Z}_7 \rightarrow
+							S$ given by $f([x]_7) = [8x]_{28}$ is an isomorphism.}
+
+			To show that $S$ is a subring of $\mathbb{Z}_{28}$, we must show that it is closed under
+			the subtraction and multiplication operators of $\mathbb{Z}_{28}$. Then, to show that
+			$f$ is an isomorphism, we must prove the same four qualities shown in the first problem.
+
+		% ======================================================================================== %
+		\item [22.] \textbf{Let $\overbar{\mathbb{Z}}$ denote the ring of integers with $a 
+							\oplus b = a + b - 1$ and $a \odot b = ab - (a + b) + 2$ operations.
+							Prove that $\overbar{\mathbb{Z}}$ is isomorphic to $\mathbb{Z}$.}
+
+			To show that $\overbar{\mathbb{Z}}$ is isomorphic to $\mathbb{Z}$, we again must show
+			that it is homomorphic and bijective. Let us begin by checking preservation of addition:
+			\begin{align*}
+				f(a \oplus b) & = f(a + b - 1) \\
+							  & = f(a) + f(b) + f(-1)
+			\end{align*}
+
+			Next, preservation of multiplication:
+			\begin{align*}
+				f(a \odot b) & = f(ab - (a + b) + 2) \\
+							 & = f(ab) - f(a + b) + f(2) \\
+							 & = f(a) * f(b) - f(a) - f(b) + f(2) \\
+			\end{align*}
+
+			Next, injectivity:
+		% ======================================================================================== %
+			Teacher Solution:
+				Step 1: $f(1) = e$ where $e$ is the identity in the range. 
+				Step 2: Find $e$.
+				Step 3: Find $f(n)$.
+				Now start fresh by proving isomorphism on f.
+
+		% ======================================================================================== %
+		\item [27.a.] \textbf{If $g:R \rightarrow S$ and $f:S \rightarrow T$ are homomorphisms, show
+							  that $f \circ g:R \rightarrow T$ is a homomorphism.}		
+
+			To show that $f \circ g:R \rightarrow T$ is a homomorphism, we must show that it 
+			preserves addition and multiplication from $R \rightarrow T$. That is, that
+			\begin{align*}
+				f(g(x + y)) & = f(g(x)) + f(g(y)) \qquad x, y \in R \\
+				f(g(x * y)) & = f(g(x)) * f(g(y)) \\
+			\end{align*}
+
+			Indeed, since $f$ and $g$ are homomorphisms,
+			\begin{align*}
+				f(g(x + y)) & = f(g(x) + g(y)) \\ 
+							& = f(g(x)) + f(g(y)) \\
+			\end{align*}
+			\begin{align*}
+				f(g(x * y)) & = f(g(x) * g(y)) \\ 
+							& = f(g(x)) * f(g(y)) \\
+			\end{align*}
+
+			So $f \circ g:R \rightarrow T$ is a homomorphism $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [27.b.] \textbf{If $f$ and $g$ are isomorphisms, show that $f \circ g$ is also an 
+							  isomorphism.}		
+
+			As shown in the previous problem, if $f$ and $g$ are homomorphisms, then $f \circ g$ is
+			also a homomorphism. Since an isomorphism must be a homomorphism, all that remains is 
+			to show that if $f$ and $g$ are isomorphims, that $f \circ g$ is bijective.
+
+			Therefore, let us consider an arbitrary $a, b$ in the domain of $g$, and some $c$ in the
+			range of $f$. Then
+			\begin{align*}
+				f(g(a)) = c & f(g(b)) = c \\
+				f(g(a)) = c \qquad f(g(b)) = c & \implies g(a) = g(b) \\
+				g(a) = c \qquad g(b) = c & \implies a = b \\
+			\end{align*} 
+			So $f \circ g$ is injective. To check surjectivity, take $c$ as an arbitrary element in
+			the range of $f$. Then since $g$ and $f$ are isomorphic, 
+			\begin{align*}
+				c \in R(f) & \implies f(b) \\
+				f(b) \in R(g) & \implies g(a) \\
+				\therefore f(g(a)) = c
+			\end{align*}
+			And we see that $f \circ g$ is surjective and therefore an isomorphism $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [35.a.] \textbf{Show that $E$ and $\mathbb{Z}$ are not isomorphic.}
+
+			$\mathbb{Z}$ is a ring with identity, and $E$ is not. Therefore, the two cannot be 
+			isomorphic.
+
+		% ======================================================================================== %
+		\item [35.b.] \textbf{Show that $\mathbb{R} \times \mathbb{R} \times \mathbb{R} \times 
+							  \mathbb{R}$ and $M(\mathbb{R})$ are not isomorphic.}
+
+			$\mathbb{R} \times \mathbb{R} \times \mathbb{R} \times \mathbb{R}$ is a commutative
+			ring, and $M(\mathbb{R})$ is not, so they cannot be isomorphic.
+
+		% ======================================================================================== %
+		\item [35.c.] \textbf{Show that $\mathbb{Z}_4 \times \mathbb{Z}_{14}$ and $\mathbb{Z}_{16}$ 
+							  are not isomorphic.}
+
+			There are $4 * 14 = 56$ elements in $\mathbb{Z}_4 \times \mathbb{Z}_{14}$, but only $16$
+			in $\mathbb{Z}_{16}$. Therefore the two cannot be isomorphic.
+
+		% ======================================================================================== %
+	\end{enumerate}
+\end{document}
+

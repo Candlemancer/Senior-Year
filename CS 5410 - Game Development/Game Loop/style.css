@@ -1,0 +1,49 @@
+/* Jonathan Petersen */
+/* A01236750 */
+/* Game Loop Assignment */
+
+html {
+	background: #333333;
+}
+
+body {
+	margin: 0px auto;
+	padding: 5% 20px;
+	width: 66%;
+	height: 100%;
+	background: #FEFEFE;
+}
+
+#header {
+	overflow: auto;
+	font-size: 26px;
+
+}
+
+#content {
+	overflow: auto;
+}
+
+#footer {
+	overflow: auto;
+	font-size: 24px;
+	text-align: center;
+}
+
+#controls {
+	float: right;
+	text-align: right;
+	font-size: 24px;
+}
+
+input {
+	width: 150px;
+}
+
+textarea {
+	float: left;
+}
+
+h1 {
+	text-align: center;
+}

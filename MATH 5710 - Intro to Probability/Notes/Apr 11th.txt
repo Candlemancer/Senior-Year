@@ -1,0 +1,28 @@
+Var(X - Y) = Cov(x - y, x - y)
+		   = Cov(x, x) - Cov(x, y) - Cov(y, x) + Cov(y, y)
+		   = var(x) + var(y) - 2Cov(x, y).
+
+If Independent:
+	Var(X - Y) = Var(x) + var(-y)
+			   = var(x) + var(y)
+
+-----
+
+54. X, Y, Z are uncorrelated, (independent)
+ U = z + x
+ V = z + y
+ Cov(u, v) = cov(z + x, z + y)
+ 		   = cov(zz) + cov(zy) + cov(xz) + cov(xz)
+ 		   = var(z) + 0
+
+----
+
+57.
+	Recall that VAR(X) = E(X^2) - E(X)^2
+	Var(XY) = E(X^2Y^2) - E(XY)^2
+		    = E(X2 Y2) - [E(X)E(Y)]2
+		    = E(x2)E(y2) - [E(x)E(y)]2
+		    = ()
+
+
+

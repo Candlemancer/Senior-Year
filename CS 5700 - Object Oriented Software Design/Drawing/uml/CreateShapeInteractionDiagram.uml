@@ -1,0 +1,17 @@
+@startuml 
+
+title Creating a Shape
+
+actor User 
+User -> HTML : "User Clicks on Surface"
+HTML -> HTMLAdapter : "HTML onClick() callback"
+HTMLAdapter -> CommandFactory
+create Command
+CommandFactory -> Command
+Command -> Surface : "Variable behavior based on Command instance"
+Surface -> ShapeFactory
+Surface <-- ShapeFactory
+Surface -> Fabric.js
+HTML <-- Fabric.js : "Return updates to HTML Canvas"
+
+@enduml

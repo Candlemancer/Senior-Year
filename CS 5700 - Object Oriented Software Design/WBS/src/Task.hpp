@@ -11,7 +11,8 @@
 #include <memory>
 #include <chrono>
 
-#include "Workforce.hpp"
+#include "Engineer.hpp"
+#include "EngineerTeam.hpp"
 #include "TaskVisitor.hpp"
 
 class TreeIterator;
@@ -33,10 +34,10 @@ class Task : public virtual std::enable_shared_from_this<Task> {
     inline std::string getLabel() { return m_label; }
     inline std::string getDescription() { return m_description; }
     inline Workers getEngineers() { return m_engineers; }
-    inline int getOriginalHoursEstimate() {
+    inline std::shared_ptr<Task> getParent() { return m_parent; }
+    virtual inline int getOriginalHoursEstimate() {
         return m_originalHoursEstimate.count();
     }
-
     virtual int getCurrentHoursEstimate() = 0;
     virtual double getPercentComplete() = 0;
     virtual int getHoursRemaining() = 0;
@@ -47,6 +48,10 @@ class Task : public virtual std::enable_shared_from_this<Task> {
     inline void setDescription(std::string desc) { m_description = desc; }
     inline void setEngineers(Workers engineers) { m_engineers = engineers; }
     inline void setParent(std::shared_ptr<Task> parent) { m_parent = parent; }
+
+    void addEngineer(std::shared_ptr<Workforce> engr);
+    bool operator==(Task* that);
+    bool operator!=(Task* that);
 
    protected:
     const int m_id;

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyDrawing</title>
+	<script type="text/javascript" src="../api/bower_components/fabric.js/dist/fabric.js" defer></script>
+	<script type="text/javascript" src="ShapeFactory.js" defer></script>
+	<script type="text/javascript" src="Surface.js" defer></script>
+	<script type="text/javascript" src="Command.js" defer></script>
+	<script type="text/javascript" src="HTMLAdapter.js" defer></script>
+	<script type="text/javascript" src="KeyboardManager.js" defer></script>
+	<script type="text/javascript" src="DrawingTest.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="content">
+	<p>Click in the box to draw shapes!</p>
+	<canvas id="myCanvas" width="800" height="600"></canvas>
+	<br>
+	<button onclick="newDrawing()">New Drawing</button>
+	<button onclick="_getHistory()">History</button>
+	<button onclick="undo()">Undo</button>
+	<button onclick="deleteObject()">Delete</button>
+	<button onclick="duplicateObject()">Duplicate</button>
+
+	<br>
+	<label>Shape Type:</label>
+	<select id="brush">
+		<option>Rectangle</option>
+		<option>Circle</option>
+		<option>Triangle</option>
+		<option>Ellipse</option>
+		<option>Line</option>
+		<option value="Polygon">Hexagon</option>
+	</select>
+	<br>	
+	<label>Shape Color: </label>
+	<br>
+	<label>R: </label>
+	<input type="text" id="shapeR" value="0">
+	<label>G: </label>
+	<input type="text" id="shapeG" value="0">
+	<label>B: </label>
+	<input type="text" id="shapeB" value="0">
+	<button onclick="changeShapeColor()">Change Shape Color</button>
+	<br>
+
+	<label>Background Color:</label>
+	<br>
+	<label>R: </label>
+	<input type="text" id="backR" value="0">
+	<label>G: </label>
+	<input type="text" id="backG" value="0">
+	<label>B: </label>
+	<input type="text" id="backB" value="0">
+	<button onclick="changeBackgroundColor()">Change Background Color</button>
+	<br>
+	<label>Background Image:</label>
+	<input type="text" id="BackgroundImageText">
+	<button onclick="changeBackgroundImage()">Change Background Image</button>
+
+	<br>
+
+	<button onclick="saveImageAsJSON()">Save Image As JSON</button>
+	<button onclick="saveImageAsPNG()">Save Image As PNG</button>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+7. Sequential Section Root : Description
+7.0. Leaf1 : 1st Leaf Task
+7.1. Leaf2 : 2nd Leaf Task
+7.2. Leaf3 : 3rd Leaf Task
+7.6. Parallel Section Parallel : Description
+7.6.3. Leaf4 : 4th Leaf Task
+7.6.4. Leaf5 : 5th Leaf Task
+7.6.5. Leaf6 : 6th Leaf Task

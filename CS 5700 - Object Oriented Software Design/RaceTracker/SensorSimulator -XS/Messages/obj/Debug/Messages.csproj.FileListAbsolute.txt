@@ -1,0 +1,4 @@
+Y:\tmp\SensorSimulator\Messages\bin\Debug\Messages.dll
+Y:\tmp\SensorSimulator\Messages\bin\Debug\Messages.pdb
+Y:\tmp\SensorSimulator\Messages\obj\Debug\Messages.dll
+Y:\tmp\SensorSimulator\Messages\obj\Debug\Messages.pdb

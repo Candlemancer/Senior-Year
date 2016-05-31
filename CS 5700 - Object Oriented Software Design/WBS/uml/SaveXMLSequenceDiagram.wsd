@@ -1,0 +1,18 @@
+@startuml
+
+title Saving a WBS Tree as XML
+
+	ParentTask -> XMLOutputVisitor : visit()
+	create XMLFile
+	XMLOutputVisitor -> XMLFile
+loop
+	XMLOutputVisitor -> TreeIterator : Get Next Element
+	loop
+		TreeIterator -> ParentTask : getChildren()
+		TreeIterator <-- ParentTask
+	end
+	XMLOutputVisitor <-- TreeIterator : Returns Next Element
+	XMLOutputVisitor -> XMLFile
+end
+
+@enduml

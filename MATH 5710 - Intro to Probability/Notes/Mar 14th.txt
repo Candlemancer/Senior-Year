@@ -1,0 +1,71 @@
+  Expected Values and Variances:
+
+- Expected Value:
+	If X is a discrete random variable with frequency p(x), the expected value of X, denoted E(X) is
+	E(X) = Sum(xi * p(xi))
+	Provided that the sum converges. If the sum diverges, the expectation is undefined.
+
+	If X is a continuous random variable
+	E(X) = ∫x * f(x)
+
+
+Expected value is analogous to center of mass in physics.
+
+Ex:
+	Discrete Case:
+	Given a roulette with the numbers 1 - 36, 0, and 00
+	Let X represent your net gain, then
+		P(X =  1) = 18/36
+		P(X = -1) = 20/36
+	And
+		E(X) = (1)(18/36) + (-1)(20/36) = -2 / 36 
+			 = -1 / 19
+
+	------------------------------------------------------------------------------------------------
+	Given items in a plant defective with probability p. (X)
+	Inspect items one at a time until the first defective (Geometric Distribution).					* Study those
+	How many items must be inspected? (What is the expected value of X?)
+
+	X ~ Geometric Distribution
+	P(X = k) = p(1 - p)^(k - 1)
+
+	E(X) = Sum[(k)(1-p)^(k-1)(p)]
+		 = p * Sum[k(q)^k-1]		let q = 1 - p
+		 = p * Sum[d/dq(q^k)]
+		 = p * d/dq(Sum[q^k])																		* Study summations
+		 = p * d/dq(q/1 - q)
+		 = p * (((1-q) + (q)) / (1-q)^2)
+		 = p * (1 / p^2)
+		 = 1 / p
+
+	------------------------------------------------------------------------------------------------
+
+	X ~ Bernoulli
+	0 -> p
+	1 -> q
+	E(X) = [0(p) + 1(q)] = q
+
+	------------------------------------------------------------------------------------------------
+
+	X ~ Exponential(λ)
+	E(X) = Sum[pdf(X)]
+		 = Sum[λe^(-λx)]		x ≥ 0
+		 = ∫x * f(x) * dx
+		 = ∫xλe^(-λx) dx
+		 = λ ∫xe^(-λx) dx 
+		 = λ ∫xe^(-λx) dx 
+		 = ...
+		 = 1 / λ
+
+	------------------------------------------------------------------------------------------------
+
+	X ~ Normal(μ, σ^2)
+	P(X = x) = (1 / [σ√(2π)]) * e^(- |x - μ|^2 / 2σ^2)
+	E(X) = ∫x(1 / [σ√(2π)]) * e^(- |x - μ|^2 / 2σ^2)dx
+		 = (1 / [σ√(2π)]) * ∫xe^(- |x - μ|^2 / 2σ^2)dx 	let Z = (x - μ) / σ√2, Z' = dx / σ√2
+		 = (1 / [σ√(2π)]) * ∫(σZ√2 + μ)e^(Z^2)(σ√2)dZ
+		 = 1 / √π * ∫(σZ√2 + μ)e^(Z^2)dZ
+		 = 1 / √π * (∫σZ√2(e^(Z^2)dZ) + ∫μe^(Z^2)dZ)
+		 = μ / √π * (0 + ∫e^(Z^2)dZ)
+		 = μ / √π * ∫e^(Z^2)dZ
+		 = μ

@@ -1,0 +1,16 @@
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/bin/Debug/DummyServer.exe.config
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/bin/Debug/DummyServer.exe.mdb
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/bin/Debug/DummyServer.exe
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/obj/Debug/DummyServer.exe
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/obj/Debug/DummyServer.exe.mdb
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/bin/Debug/Messages.dll
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/DummyServer/bin/Debug/Messages.dll.mdb
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/bin/Debug/DummyServer.exe.config
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/bin/Debug/DummyServer.exe.mdb
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/bin/Debug/DummyServer.exe
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/obj/Debug/DummyServer.exe
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/obj/Debug/DummyServer.exe.mdb
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/bin/Debug/Messages.dll
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/DummyServer/bin/Debug/Messages.dll.mdb

@@ -1,0 +1,20 @@
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.Properties.Resources.resources
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.SimulationForm.resources
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/bin/Debug/SensorSimulator.exe.config
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/bin/Debug/SensorSimulator.exe.mdb
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/bin/Debug/SensorSimulator.exe
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.exe
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.exe.mdb
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/bin/Debug/Messages.dll
+/Users/swc/Box Sync/Classes/cs5700 2015 Fall/Homework/HW2/SensorSimulator -XS/SensorSimulator/bin/Debug/Messages.dll.mdb
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.Properties.Resources.resources
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.SimulationForm.resources
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/bin/Debug/SensorSimulator.exe.config
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/bin/Debug/SensorSimulator.exe.mdb
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/bin/Debug/SensorSimulator.exe
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.exe
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/obj/Debug/SensorSimulator.exe.mdb
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/bin/Debug/Messages.dll
+/Users/candlemancer/Classwork/USU Senior Year/CS 5700 - Object Oriented Software Design/RaceTracker/SensorSimulator -XS/SensorSimulator/bin/Debug/Messages.dll.mdb

@@ -1,0 +1,30 @@
+@startuml
+
+	hide empty members
+	hide empty attributes
+
+	class 'π(E.Fname, E.Lname, E.Address)' {
+
+	}
+	class "σ(D.Dname = ‘Research’ AND D.Dnumber = P.Dno)" {
+
+	}
+	class "X" {
+
+	}
+	class "DEPARTMENT" {
+
+	}
+	class "EMPLOYEE" {
+
+	}
+
+	"π(E.Fname, E.Lname, E.Address)" -- "σ(D.Dname = ‘Research’ AND D.Dnumber = P.Dno)"
+	"σ(D.Dname = ‘Research’ AND D.Dnumber = P.Dno)" -- "X"
+
+	"X" -- "DEPARTMENT"
+	"X" -- "EMPLOYEE"
+
+
+
+@enduml

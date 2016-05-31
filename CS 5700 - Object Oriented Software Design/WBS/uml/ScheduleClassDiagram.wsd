@@ -1,0 +1,74 @@
+@startuml
+
+class Schedule {
+    + Schedule()
+    + ~Schedule()
+    + std::shared_ptr<ParentTask> getWBS()
+    + std::shared_ptr<Workforce> getEngineers()
+    + void setWBS(std::shared_ptr<ParentTask> wbs) 
+    + void setEngineers(std::shared_ptr<Workforce> e) 
+
+    + std::vector<WorkDay> getSchedule()
+
+    - std::shared_ptr<ParentTask> m_wbs
+    - std::shared_ptr<Workforce> m_engineers
+}
+Schedule -- WorkDay
+Schedule o-- Workforce
+
+class WorkDay {
+    + WorkDay()
+    + ~WorkDay()
+    + const static int WORKDAY_LENGTH
+    + int getHoursFilled() 
+    + std::vector<std::shared_ptr<Task>> getTasks()
+    + std::vector<std::shared_ptr<Workforce>> getWorkers()
+    + void addAssignment(int hours, std::shared_ptr<Task> task, std::shared_ptr<Workforce> worker)
+
+    - int m_hoursFilled
+    - std::vector<std::shared_ptr<Task>> m_tasks
+    - std::vector<std::shared_ptr<Workforce>> m_workers
+}
+WorkDay o-- Workforce
+
+class Workforce {
+    + Workforce()
+    + Workforce(int hoursAvailable)
+    + virtual ~Workforce()
+    + {abstract} virtual std::chrono::hours getDailyAvailability
+
+    - std::chrono::hours m_dailyAvailability
+}
+Workforce <|-- Engineer
+Workforce <|-- EngineerTeam
+
+class Engineer {
+    + Engineer(int id, std::string name, int hoursAvailable)
+    + virtual ~Engineer()
+    + virtual std::chrono::hours getDailyAvailability()
+    + void setDailyAvailability(std::chrono::hours dailyHours)
+    + std::string getName()
+    + int getID()
+
+    # int m_id;
+    # std::string m_name;
+
+    - const static int FULL_TIME_DAILY_HOURS;
+    - const static int MAX_HOURS_PER_DAY;
+    - const static int MIN_HOURS_PER_DAY;
+}
+
+class EngineerTeam {
+    + EngineerTeam()
+    + virtual ~EngineerTeam()
+    + virtual std::chrono::hours getDailyAvailability()
+    + std::vector<std::shared_ptr<Workforce> getMembers()
+    + void setMembers(std::vector<std::shared_ptr<Workforce> engineers)
+    + void addTeamMember(std::shared_ptr<Workforce> member)
+    + void removeTeamMember(int id)
+
+    - std::vector<std::shared_ptr<Workforce>> m_members
+}
+EngineerTeam o-- Workforce
+
+@enduml

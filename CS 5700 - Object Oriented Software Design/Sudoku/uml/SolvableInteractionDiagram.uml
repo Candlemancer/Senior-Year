@@ -1,0 +1,14 @@
+@startuml
+
+title Solving a Solvable Sudoku
+
+Main -> SudokuFile : "Create SudokuPuzzle using fromFile()"
+create SudokuPuzzle
+SudokuFile -> SudokuPuzzle : "Construct SudokuPuzzle"
+Main <-- SudokuPuzzle
+
+create Solver
+Main -> Solver : "Solve this puzzle with solve()"
+Main <-- Solver : "Return new SudokuPuzzle (Solved)"
+
+@enduml

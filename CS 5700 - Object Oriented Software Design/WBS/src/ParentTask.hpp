@@ -34,21 +34,13 @@ class TreeIterator {
 class ParentTask : public Task {
     // public virtual std::enable_shared_from_this<ParentTask> {
    public:
-    inline ParentTask(int id,
-                      std::string label,
-                      std::string description,
-                      int hoursEstimate)
-        : Task(id, label, description, hoursEstimate), m_tasks() {}
+    inline ParentTask(int id, std::string label, std::string description)
+        : Task(id, label, description, 0), m_tasks() {}
     virtual ~ParentTask() = default;
     virtual double getPercentComplete();
     inline std::vector<std::shared_ptr<Task>> getTasks() { return m_tasks; }
-    inline void setTasks(std::vector<std::shared_ptr<Task>> tasks) {
-        m_tasks = tasks;
-        for (auto&& task : m_tasks) {
-            auto p_parent = shared_from_this();
-            task->setParent(p_parent);
-        }
-    }
+    void setTasks(std::vector<std::shared_ptr<Task>> tasks);
+    void addTask(std::shared_ptr<Task> task);
 
     TreeIterator begin();
     TreeIterator end();

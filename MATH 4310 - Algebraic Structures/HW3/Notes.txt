@@ -1,0 +1,108 @@
+Theorem 1.5 - pg. 18 (Solid Test Candidiate)
+
+	Let p be prime. If p | ab, then p | a or p | b.
+
+	Proof:
+		Look at the gcd(p, b).
+		Divisors of p are {+/- 1, +/- p}
+		Divisors of b are {...}
+		Therefore, gcd(p, b) is either 1 or p.
+
+	  Case gcd = p:
+	  	Divisors of b must include p.
+	  	(i.e. p | b)
+	  	Conclusion holds.
+
+	  Case gcd = 1:	
+	  	p, b are relatively prime.
+	  	Recall that Theorem 1.4 (Relatively Prime Theorem) says
+	  		if gcd(p,b) = 1 and p | ab,
+	  		then p | a.
+
+	Collorary:
+		Let p be a number with the property that 
+		if p | ab
+		then p | a or p | b
+
+	  Ex: 4 | 6 * 2
+	  	  4 !| 6, 4 !| 2.
+
+	  	Suppose p is composite. Therefore, p = rs. With r, s != 1.
+	  Hint: rs | sr^2
+	  	a = r^2, b = s.
+	  	p | ab = rs | sr^2
+	  	but p !| a, does | b.
+====================================================================================================
+
+25. If p is prime, then p | C(p, k).
+	p * (p-1)! / k! (p - k)!
+
+====================================================================================================
+
+30. Prove that there are no integers such that a^2 = 2b^2
+	Show that sqrt(2) is irrational.
+	Proof by contradiciton:
+		sqrt(2) = a/b, gcd(a, b) = 1,
+		b * sqrt(2) = a
+		2b^2 = a^2
+
+		So 2 | a^2, 2 is prime. 
+		Therefore 2 | a, or rather, that a = 2c.
+
+		2b^2 = 4c^2
+		b^2 = 2c^2
+
+		2 | b^2, 
+		2 | b
+
+		If 2b^2 = a^2, then
+		2 | a, 
+		2 | b.
+		Contradiction! gcd(a, b) != 1. 
+
+====================================================================================================
+CHAPTER 2
+====================================================================================================
+
+Generalize the idea of =
+a = a
+if a = b, b = a.
+if a = b and a = c, a = c.
+
+Definition: 
+	Let S be any set. A relation ~ on S is called an equivalence relation if and only if ~ is 
+	reflexive, symmetric, and transitive over S.
+
+Example from Linear Algebra:
+
+S = set of all n x n matricies.
+A ~ B if A = PBP'
+
+A ~ A => A = IAI'
+A ~ B => A = PBP'
+		 AP = PB
+		 P'AP = B
+A ~ B, B ~ C, then A ~ C =>	A = PBP', B = QCQ'
+		A = PQCQ'P'
+		A = (PQ)C(Q'P')
+		A = (PQ)C(PQ)'
+
+Since ~ is reflexive, symmetric, and transitive, it is an equivalence relation.
+
+Example from Integers:
+	S = Set of all Integers, n is a fixed number.
+
+	a ~ b iff n | b - a
+
+	  Ex. 
+	  	n = 2		3 ~ 5, 4 ~ 8, 3 !~ 8
+	  	n = 6		1 ~ 7 ~ 13 ~ 19
+	  				3 ~ 9 ~ 18 ~ -3
+
+Theorem:
+	Let S = integers, let a ~ b iff n | a - b, n is fixed
+	Reflexive: n | (a - a) => a ~ a 
+	Symmetric: n | (a - b) => n | (b - a) : a ~ b => b ~ a
+	Transitive: [b - a = kn] + [c - b = ln] = [c - a = kn + ln] : a ~ b, b ~ c, a ~ c.
+	pg 26, thm 2.1
+	a === b mod n.

@@ -1,0 +1,46 @@
+/* Jonathan Petersen */
+/* A01236750 */
+/* Maze Game Assignment */
+/* Stylesheet */
+
+body {
+	background: #333333;
+	color: #FEFEFE;
+}
+
+canvas {
+	clear: left;
+	background: #FFFFFF;
+	margin: 0px auto;
+}
+
+#score {
+	float: right;
+}
+
+#time {
+	float: left;
+}
+
+#gamePanel {
+	max-width: 40%;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#controlPanel {
+	max-width: 40%;
+	margin: 0px auto;
+}
+
+#scorePanel {
+	max-width: 100%;
+}
+
+#controls {
+	float: left;
+}
+
+#highs {
+	float: right;
+}

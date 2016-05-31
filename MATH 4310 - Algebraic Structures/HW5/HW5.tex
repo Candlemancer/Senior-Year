@@ -1,0 +1,295 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\title{Homework 5 \\ Sections 2.2, 2.3}
+\author{Jonathan Petersen \\ A01236750}
+\date{February 8th, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\textbf{SECTION 2.2} \\
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [4.] Solve $x^4 = [1]$ in $\mathbb{Z}_5$
+
+			\begin{align*}
+				x^4 & = [1] \qquad \mathbb{Z}_5 \\
+				& \\
+				[0]^4 & = [0] * [0] * [0] * [0] \\
+					& = 0 * 0 * 0 * 0 = 0 = [0] \\
+					& \\
+				[1]^4 & = [1] * [1] * [1] * [1] \\
+					& = 1 * 1 * 1 * 1 = 1 = [1] \\
+					& \\
+				[2]^4 & = [2] * [2] * [2] * [2] \\
+					& = 2 * 2 * 2 * 2 = 2 \\
+					& = 16 = 3 * 5 + 1 = [1] \\
+					& \\
+				[3]^4 & = [3] * [3] * [3] * [3] \\
+					& = 3 * 3 * 3 * 3 = 3 \\
+					& = 81 = 16 * 5 + 1 = [1] \\
+					& \\
+				[4]^4 & = [4] * [4] * [4] * [4] \\
+					& = 4 * 4 * 4 * 4 = 4 \\
+					& = 256 = 51 * 5 + 1 = [1]
+			\end{align*}
+
+			Therefore, $[1], [2], [3], [4]$ are all solutions.
+
+		% ======================================================================================== %
+		\item [8.] Solve $x^3 + x^2 = [2]$ in $\mathbb{Z}_{10}$
+
+			\begin{align*}
+				x^3 + x^2 & = [2] \qquad \mathbb{Z}_10 \\
+				& \\
+				[0]^3 + [0]^2 & = [0] * [0] * [0] + [0] * [0] \\
+							  & = [0] \\
+							  & \\
+				[1]^3 + [1]^2 & = [1] * [1] * [1] + [1] * [1] \\
+							  & = [1] + [1] \\
+							  & = [2] \\
+							  & \\
+				[2]^3 + [2]^2 & = [2] * [2] * [2] + [2] * [2] \\
+							  & = [8] + [4] \\
+							  & = [2] \\ 
+							  & \\
+				[3]^3 + [3]^2 & = [3] * [3] * [3] + [3] * [3] \\
+							  & = [27] + [9] \\
+							  & = [6] \\ 
+							  & \\
+				[4]^3 + [4]^2 & = [4] * [4] * [4] + [4] * [4] \\
+							  & = [64] + [16] \\
+							  & = [0] \\
+							  & \\
+				[5]^3 + [5]^2 & = [5] * [5] * [5] + [5] * [5] \\
+							  & = [125] + [25] \\
+							  & = [0] \\
+							  & \\
+  				[6]^3 + [6]^2 & = [6] * [6] * [6] + [6] * [6] \\
+							  & = [216] + [36] \\
+							  & = [2] \\
+			\end{align*}
+			\begin{align*}
+				[7]^3 + [7]^2 & = [7] * [7] * [7] + [7] * [7] \\
+							  & = [343] + [49] \\
+							  & = [2] \\
+							  & \\
+				[8]^3 + [8]^2 & = [8] * [8] * [8] + [8] * [8] \\
+							  & = [512] + [64] \\
+							  & = [6] \\
+							  & \\
+				[9]^3 + [9]^2 & = [9] * [9] * [9] + [9] * [9] \\
+							  & = [729] + [81] \\
+							  & = [0]
+  			\end{align*}
+
+	  		Therefore $[1], [2], [6], [7]$ are all solutions.
+
+		% ======================================================================================== %
+		\item [14.] Solve the following.
+			\begin{enumerate} 
+
+				\item [a.] $x^2 + x = [0]$ in $\mathbb{Z}_5$
+
+					\begin{align*}
+						[0]^2 + [0] & = [0] * [0] + [0] = [0] \\
+						[1]^2 + [1] & = [1] * [1] + [1] = [1] + [1] = [2] \\
+						[2]^2 + [2] & = [2] * [2] + [2] = [4] + [2] = [1] \\
+						[3]^2 + [3] & = [3] * [3] + [3] = [9] + [3] = [2] \\
+						[4]^2 + [4] & = [4] * [4] + [4] = [16] + [4] = [0]
+					\end{align*}
+
+					Therefore, $[0], [4]$ are solutions.
+
+		% ======================================================================================== %
+				\item [b.] $x^2 + x = [0]$ in $\mathbb{Z}_6$
+
+					\begin{align*}
+						[0]^2 + [0] & = [0] * [0] + [0] = [0] \\
+						[1]^2 + [1] & = [1] * [1] + [1] = [1] + [1] = [2] \\
+						[2]^2 + [2] & = [2] * [2] + [2] = [4] + [2] = [0] \\
+						[3]^2 + [3] & = [3] * [3] + [3] = [9] + [3] = [0] \\
+						[4]^2 + [4] & = [4] * [4] + [4] = [16] + [4] = [2] \\
+						[5]^2 + [5] & = [5] * [5] + [5] = [25] + [5] = [0]
+					\end{align*}
+
+					Therefore, $[0], [2], [3], [5]$ are solutions.
+		% ======================================================================================== %
+				\item [c.] If $p$ is prime, prove that the only solutions of $x^2 + x = [0]$ in 
+						$\mathbb{Z}_p$ are $[0]$ and $[p - 1]$.
+
+						By Theorem 2.8 and the fact that 
+
+							\begin{align*}
+								x^2 + x & = [0] \\
+								x(x + 1) & = [0]
+							\end{align*}
+
+						we know that either $x = [0]$ or $x + 1 = [0]$ in $\mathbb{Z}_p$. 
+						Solving for $x$ this shows us that the solutions to $x^2 + x = [0]$ must be
+						$x = [0]$ or 
+
+							\begin{align*}
+								x & = [0] - 1 \\
+								  & = [p] - [1] \\
+								  & = [p - 1]
+							\end{align*}
+
+						and so the statement holds $_{\blacksquare}$
+
+			\end{enumerate}
+		
+		% ======================================================================================== %
+		\item [16.a.] Find all $[a]$ in $\mathbb{Z}_5$ for which the equation $[a] * x = [1]$ has a
+				solution.
+
+				\begin{align*}
+					[a] = [0] & \implies [0]x = [1] \qquad \text{No Solution} \\
+					[a] = [1] & \implies [1]x = [1] \qquad \text{Solution at x = [1]} \\
+					[a] = [2] & \implies [2]x = [1] \qquad \text{Solution at x = [3]} \\
+					[a] = [3] & \implies [3]x = [1] \qquad \text{Solution at x = [2]} \\
+					[a] = [4] & \implies [4]x = [1] \qquad \text{Solution at x = [4]} 
+				\end{align*}
+
+				Therefore, $[a] * x = [1]$ has solutions at values $[1], [2], [3], [4]$.
+
+		% ======================================================================================== %
+	\end{enumerate}
+
+	\vspace{5mm}
+
+	\textbf{SECTION 2.3} \\
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [1.b.] Find all the units in $\mathbb{Z}_8$.
+
+			As discussed in class, Units and Zero Divisors partition the nonzero elements of 
+			$\mathbb{Z}_n$, so every nonzero element of $\mathbb{Z}_8$ must be either a Zero 
+			Divisor or a Unit. We then find that:
+
+			\begin{align*}
+				[0] & \text{ is not a nonzero element.} \\
+				[1] & = [1] * [1] \implies [1] \text{ is a Unit.} \\
+				[0] & = [4] * [2] \implies [2] \text{ is a Zero Divisor.} \\
+				[1] & = [3] * [3] \implies [3] \text{ is a Unit.} \\
+				[0] & = [2] * [4] \implies [4] \text{ is a Zero Divisor.} \\
+				[1] & = [5] * [5] \implies [5] \text{ is a Unit.} \\
+				[0] & = [4] * [6] \implies [6] \text{ is a Zero Divisor.} \\
+				[7] & = [7] * [7] \implies [7] \text{ is a Unit.}
+			\end{align*}
+
+			Therefore, $[1], [3], [5], [7]$ are all units in $\mathbb{Z}_8$.
+
+		% ======================================================================================== %
+		\item [2.b.] Find all the Zero Divisors in $\mathbb{Z}_8$.
+
+			By the previous problem, $[2], [4], [6]$ are all Zero Divisors.
+
+		% ======================================================================================== %
+		\item [4.c.] How many solutions does $[6]x = [4]$ have in $\mathbb{Z}_9$?
+
+			\begin{align*}
+				[6][0] & = [0] \\
+				[6][1] & = [6] \\
+				[6][2] & = [3] \\
+				[6][3] & = [0] \\
+				[6][4] & = [6] \\
+				[6][5] & = [3] \\
+				[6][6] & = [0] \\
+				[6][7] & = [6] \\
+				[6][8] & = [3]
+			\end{align*}
+
+			Therefore, $[6]x = [4]$ has no solutions in $\mathbb{Z}_9$.
+		% ======================================================================================== %
+		\item [8.]
+			\begin{enumerate}
+				\item [a.] Give three examples of equations in the form $[a]x = [b]$ in 
+						$\mathbb{Z}_{12}$ that have no nonzero solutions.
+
+					\begin{align}
+						[2]x & = [1] \\
+						[3]x & = [1] \\
+						[4]x & = [1]
+					\end{align}
+
+		% ======================================================================================== %
+				\item [b.] For each example above, does the equation $[a]x = [0]$ have a nonzero 
+						solution?
+
+					Yes.
+
+					\begin{align*}
+						[2][6] & = [0] \\
+						[3][4] & = [0] \\
+						[4][3] & = [0]
+					\end{align*}
+
+			\end{enumerate}
+		% ======================================================================================== %
+		\item [15.] Use Exercise 13 to solve the following equations:
+			\begin{enumerate}
+				\item [a.] $[15]x = [9]$ in $\mathbb{Z}_{18}$
+
+					Given Exercise 13, we know that for $a, b, n \in \mathbb{Z}$, $n > 0$, the 
+					solutions to $[a]x = [b]$ in $\mathbb{Z}_n$ are given by the set:
+
+					\begin{align*}
+						\lbrace [ub_1 & + 0n_1], [ub_1 + n_1], \dots, [ub_1 + (d - 1)n_1] \rbrace \\
+						d & = au + nv \qquad u, v \in \mathbb{Z} \\
+						b & = db_1 \qquad n = dn_1 \qquad a = da_1
+					\end{align*} 
+
+					Applying this property to our problem, we see that 
+
+					\begin{align*}
+						n = 18 \qquad a & = 15 \qquad b = 9 \\
+						dn_1 = 18 \qquad da_1 & = 15 \qquad db_1 = 9 \\
+						d & = 15u + 18v \\
+						d & = 3(5u + 6v) \\
+						d = 3 \qquad u & = -1 \qquad v = 1 \\
+						18 = 3n_1 & \implies n_1 = 6 \\
+						15 = 3a_1 & \implies a_1 = 5 \\
+						9 = 3b_1 & \implies b_1 = 3 \\
+					\end{align*}
+
+					Therefore, $[(-1)(3)], [(-1)(3) + 6], [(-1)(3) + (2)6]$ are all solutions.
+					Simplifying the terms, we find the solutions to be $[15], [3], [9]$.
+
+		% ======================================================================================== %
+				\item [b.] $[25]x = [10]$ in $\mathbb{Z}_{65}$
+
+					Following the above, we have $n = 65$, $a = 25$, $b = 10$. Therefore:
+
+					\begin{align*}
+						d & = 25u + 65v \\
+						  & = 5(5u + 7v) \\
+						  & = 5 \qquad u = 3 \qquad v = -2
+					\end{align*}
+
+					So then
+
+					\begin{align*}
+						5n_1 = 65 & \implies n_1 = 7 \\
+						5a_1 = 25 & \implies a_1 = 5 \\
+						5b_1 = 10 & \implies b_1 = 2
+					\end{align*}
+
+					and 
+
+					\begin{align*}
+						[3(2) + 0(7)] & = [6] \\
+						[3(2) + 1(7)] & = [13] \\
+						[3(2) + 2(7)] & = [20] \\
+						[3(2) + 3(7)] & = [27] \\
+						[3(2) + 4(7)] & = [34]
+					\end{align*}
+
+					are our solutions.
+			\end{enumerate}
+		% ======================================================================================== %
+	\end{enumerate}
+\end{document}
+

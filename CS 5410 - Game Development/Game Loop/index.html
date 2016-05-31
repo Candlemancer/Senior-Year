@@ -1,0 +1,45 @@
+<!-- Jonathan Petersen -->
+<!-- A01236750 -->
+<!-- Game Loop Assignment -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Game Loop</title>
+	<script type="text/javascript" src="GameLoop.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div id="header">
+		<h1>Browser GameLoop</h1>
+	</div>	
+	<div id="content">
+		<br>
+		<textarea id="eventLog" rows="30" cols="80" readonly="true"></textarea>
+		<br>
+
+		<div id="controls">
+			<form name="inputs">
+				<label>Name:</label>
+				<input name="name" type="text">
+				<br>
+
+				<label>Interval:</label>
+				<input name="interval" type="number">
+				<br>
+
+				<label># Times:</label>
+				<input name="multiplicity" type="number">	
+				<br>
+			</form>
+
+			<input type="button" onclick="addEvent(document.inputs)" value="Add Event">
+			<br>		
+		</div>
+	</div>
+	<div id="footer">
+		<span>Created for CS 5410 by Jonathan Petersen</span>
+	</div>
+</body>
+</html>

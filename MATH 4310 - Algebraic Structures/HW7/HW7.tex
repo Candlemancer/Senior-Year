@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{dcolumn}
+\newcolumntype{2}{D{.}{5.0pt}{2.0}}
+\title{Homework 7 \\ Section 3.2}
+\author{Jonathan Petersen \\ A01236750}
+\date{March 2nd, 2016}
+\begin{document}
+	\maketitle
+	\hrule 
+	\vspace{5mm}
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [3.b.] \textbf{Find all the idempotents in $\mathbb{Z}_{12}$.}
+
+			In $\mathbb{Z}_{12}$:
+			\begin{align*}
+				0^2 & = 0	& \qquad  6^2 & = 0 \\
+				1^2 & = 1	& \qquad  7^2 & = 1 \\
+				2^2 & = 4	& \qquad  8^2 & = 4 \\
+				3^2 & = 9	& \qquad  9^2 & = 9 \\
+				4^2 & = 4 	& \qquad 10^2 & = 4 \\
+				5^2 & = 1 	& \qquad 11^2 & = 1 
+			\end{align*}
+			Therefore $\lbrace 0, 1, 4, 9 \rbrace$ are the idempotents in $\mathbb{Z}_{12}$.
+
+		% ======================================================================================== %
+		\item [6.b.] \textbf{If $A = \begin{bmatrix}1 & 2 \\ 3 & 6 \end{bmatrix}$, find four 
+				solutions to the equation $AX = 0$.}
+
+			$
+			\begin{bmatrix}
+				2 & 2 \\ -1 & -1
+			\end{bmatrix}
+			\begin{bmatrix}
+				4 & 4 \\ -2 & -2
+			\end{bmatrix}
+			\begin{bmatrix}
+				8 & 8 \\ -4 & -4
+			\end{bmatrix}
+			\begin{bmatrix}
+				16 & 16 \\ -8 & -8
+			\end{bmatrix}
+			$
+
+
+		% ======================================================================================== %
+		\item [8.] \textbf{Let $R$ be a ring and $b$ be a fixed element of $R$. Let $T = \lbrace rb
+				| r \in R \rbrace$. Prove that $T$ is a subring of $R$.}	
+
+			To prove that $T$ is a subring of $R$ we must prove that
+
+			\begin{enumerate}
+				\item $T$ is a subset of $R$.
+				\item $T$ is closed under subtraction.
+				\item $T$ is closed under multiplication.
+			\end{enumerate}
+
+			Since $T$ only contains multiples of elements from $R$, and since $R$ is closed under
+			multiplicaiton, it is trivial to see that $T$ is a subset of $R$. Let us then focus on
+			the other two requirements.
+
+			Given some arbitrary $u, v \in T$, we can see that
+
+			\begin{align*}
+				u - v & = (rb) + -(sb) \qquad r, b, s \in R \\
+					  & = (r - s)b \\
+					  & = kb \qquad k = r - s \\
+			\end{align*}
+
+			Since $R$ is a ring, it must be closed under subtraction, therefore $k \in R$ and by 
+			extension, $u - v \in T$, so $T$ is closed under subtraction. Next we consider 
+			multiplication.
+
+			\begin{align*}
+				u * v & = rb * sb \qquad r, b, s \in R \\
+					  & = (r * s)b \\
+					  & = kb \qquad k = r * s \\
+			\end{align*}
+
+			and since $R$ is closed under multiplicaiton, $kb \in R \implies u * v \in T$. 
+			Therefore, $T$ must be a subring of $R$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [13.a.] \textbf{Let $S$ and $T$ be subrings of a ring $R$. Prove or disprove that 
+				$S \cap T$ is a subring.}
+
+			Let $s \in S$, $t \in T$ such that $s, t \in S \cap T$. It is obvious that if $s, t
+			\in S \cap T$ then $s, t \in S$. Since $S$ is a subring of $R$, we know that it must be
+			closed under subtraction, and thus that $s - t \in S$. By similar logic, we know that 
+			$s, t \in T$ and so $s - t \in T$. Since $s - t \in S$ and $s - t \in T$, it is clear
+			that $s - t \in S \cap T$. Therefore, $S \cap T$ is closed under subtraction.
+
+			By the same logic above, $s, t \in S \cap T$ implies that $s, t \in S, T$, leading to 
+			$s * t \in S, T$ and finally $s * t \in S \cap T$. This shows that $S \cap T$ is closed
+			under multiplication, and according to Theorem 3.6 this means that $S \cap T$ is a 
+			subring of $R$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [13.b.] \textbf{Let $S$ and $T$ be subrings of a ring $R$. Prove or disprove that 
+				$S \cup T$ is a subring.}
+
+			Consider the example when $R = \mathbb{Z}$, $S = \lbrace 3k | k \in \mathbb{Z} \rbrace$,
+			$T = \lbrace 2j | j \in \mathbb{Z} \rbrace$. Then let $s = 3(1)$ and $t = 2(1)$. We can
+			see that $s \in S$ and $t \in T$ implies that $s, t \in S \cup T$, but $s + t = 5$, and
+			since 5 is not a multiple of 2 or 3, $5 \not \in S$ and $5 \not \in T$, therefore $S
+			\cup T$ is not necessarily closed under subtraction, and we cannot assume that $S \cup 
+			T$ is a subring of $R$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [15.a.] \textbf{If $a$ and $b$ are units in a ring $R$ with identity, prove that $ab$
+				is a unit whose inverse is $(ab)^{-1} = b^{-1} * a^{-1}$}
+
+			To show that $ab$ is a unit, we must show that there exists some $x \in R$ such that 
+			$1 = abx$ in $R$. Since $R$ is a ring with identity, we know that $a^{-1}$ and $b^{-1}$ 
+			are both in $R$, and since rings are closed under multiplication we know that the 
+			product of those two elements must also be in the ring. Therefore, let 
+			$x = b^{-1} * a^{-1}$ and we can see that:
+
+			\begin{align*}
+				abx & = 1 \\
+				a * b * b^{-1} * a^{-1} & = 1 \\
+				a * 1 * a^{-1} & = 1 \\
+				a * a^{-1} & = 1 \\
+				1 & = 1
+			\end{align*}
+
+			Which is true. Therefore, if $a$ and $b$ are units in a ring $R$ with identity, $ab$ is 
+			a unit whose inverse is $(ab)^{-1} = b^{-1} * a^{-1}$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [31.a.] \textbf{Prove that $a + a = 0$ for every $a$ in a boolean ring.}
+
+			Let $R$ be a boolean ring, and let $a \in R$. Furthermore, $x * x = x$ implies that 
+			there is no $x$ other than 0 such that $x * x = 0$, or rather that $R$ is an integral
+			domain. We can then see that
+
+			\begin{align*}
+				(a + a) & = (a + a)^2 \\
+				(a + a)^2 & = (a + a)(a + a) \\
+				(a + a) & = (a + a)(a + a) \\
+				0 & = (a + a) \\
+			\end{align*}
+
+			Therefore $a + a = 0$ $_{\blacksquare}$
+
+		% ======================================================================================== %
+		\item [31.b.] \textbf{Prove that every boolean ring is commutative.}
+
+			Let $R$ be a boolean ring, and let $a, b \in R$. Then
+
+			\begin{align*}
+				a + b & = (a + b)^2 \\
+				      & = a^2 + ab + ba + b^2 \\
+				      & = a + ab + ba + b \\
+				0 & = ab + ba \\
+				ab & = -ba\\
+			\end{align*}
+
+			However, note that since $R$ is a boolean ring
+
+			\begin{align*}
+				(-a) & = (-a)^2 \\
+					 & = (-a)(-a) \\
+					 & = a^2 \\
+					 & = a
+			\end{align*}
+
+			Therefore $-ba$ from our original equation is equal to $ba$, and we see that 
+
+			\begin{equation*}
+				ab = ba
+			\end{equation*}
+
+			Or, in other words, that $R$ is commutative $_{\blacksquare}$
+
+		% ======================================================================================== %
+	\end{enumerate}
+\end{document}
+

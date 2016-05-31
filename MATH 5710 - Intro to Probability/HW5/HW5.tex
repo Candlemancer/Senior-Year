@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\title{Homework 5}
+\author{Jonathan Petersen \\ A01236750}
+\date{February 17th, 2016}
+\begin{document}
+	\maketitle
+	\hrule
+	\begin{enumerate}
+		% ======================================================================================== %
+		\item [17.] \textbf{Suppose that in a sequence of independent Bernoulli trials, each with 
+						probability $p$, the number of failures up to the first success is counted.
+						What is the frequency funciton for this random variable?}
+
+			Let $X$ be the number of failures up to the first success. Then we see that when
+			$X = k$, there must be $k$ failures and 1 success, or in other words:
+
+				\begin{align*}
+					P(X = k) = p(1 - p)^k \qquad k = 0, 1, 2, \dots
+				\end{align*}
+
+		% ======================================================================================== %
+		\item [19.] \textbf{Find the expression for the CDF of a geometric random variable.}
+
+			The CDF of a geometric random variable for some threshold $n$ could be found by 
+			calculating the value of the geometric distribution for $k = 0, 1, 2, \dots, n$.
+
+			Thus:
+
+				\begin{align*}
+					\sum_{k = 0}^{n} p(1-p)^{k-1} & = p(1-p)^0 + p(1-p)^1 + \dots + p(1-p)^n \\
+						& = 1 - (1 - p)^k
+				\end{align*}
+
+		% ======================================================================================== %
+		\item [20.]	\textbf{If $X$ is a geometric random variable with $p = 0.5$, for what value of
+						$k$ is $P(X \le k) \approx{} 0.99$?}
+
+			To calculate $P(X \le k)$ we can use the CDF of the geometric distribution function
+			found above, namely
+
+				\begin{align*}
+					P(X \le k) & = 1 - (1 - p)^k
+				\end{align*}
+
+			we can see that when $p = 0.5$
+
+				\begin{align*}
+					P(X \le k) & = 1 - (0.5)^k \\
+					0.99 & \approx 1 - (0.5)^k \\
+					-0.01 & \approx 0.5^k \\
+					log_{0.5}(-0.01) & \approx k \\
+				\end{align*}
+
+			Or rather, that $P(X \le k) \approx{} 0.99$ occurs when $k = log_{0.5}(-0.01)$.
+
+
+		% ======================================================================================== %
+		\item [22.]	\textbf{Three identical fair coins are tossed simultaneously until all three
+						show the same face. What is the probability that they are thrown more than
+						3 times?}
+			
+			\begin{align*}
+				P(x) = P(\text{all 3 heads}) & = P(h_1) * P(h_2) * P(h_3) \\
+					& = 0.5 * 0.5 * 0.5 = 0.0625\\
+					\\
+				P(X > 3) & = 1 - P(X \le 3) \qquad X = \text{Number of times coins thrown} \\
+					& = 1 - (P(X = 1) + P(X = 2) + P(X = 3)) \\ 
+					& = 1 - ((0.0625) + (0.0625)(1 - 0.0625) + (0.0625)(1 - 0.0625)^2) \\
+					& = 1 - (0.0625 + 0.05859375 + 0.05493164062) \\
+					& = 1 - 0.1760253906 \\
+					& = 0.8239746094
+			\end{align*}
+
+		% ======================================================================================== %
+		\item [26.] \textbf{Given the setup, what is the probability that the professor will never
+						be trapped ($X = 0$)? That he will be trapped once ($X = 1$)? 
+						Twice ($X = 2$)?}	
+
+			We can approximate the value by a Poisson distribution, with 
+
+				\begin{align*}
+					X & = \text{The number of times the professor is trapped.} \\
+					p & = 1 / 10,000 \\
+					n & = 5 * 52 * 10 = 2600 \\
+					\therefore \lambda & = np = 0.26 \\
+				\end{align*}
+
+			And we approximate $X$ as follows
+	
+				\begin{align*}
+					P(X = k) & = \frac{\lambda^k}{k!}e^{-\lambda}\\
+					P(X = 0) & = \frac{0.26^0}{0!}e^{-0.26} = e^{-0.26} \\
+					P(X = 1) & = \frac{0.26^1}{1!}e^{-0.26} = 0.26e^{-0.26} \\
+					P(X = 2) & = \frac{0.26^2}{2!}e^{-0.26} \\
+							 & = \frac{0.0676}{2}e^{-0.26} = 0.0338e^{-0.26}
+				\end{align*}
+
+		% ======================================================================================== %
+		\item [27.]	\textbf{Suppose a rare disease has an incidence of 1 in 1000. Find the 
+						probability of $k$ cases in a population for $k = 0, 1, 2$.}
+
+			We can approximate the value by a Poisson distribution. Let $X$ be the number of cases,
+			then given
+
+				\begin{align*}
+					p & = 1 / 1000 \\
+					n & = 100,000
+				\end{align*}	
+
+			we can calculate $X$ by the formula
+
+				\begin{align*}
+					P(X = k) & = \frac{\lambda^k}{k!}e^{-\lambda} \qquad \lambda = np = 100 \\
+					P(X = 0) & = \frac{100^0}{0!}e^{-100} = e^{-100} \\
+					P(X = 1) & = \frac{100^1}{1!}e^{-100} = 100e^{-100} \\
+					P(X = 2) & = \frac{100^2}{2!}e^{-100} \\
+							 & = \frac{10000}{2}e^{-100} = 5000e^{-100}
+				\end{align*}
+
+		% ======================================================================================== %
+		\item [32.]	\textbf{For what value of $k$ is the Poisson frequency function maximized?}
+		
+			The Poisson frequency function 
+
+				\begin{align*}
+					P(X = k) & = \frac{\lambda^k}{k!}e^{-\lambda} \qquad \lambda = np \\
+						& = \frac{\lambda^ke^{-\lambda}}{k!}
+				\end{align*}
+
+			---
+
+	\end{enumerate}
+\end{document}
+
